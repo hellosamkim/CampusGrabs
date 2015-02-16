@@ -1,0 +1,13 @@
+= form_for(@listing) do |f|
+
+  %div.field
+    = f.label :name
+    = f.text_field :name
+  %div.field
+    = f.label :description
+    = f.text_area :description
+  %div.field
+    = f.label :price_in_cents
+    = f.number_field :price_in_cents
+  %div.actions
+    = f.submit
