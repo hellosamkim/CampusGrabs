@@ -1,0 +1,6 @@
+%h2
+  = @listing.name
+%h3
+  = number_to_currency(@listing.price, :unit =>"$")
+
+= link_to 'Back', listings_path

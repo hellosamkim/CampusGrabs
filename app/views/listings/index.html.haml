@@ -1,0 +1,10 @@
+%h2 Listings
+
+%h4
+  - @listings.each do |listing|
+    %p
+      = listing.name 
+    %p
+      = listing.description
+
+= link_to 'New', new_listing_path
