@@ -1,21 +1,10 @@
-= form_for(@listing) do |f|
-  - if @listing.errors.any?
-    %div#error_explanation
-      %h2
-        = pluralize(@listing.errors.count, "error")
-        %p prohibited this product from being saved:
-        %ul
-        - @listing.errors.full_messages.each do |msg|
-          %li= msg
-
-  %div.field
-    = f.label :name
-    = f.text_field :name
-  %div.field
-    = f.label :description
-    = f.text_area :description
-  %div.field
-    = f.label :price_in_cents
-    = f.number_field :price
-  %div.actions
-    = f.submit
+= simple_form_for(@listing) do |f|
+  .form-group
+    %div.field
+      = f.input :title, :class => "form-control"
+    %div.field
+      = f.input :description, :class => "form-control"
+    %div.field
+      = f.input :price, :class => "form-control"
+    %div.actions
+      = f.button :submit, :class => "btn btn-primary"
