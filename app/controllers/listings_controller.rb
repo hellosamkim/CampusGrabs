@@ -12,6 +12,16 @@ class ListingsController < ApplicationController
     @listing = Listing.new
   end
 
+  def create
+    @listing = Listing.new(listing_params)
+
+    if @listing.save
+      redirect_to @listing
+    else
+      render :new
+    end
+  end
+
   def edit
   end
 
