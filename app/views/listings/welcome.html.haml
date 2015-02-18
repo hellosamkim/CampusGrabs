@@ -3,20 +3,20 @@
     .cover-container
       .masthead.clearfix
         .inner
-          %h3.masthead-brand Cover
+          .masthead-brand
+            %img{:src => "/images/logo.png", :style => "width: 60%;", :class => "logo"}
           %nav
             %ul.nav.masthead-nav
               %li.active
                 %a{:href => "#"} Home
               %li
-                %a{:href => "#"} Features
-              %li
-                %a{:href => "#"} Contact
+                %a{:href => "#"} Abouts
       .inner.cover
-        %h1.cover-heading Cover your page.
-        %p.lead Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.
-        %p.lead
-          %a.btn.btn-lg.btn-default{:href => "#"} Learn more
+        .cover-heading 
+          %h1 Campus Grabs
+          %p Buy, Sell, and Trade things around Campus
+
+        %a.btn.btn-lg.btn-default{:href => "#"} Get Started
       .mastfoot
         .inner
-          %p Footer!
+          %p Sam Kim

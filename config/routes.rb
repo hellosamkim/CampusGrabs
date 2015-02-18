@@ -15,6 +15,8 @@ Rails.application.routes.draw do
     root to: "listings#welcome"    
   end
 
+  get '/welcome' => 'listings#welcome'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
