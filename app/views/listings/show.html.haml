@@ -3,4 +3,11 @@
 %h3
   = number_to_currency(@listing.price, :unit =>"$")
 
+%h4
+  = @listing.description
+
 = link_to 'Back', listings_path
+
+= link_to 'Edit', edit_listing_path(@listing.id)
+
+= link_to 'Delete', listing_path(@listing.id), method: :delete, data: { confirm: "Your listing will be permanently removed. Are you sure?" }

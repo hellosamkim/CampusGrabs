@@ -2,7 +2,7 @@ class ListingsController < ApplicationController
   before_action :set_listing, only: [:show, :edit, :update, :destroy]
 
   def index
-    @listings = Listing.all
+    @listings = Listing.all.order("created_at DESC")
   end
 
   def show
@@ -16,8 +16,10 @@ class ListingsController < ApplicationController
     @listing = Listing.new(listing_params)
 
     if @listing.save
+      flash[:success] = "Listing successfully created"
       redirect_to @listing
     else
+      flash[:error] = "Listing could not be created, please try again."
       render :new
     end
   end
@@ -35,9 +37,9 @@ class ListingsController < ApplicationController
 
   def destroy
     if @listing.destroy
-      flash[:success] = "Listing was deleted"
+      flash[:success] = "Listing successfully deleted"
     else
-      flash[:error] = "Listing could not be deleted, please try again later."
+      flash[:error] = "Listing could not be deleted, please try again."
     end
     redirect_to @listing
   end
