@@ -9,11 +9,11 @@ class ListingsController < ApplicationController
   end
 
   def new
-    @listing = Listing.new
+    @listing = current_user.listings.build
   end
 
   def create
-    @listing = Listing.new(listing_params)
+    @listing = current_user.listings.build(listing_params)
 
     if @listing.save
       flash[:success] = "Listing successfully created"
