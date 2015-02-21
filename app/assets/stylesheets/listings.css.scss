@@ -1,8 +1,39 @@
 .navbar.navbar-default {
-  background-color: #7C5D4A;
+  background-color: #967d6e;
+  border-color: #967d6e;
 }
 
 .nav-logo {
   position: relative;
-  margin-top: -14px;
+  margin-top: -14.5px;
+  width: 40%;
+  opacity: 0.3;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;  
+}
+
+.nav-logo:hover {
+  opacity: 0.8;
+}
+
+.nav.navbar-nav.navbar-right {
+  position: absolute;
+  right: 30px;
+  width: 20%;
+}
+
+@media (max-width: 767px) {
+  .navbar-brand {
+    position: absolute;
+    width: 300px;
+  }
+
+  .nav-logo {
+    width: 50%;
+  }
+
+  .nav.navbar-nav.navbar-right {
+    display: none;
+  }
 }
