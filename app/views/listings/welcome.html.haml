@@ -7,16 +7,16 @@
             %img{:src => "/images/logo.png", :style => "width: 60%;", :class => "logo"}
           %nav
             %ul.nav.masthead-nav
-              %li.active
-                %a{:href => "#"} Home
               %li
-                %a{:href => "#"} Abouts
+                %a{:href => about_us_path} About Us
+              %li
+                %a{:href => new_user_session_path} Sign In
       .inner.cover
         .cover-heading 
           %h1 Campus Grabs
           %p Buy, Sell, and Trade things around Campus
 
-        %a.btn.btn-lg.btn-default{:href => "#"} Get Started
+        %a.btn.btn-lg.btn-default{:href => new_user_registration_path} Get Started
       .mastfoot
         .inner
           %p Sam Kim

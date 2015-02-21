@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   end
 
   get '/welcome' => 'listings#welcome'
+  get '/about-us' => 'listings#about_us'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
