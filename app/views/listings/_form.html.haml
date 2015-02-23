@@ -7,6 +7,6 @@
     %div.field
       = f.input :price, :class => "form-control"
     %div.field
-      = f.file_field :image, :class => "form-control"
+      = f.file_field "images[]", type: :file, multiple: true
     %div.actions
       = f.button :submit, :class => "btn btn-primary"
