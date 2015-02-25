@@ -1,6 +1,6 @@
 class ImagesController < ApplicationController
-  before_action :set_image, only: [:show, :edit, :update, :destroy]
   before_action :set_listing
+  before_action :set_image, only: [:show, :edit, :update, :destroy]
   before_filter :ensure_logged_in, only: [:create, :edit, :destroy]
 
   def show

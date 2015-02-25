@@ -10,7 +10,9 @@
 %div.product_image
   - @listing.images.each do |image|
     = image_tag image.picture_url
-    / = link_to "edit", edit_listing_image_path(image)
+    %div.image_options
+      = link_to "edit", edit_listing_image_path(@listing, image.id)
+      = link_to "delete", listing_image_path(@listing, image.id), method: :delete, data: { confirm: "Are you sure?" }
     
 %div.add_image
   - if @listing.user_auth(current_user)
