@@ -1,0 +1,10 @@
+%p#notice
+  = notice
+
+%p
+  %strong Listing:
+  = @image.listing_id
+
+
+= link_to 'Edit', edit_listing_image_path(@image)
+= link_to 'Back', listing_path(@listing)

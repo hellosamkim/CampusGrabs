@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
-  resources :listings
+  resources :listings do
+    resources :images
+  end
   authenticated :user do
     root to: "listings#index", as: :authenticated_root
   end
