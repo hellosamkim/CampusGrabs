@@ -7,9 +7,14 @@
 %h4
   = @listing.description
 
-- if @listing.user_auth(current_user)
-  %div
-    = link_to 'New Image', new_listing_image_path(@listing.id)
+%div.product_image
+  - @listing.images.each do |image|
+    = image_tag image.picture_url
+    / = link_to "edit", edit_listing_image_path(image)
+    
+%div.add_image
+  - if @listing.user_auth(current_user)
+    = link_to 'Add Product Image', new_listing_image_path(@listing.id)
 
 = link_to 'Back', listings_path
 

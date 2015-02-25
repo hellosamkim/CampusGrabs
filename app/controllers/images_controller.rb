@@ -1,5 +1,5 @@
 class ImagesController < ApplicationController
-  before_action :set_image, only: [:show, :edit, :update, :destroy, :create]
+  before_action :set_image, only: [:show, :edit, :update, :destroy]
   before_action :set_listing
   before_filter :ensure_logged_in, only: [:create, :edit, :destroy]
 
@@ -7,7 +7,7 @@ class ImagesController < ApplicationController
   end
 
   def new
-    @image = Image.new
+    @image = Image.new(:listing_id => params[:listing_id])
   end
 
   def edit
@@ -15,6 +15,11 @@ class ImagesController < ApplicationController
 
   def create
     @image = @listing.images.create(image_params)
+    if @image.save
+      flash[:success] = "Image successfully uploaded"
+    else
+      flash[:error] = "Image could not be uploaded. Please try again."
+    end
     redirect_to @listing
   end
 
@@ -41,6 +46,6 @@ class ImagesController < ApplicationController
     end
 
     def image_params
-      params.require(:image).permit(:listing_id)
+      params.require(:image).permit(:listing_id, :picture)
     end
 end

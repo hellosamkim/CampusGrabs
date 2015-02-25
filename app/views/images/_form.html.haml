@@ -1,5 +1,7 @@
-= simple_form_for([@listing, @listing.images.build]) do |f|
+= simple_form_for ([@listing, @listing.images.build]), html: {multipart: true} do |f|
   = f.error_notification
+  %div.field
+    = f.file_field :picture
   %div.form-actions
     = f.button :submit
 
