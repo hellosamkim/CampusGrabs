@@ -1,5 +1,6 @@
 class ListingsController < ApplicationController
   before_action :set_listing, only: [:show, :edit, :update, :destroy]
+  before_filter :ensure_logged_in, only: [:create, :edit, :destroy]
 
   def index
     @listings = Listing.all.order("created_at DESC")
