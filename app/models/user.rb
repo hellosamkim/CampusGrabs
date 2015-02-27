@@ -5,5 +5,4 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
          
   has_many :listings
-  has_many :pictures, through: :listings
 end

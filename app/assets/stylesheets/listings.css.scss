@@ -20,12 +20,16 @@
 
 .nav.navbar-nav.navbar-right {
   position: absolute;
-  right: 3%;
-  width: 20%;
+  right: 10%;
+  width: 300px;
 }
 
-.listing-images {
-  max-width: 20 0px;
+.row {
+  max-width: 100%;
+}
+
+.thumbs {
+  height: 200px;
 }
 
 @media (max-width: 767px) {

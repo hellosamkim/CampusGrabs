@@ -1,7 +1,9 @@
 class ImagesController < ApplicationController
-  before_action :set_listing
+  before_action :authenticate_user!
+  before_action :set_listing  
   before_action :set_image, only: [:show, :edit, :update, :destroy]
-  before_filter :ensure_logged_in, only: [:create, :edit, :destroy]
+  before_filter :ensure_logged_in, only: [:new, :edit, :destroy]
+  before_filter :ensure_correct_user, only: [:edit]
 
   def show
   end

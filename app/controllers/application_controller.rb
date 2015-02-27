@@ -9,4 +9,11 @@ class ApplicationController < ActionController::Base
       redirect_to listings_path
     end
   end
+
+  def ensure_correct_user
+    unless current_user.id == @listing.user_id
+      flash[:alert] = "You cannot edit other people's listings."
+      redirect_to listing_path
+    end
+  end
 end

@@ -1,8 +1,9 @@
 = render 'nav'
 
-%h2 Listings
-
-%h4
+%div.row
   - @listings.each do |listing|
-    %a{:href => listing_path(listing.id)}
-      = listing.title
+    %div.col-md-4
+      %a{:href => listing_path(listing.id)}
+        - listing.images[0..0].each_with_index do |image|
+          = image_tag image.picture.url, :class => "thumbs"
+
