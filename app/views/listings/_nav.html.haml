@@ -1,4 +1,4 @@
-%nav.navbar.navbar-default
+%nav.navbar.navbar-default#nav-top
   .container-fluid
     / Brand and toggle get grouped for better mobile display
     .navbar-header
@@ -9,13 +9,29 @@
         %span.icon-bar
       %a.navbar-brand{:href => listings_path}
         %img{:src => "/images/logo.png", :class => "nav-logo" }
+    #bs-example-navbar-collapse-1.collapse.navbar-collapse
+      %ul.nav.navbar-nav#nav-position
+        %li#only-mobile
+          %a{:href => listings_path}
+            Home
         - if user_signed_in?
-          %ul.nav.navbar-nav.navbar-right
-            %li= link_to 'New', new_listing_path 
-            %li= link_to 'Account', edit_user_registration_path
-            %li= link_to 'Sign Out', destroy_user_session_path, method: :delete
+          %li.dropdown
+            %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+              Account
+              %span.caret
+            %ul.dropdown-menu{:role => "menu"}
+              %li 
+                = link_to 'Sign Out', destroy_user_session_path, method: :delete
         - else
-          %ul.nav.navbar-nav.navbar-right
-            %li= link_to 'Sign In', new_user_session_path
-            %li= link_to 'Sign Up', new_user_registration_path
+          %li
+            = link_to 'Log In', new_user_session_path
+          %li 
+            = link_to 'Sign Up', new_user_registration_path
+            
+%nav.navbar.navbar-default
+  .container-fluid
+
+
+            
+
             
