@@ -18,6 +18,10 @@
 @import "bootstrap";
 
 // Below two css borders are for mobile nav toggles
+a:hover {
+  text-decoration: none;
+}
+
 .navbar-default .navbar-toggle {
   border-color: #cbbfb8;
 }

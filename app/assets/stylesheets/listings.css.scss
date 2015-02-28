@@ -9,15 +9,28 @@
   height: 50px;
 }
 
-.new_listing, .my_listing {  
+.add_listing, .my_listing {  
   height: 100%;
   width: 50%;
   line-height: 50px;
   vertical-align: middle;
   text-align: center;
+  opacity: 0.6;
+
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
 }
 
-.new_listing {
+.add_listing:hover, .my_listing:hover {
+  opacity: 0.9;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.add_listing {
   float: left;
 }
 

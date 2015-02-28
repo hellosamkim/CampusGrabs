@@ -1,6 +1,7 @@
 %nav.bottom_nav
-  %div.new_listing
-    = link_to "Add Listing", new_listing_path
-  %div.my_listing
-    = link_to "My Listings", my_listings_path
-
+  %a{:href => new_listing_path}
+    %div.add_listing
+      Add New Listing
+  %a{:href => my_listings_path}
+    %div.my_listing
+      My Listings

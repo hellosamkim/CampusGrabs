@@ -13,6 +13,7 @@ gem 'simple_form'
 gem 'devise', '~> 3.4.1'
 gem 'rmagick', '~> 2.13.4'
 gem 'carrierwave'
+gem "font-awesome-rails"
 
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
