@@ -1,8 +1,28 @@
-.navbar.navbar-default {
+.navbar.navbar-default, {
   background-color: #cbbfb8;;
   border-color: #cbbfb8;;
   border-radius: 0;
   margin-bottom: 0px;
+}
+
+.bottom_nav {
+  height: 50px;
+}
+
+.new_listing, .my_listing {  
+  height: 100%;
+  width: 50%;
+  line-height: 50px;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.new_listing {
+  float: left;
+}
+
+.my_listing {
+  float: right;
 }
 
 .nav-logo {
@@ -42,6 +62,7 @@
 ul.nav.navbar-nav#nav-position {
   height: 75px;
 }
+
 
 @media (max-width: 767px) {
   .navbar-brand {
