@@ -1,12 +1,13 @@
 .navbar.navbar-default {
-  background-color: #867266;
-  border-color: #867266;
+  background-color: #cbbfb8;;
+  border-color: #cbbfb8;;
   border-radius: 0;
+  margin-bottom: 0px;
 }
 
 .nav-logo {
   position: relative;
-  margin-top: -3.2%;
+  margin-top: -3.6%;
   margin-left: 7%;
   width: 55%;
   opacity: 0.3;
@@ -27,10 +28,18 @@
   height: 200px;
 }
 
-#nav-top {
-  background-color: #cbbfb8;
-  border-color: #cbbfb8;
-  margin-bottom: 0;
+.nav {
+  height: 75px
+}
+
+.breakline {
+  height: 1%;
+  background-color: #867266;
+  padding: 0;
+  margin: 0;
+}
+
+ul.nav.navbar-nav#nav-position {
   height: 75px;
 }
 

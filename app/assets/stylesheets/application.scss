@@ -17,6 +17,15 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+// Below two css borders are for mobile nav toggles
+.navbar-default .navbar-toggle {
+  border-color: #cbbfb8;
+}
+
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #cbbfb8;
+}
 
 // // // // // // // This is for the Welcome page // // // // // // // //
 /* Custom default button */
@@ -37,7 +46,7 @@ html,
 body {
   height: 100%;
   color: #333;
-  background-color: #cbbfb8;
+  background-color: #FFFDFC;
   background-position: 50% 50%;
   background-size: cover;
 }
