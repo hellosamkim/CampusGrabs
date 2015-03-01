@@ -7,4 +7,4 @@ $ ->
     $('#listings-container').masonry
       itemSelector: '.box'
       isFitWidth: true
-      gutterWidth: 18
+      gutterWidth: 10

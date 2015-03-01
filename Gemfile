@@ -16,6 +16,7 @@ gem 'rmagick', '~> 2.13.4'
 gem 'carrierwave'
 gem "font-awesome-rails"
 gem 'masonry-rails', '~> 0.2.4'
+gem 'faker', '~> 1.4.3'
 
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
