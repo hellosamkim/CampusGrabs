@@ -7,6 +7,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 
+# Gems I used :)
 gem 'haml', '~> 4.0.6'
 gem 'bootstrap-sass', '~> 3.3.3'
 gem 'simple_form'
@@ -14,6 +15,7 @@ gem 'devise', '~> 3.4.1'
 gem 'rmagick', '~> 2.13.4'
 gem 'carrierwave'
 gem "font-awesome-rails"
+gem 'masonry-rails', '~> 0.2.4'
 
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'

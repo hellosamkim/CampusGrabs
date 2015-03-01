@@ -12,10 +12,28 @@
  *
  *= require_tree .
  *= require_self
+ *= require font-awesome
  */
  
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+// Align listings to the center, and make height of row bigger
+.row {
+  max-width: 100%;
+  margin: 0;
+}
+
+// Makes nav links full height
+.dropdown {
+  height: 100%;
+}
+
+// Nav bar links on right
+.navbar-default .navbar-nav > li > a {
+  font-size: 1.7rem;
+  height: 100%;
+}
 
 // Below two css borders are for mobile nav toggles
 a:hover {
@@ -50,7 +68,7 @@ html,
 body {
   height: 100%;
   color: #333;
-  background-color: #FFFDFC;
+  background-color: #F4EDE9;
   background-position: 50% 50%;
   background-size: cover;
 }

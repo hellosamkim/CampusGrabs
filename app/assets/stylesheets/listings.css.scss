@@ -1,3 +1,4 @@
+// Nav bars
 .navbar.navbar-default, {
   background-color: #cbbfb8;;
   border-color: #cbbfb8;;
@@ -5,9 +6,37 @@
   margin-bottom: 0px;
 }
 
-.bottom_nav {
+.nav-logo {
+  position: relative;
+  margin-top: -3.8%;
+  margin-left: 7%;
+  width: 40%;
+  opacity: 0.3;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;  
+}
+
+.nav-logo:hover {
+  opacity: 0.8;
+}
+
+.nav {
+  height: 50px
+}
+
+ul.nav.navbar-nav#nav-position {
   height: 50px;
 }
+
+.breakline {
+  height: 1%;
+  background-color: #867266;
+  padding: 0;
+  margin: 0;
+}
+
+// Nav 2 styling 
 
 .add_listing, .my_listing {  
   height: 100%;
@@ -16,6 +45,7 @@
   vertical-align: middle;
   text-align: center;
   opacity: 0.6;
+  font-size: 2rem;
 
   -webkit-transition: all .3s ease-in-out;
   -moz-transition: all .3s ease-in-out;
@@ -38,44 +68,23 @@ a:hover {
   float: right;
 }
 
-.nav-logo {
-  position: relative;
-  margin-top: -3.6%;
-  margin-left: 7%;
-  width: 55%;
-  opacity: 0.3;
-  -webkit-transition: all .3s ease-in-out;
-  -moz-transition: all .3s ease-in-out;
-  transition: all .3s ease-in-out;  
-}
+// Front Page with each Listings
 
-.nav-logo:hover {
-  opacity: 0.8;
-}
-
-.row {
-  max-width: 100%;
+.each_listing {
 }
 
 .thumbs {
-  height: 200px;
+  width: 100%;
 }
 
-.nav {
-  height: 75px
+.center-image {
+  text-align: center;
 }
 
-.breakline {
-  height: 1%;
-  background-color: #867266;
-  padding: 0;
-  margin: 0;
+.listings_wrapper {
+  margin-top: 20px;
+  padding-top: 30px;
 }
-
-ul.nav.navbar-nav#nav-position {
-  height: 75px;
-}
-
 
 @media (max-width: 767px) {
   .navbar-brand {

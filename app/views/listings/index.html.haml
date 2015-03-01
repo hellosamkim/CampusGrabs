@@ -2,10 +2,14 @@
 %div.breakline
 = render 'nav_2'
 
-%div.row
-  - @listings.each do |listing|
-    %div.col-md-4
-      %a{:href => listing_path(listing.id)}
-        - listing.images[0..0].each_with_index do |image|
-          = image_tag image.picture.url, :class => "thumbs"
+.listings_wrapper
+  %div.row
+    - @listings.each do |listing|
+      %div.col-md-4
+        .each_listing
+          %a{:href => listing_path(listing.id)}
+            - listing.images[0..0].each_with_index do |image|
+              .center-image
+                = image_tag image.picture.url, :class => "thumbs"
+
 
