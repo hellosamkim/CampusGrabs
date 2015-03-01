@@ -8,3 +8,5 @@ $ ->
       itemSelector: '.box'
       isFitWidth: true
       gutterWidth: 10
+  
+  setTimeout("$('.alert').fadeOut('slow')", 2500)

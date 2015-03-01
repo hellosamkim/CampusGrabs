@@ -17,3 +17,6 @@
 //= require bootstrap
 //= require turbolinks
 //= require_tree .
+
+$ ->
+  setTimeout("$('.alert').fadeOut('slow')", 5000)
