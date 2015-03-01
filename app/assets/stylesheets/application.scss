@@ -13,10 +13,25 @@
  *= require_tree .
  *= require_self
  *= require font-awesome
+ *= require 'masonry/transitions'
+ *= require 'masonry/infinitescroll'
  */
  
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+// Masonry Listings
+.box {
+  width: 300px;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;  
+}
+
+#listings-container.transition-enabled.infinite-scroll.clearfix {
+  margin-left: auto;
+  margin-right: auto;
+}
 
 // Align listings to the center, and make height of row bigger
 .row {
