@@ -3,7 +3,7 @@
 = render 'nav_2'
 
 .listings_wrapper
-  #listings-container.transition-enabled.infinite-scroll.clearfix
+  #listings-container.transitions-enabled.masonry-brick
     - @listings.each do |listing|
       .box.panel.panel-default
         %a{:href => listing_path(listing.id)}
