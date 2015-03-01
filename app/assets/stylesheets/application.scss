@@ -50,9 +50,15 @@
           transition-property: left, right, top;
 }
 
-#listings-container.transition-enabled.infinite-scroll.clearfix {
+#listings-container.transitions-enabled {
   margin-left: auto;
   margin-right: auto;
+}
+
+@media (max-width: 767px) {
+  .box {
+    width: 360px;
+  }
 }
 
 // Align listings to the center, and make height of row bigger
