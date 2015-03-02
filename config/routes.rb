@@ -19,13 +19,13 @@ Rails.application.routes.draw do
 
   get '/welcome' => 'listings#welcome'
   get '/about-us' => 'listings#about_us'
-  get 'my_listings' => 'listings#my_listings'
-  get '/my_profile' => 'listings#my_profile'
 
   as :user do
     get "/login" => "devise/sessions#new"
     get "/logout" => "devise/sessions#destroy"
-    get "/:username/edit" => "devise/registrations#edit", as: :user_edit
+    get "/users/:username/edit" => "devise/registrations#edit", as: :user_edit
+    get '/users/:username/my_listings' => 'listings#my_listings', as: :my_listings
+    get '/users/:username/' => 'listings#my_profile', as: :my_profile
   end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

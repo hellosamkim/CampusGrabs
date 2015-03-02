@@ -19,4 +19,10 @@ $ ->
     return false
 
   $('.nav-logo').mouseenter ->
-    $('.nav-logo').addClass("animated bounce")
+    $('.nav-logo').addClass("animated tada")
+    setTimeout("$('.nav-logo').removeClass('animated tada')", 1000)
+
+  $('.listing-image').slick
+    dots: true
+    speed: 500
+    autoplay: false

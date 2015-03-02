@@ -171,13 +171,13 @@ a:hover {
 
 .listing-time {
   position: absolute;
-  top: 5px;
-  right: 10px;
-  padding: 0 2px 0 2px;
-  border-radius: 5px;
+  top: 0px;
+  right: -0.4px;
+  padding: 1px 4px 1px 4px;
+  border-radius: 0px 5px 0px 5px;
   font-size: 1.4rem;
-  background-color: #FEFEFE;
-  color: #666;
+  background-color: #B5A49B;
+  color: #FEFEFE;
 }
 
 .listing-hover:hover ~ .listing-details {

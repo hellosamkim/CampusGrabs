@@ -1,22 +1,19 @@
 = render 'nav_1'
 %div.breakline
 
-%h2
-  = @listing.title
+.each-listing-heading
+  %h2
+    = @listing.title
 
-%h3
-  = number_to_currency(@listing.price, :unit =>"$")
+  %h3
+    = number_to_currency(@listing.price, :unit =>"$")
 
-%h4
-  = @listing.description
+  %h4
+    = @listing.description
 
-%div.product_image
+.listing-image
   - @listing.images.each do |image|
-    = image_tag image.picture_url
-    - if @listing.user_auth(current_user)
-      %div.image_options
-        = link_to "edit", edit_listing_image_path(@listing, image.id)
-        = link_to "delete", listing_image_path(@listing, image.id), method: :delete, data: { confirm: "Are you sure?" }
+    = image_tag image.picture_url, :class => "each-image"
     
 %div.add_image
   - if @listing.user_auth(current_user)

@@ -10,7 +10,7 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
-*= require font-awesome
+ *= require font-awesome
  *= require 'masonry/transitions'
  *= require 'masonry/infinitescroll'
  *= require_tree .
@@ -19,6 +19,20 @@
  
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+html,
+body {
+  height: 100%;
+  color: #333;
+  background-color: #F3F1EF;
+  background-position: 50% 50%;
+  background-size: cover;
+}
+
+// Set Slick Carousel
+.listing-image.slick-initialized.slick-slider {
+  width: 30%;
+}
 
 // Nav-menu change "active" colour
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
@@ -132,161 +146,3 @@ a:hover {
 .navbar-default .navbar-form {
   border-color: #cbbfb8;
 }
-
-
-
-
-// // // // // // // Welcome Page Styling // // // // // // // //
-/* Custom default button */
-.btn-default,
-.btn-default:hover,
-.btn-default:focus {
-  color: #333;
-  text-shadow: none; /* Prevent inheritence from `body` */
-  background-color: #fff;
-  border: 1px solid #fff;
-}
-
-/*
- * Base structure
- */
-
-html,
-body {
-  height: 100%;
-  color: #333;
-  background-color: #F3F1EF;
-  background-position: 50% 50%;
-  background-size: cover;
-}
-
-/* Extra markup and styles for table-esque vertical and horizontal centering */
-.site-wrapper {
-  text-align: center;
-  background-image: linear-gradient(rgba(255,255,255,0.5),rgba(255,255,255,0.5)), url("/images/background.jpeg");
-  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
-  background-position: 50% 50%;
-  background-size: cover;
-  display: table;
-  width: 100%;
-  height: 100%; /* For at least Firefox */
-  min-height: 100%;
-  -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
-          box-shadow: inset 0 0 100px rgba(0,0,0,.5);
-}
-.site-wrapper-inner {
-  display: table-cell;
-  vertical-align: top;
-}
-.cover-container {
-  margin-right: auto;
-  margin-left: auto;
-}
-
-.inner {
-  padding: 30px;
-}
-
-/*
- * Header
- */
-
-.masthead-nav > li {
-  display: inline-block;
-}
-.masthead-nav > li + li {
-  margin-left: 20px;
-}
-.masthead-nav > li > a {
-  padding-right: 0;
-  padding-left: 0;
-  font-size: 16px;
-  font-weight: bold;
-  color: #333; /* IE8 proofing */
-  border-bottom: 2px solid transparent;
-}
-.masthead-nav > li > a:hover,
-.masthead-nav > li > a:focus {
-  background-color: transparent;
-  border-bottom-color: #333;
-}
-.masthead-nav > .active > a,
-.masthead-nav > .active > a:hover,
-.masthead-nav > .active > a:focus {
-  color: #333;
-  border-bottom-color: #333;
-}
-
-@media (min-width: 768px) {
-  .masthead-brand {
-    float: left;
-  }
-  .masthead-nav {
-    float: right;
-  }
-}
-
-/*
- * Cover
- */
-
-.cover {
-  padding: 0 20px;
-}
-.cover .btn-lg {
-  padding: 10px 20px;
-  font-weight: bold;
-}
-
-.cover-heading h1 {
-  font-size: 5rem;
-  color: #422A05; 
-}
-
-.cover-heading h3 {
-  font-size: 3rem;
-  color: #FDFBCA;
-}
-
-/*
- * Footer
- */
-
-.mastfoot {
-  color: #333; /* IE8 proofing */
-}
-
-/*
- * Affix and center
- */
-
-@media (min-width: 768px) {
-  /* Pull out the header and footer */
-  .masthead {
-    position: fixed;
-    top: 0;
-  }
-  .mastfoot {
-    position: fixed;
-    bottom: 0;
-  }
-  /* Start the vertical centering */
-  .site-wrapper-inner {
-    vertical-align: middle;
-  }
-  /* Handle the widths */
-  .masthead,
-  .mastfoot,
-  .cover-container {
-    width: 100%; /* Must be percentage or pixels for horizontal alignment */
-  }
-}
-
-@media (min-width: 992px) {
-  .masthead,
-  .mastfoot,
-  .cover-container {
-    width: 80%;
-  }
-}
-// // // // // // // Above is for the Welcome page // // // // // // // //
