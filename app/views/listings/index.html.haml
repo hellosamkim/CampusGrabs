@@ -1,15 +1,19 @@
 = render 'nav_1'
-%div.breakline
 = render 'nav_2'
 
 .listings_wrapper
   #listings-container.transitions-enabled
     - @listings.each do |listing|
       .box.panel.panel-default#listing-shadow
+        - listing.images[0..0].each_with_index do |image|
+          = image_tag image.picture.url, :class => "thumbs"
+          %div.breakline
+        .panel-body 
+          .panel-title
+            = listing.title
         %a{:href => listing_path(listing.id)}
-          - listing.images[0..0].each_with_index do |image|
-            = image_tag image.picture.url, :class => "thumbs"
-          .panel-body 
-            %h2 
-              = listing.title
+          .listing-hover
+        .listing-price
+          = number_to_currency(listing.price, :precision => 0)
+
 

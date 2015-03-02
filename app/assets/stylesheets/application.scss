@@ -20,7 +20,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-
 // Nav-menu change "active" colour
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
   background-color: #b5a49b;
@@ -76,8 +75,50 @@
   border-radius: 5px;
 }
 
+.panel-body {
+  padding: 0;
+}
+
+.panel-title {
+  width: 100%;
+  margin: 2px;
+  text-align: center;
+}
+
 .box {
   border-radius: 5px;
+}
+
+.listing-hover {
+  background-color: #eff1f3;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.listing-hover:hover {
+  opacity: 0.5;
+}
+
+.listing-hover:hover + .listing-price {
+
+}
+
+.listing-price {
+  padding: 5px 15px 5px 15px;
+  position: absolute;
+  top: 12px;
+  left: -0.7px;
+  font-size: 1.8rem;
+  background-color: #666;
+  color: #FEFEFE;
+  border-radius: 0px 5px 5px 0px;
 }
 
 @media (max-width: 767px) {
@@ -146,7 +187,7 @@ html,
 body {
   height: 100%;
   color: #333;
-  background-color: #FEFEFE;
+  background-color: #F3F1EF;
   background-position: 50% 50%;
   background-size: cover;
 }

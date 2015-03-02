@@ -7,8 +7,9 @@
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      %a.navbar-brand{:href => listings_path}
-        %img{:src => "/images/logo.png", :class => "nav-logo" }
+      .navbar-brand
+        %a{:href => listings_path}
+          %img{:src => "/images/logo.png", :class => "nav-logo"}
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
       %ul.nav.navbar-nav#nav-position
         %li#only-mobile
@@ -44,6 +45,6 @@
             = link_to 'Log In', new_user_session_path
           %li 
             = link_to 'Register', new_user_registration_path
-            
+%div.breakline-with-shadow
 
             

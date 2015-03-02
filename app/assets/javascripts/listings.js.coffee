@@ -16,4 +16,7 @@ $ ->
 
   $('.nav-drop-menu-close').click ->
     $('#nav-drop-menu').hide 'slow'
-    return false;
+    return false
+
+  $('.nav-logo').mouseenter ->
+    $('.nav-logo').addClass("animated bounce")
