@@ -1,11 +1,10 @@
 = simple_form_for @listing, html: { multipart: true } do |f|
-  .form-group
-    %div.field
+  %form
+    %div.form-group
       = f.input :title, :class => "form-control"
-    %div.field
+    %div.form-group
       = f.input :description, :class => "form-control"
-    %div.field
+    %div.form-group
       = f.input :price, :class => "form-control"
-
     %div.actions
       = f.button :submit, :class => "btn btn-primary"

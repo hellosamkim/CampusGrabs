@@ -17,12 +17,25 @@
   transition: all .3s ease-in-out;  
 }
 
-.nav-logo:hover {
-  opacity: 0.8;
+#nav-menu {
+  -webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
 }
 
-ul.nav.navbar-nav#nav-position {
-  height: 50px;
+#nav-menu:hover {
+  background-color: #c0b2a9;
+}
+
+#nav-drop-menu {
+  margin: 12px 0 0 -55px;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.nav-logo:hover {
+  opacity: 0.8;
 }
 
 .breakline {
@@ -38,18 +51,18 @@ ul.nav.navbar-nav#nav-position {
 // Nav 2 styling 
 
 .bottom_nav {
-  height: 80px;
+  height: 60px;
   box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.30);
 }
 
-.add_listing, .my_listing {  
-  // height: 100%;
-  width: 50%;
-  line-height: 80px;
+.add_listing {  
+  float: right;
+  width: 16%;
+  line-height: 60px;
   vertical-align: middle;
   text-align: center;
   opacity: 0.6;
-  font-size: 2rem;
+  font-size: 1.7rem;
 
   -webkit-transition: all .3s ease-in-out;
   -moz-transition: all .3s ease-in-out;
@@ -64,12 +77,11 @@ a:hover {
   text-decoration: none;
 }
 
-.add_listing {
-  float: left;
-}
-
-.my_listing {
-  float: right;
+@media (max-width: 767px) {
+  .add_listing {
+    width: 150px;
+    margin-right: 18px;
+  }
 }
 
 // Front Page with each Listings

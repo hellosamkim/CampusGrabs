@@ -20,6 +20,12 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
+// Nav-menu change "active" colour
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  background-color: #b5a49b;
+}
+
 // Alert Infos
 .alert-info {
   opacity: 0.8;

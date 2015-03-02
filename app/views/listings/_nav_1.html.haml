@@ -15,22 +15,33 @@
           %a{:href => listings_path}
             Home
         - if user_signed_in?
-          %li.dropdown
+          %li.dropdown#nav-menu
             %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
-              %i{:class => "fa fa-user fa-lg"} &nbsp
+              %i{:class => "fa fa-bars"} &nbsp
               = current_user.username
-              %span.caret
-            %ul.dropdown-menu{:role => "menu"}
+            %ul.dropdown-menu#nav-drop-menu{:role => "menu"}
+              %li
+                = link_to my_profile_path do
+                  %i{:class => "fa fa-user"}  &nbsp&nbsp
+                  Profile
+              %li
+                = link_to my_listings_path do
+                  %i{:class => "fa fa-briefcase"} &nbsp
+                  My Listings
+              %li.divider
+              %li
+                = link_to edit_user_registration_path do
+                  %i{:class => "fa fa-cog"} &nbsp
+                  Account Settings
               %li
                 = link_to destroy_user_session_path, method: :delete do
-                  %i{:class => "fa fa-sign-out"} 
-                    Sign Out
+                  %i{:class => "fa fa-sign-out"} &nbsp
+                  Sign Out
         - else
           %li
             = link_to 'Log In', new_user_session_path
           %li 
-            = link_to 'Sign Up', new_user_registration_path
-
+            = link_to 'Register', new_user_registration_path
             
 
             
