@@ -107,7 +107,7 @@ a:hover {
   }
 }
 
-// Front Page with each Listings
+// Front Page with all the listings
 
 .thumbs {
   width: 100%;
@@ -119,6 +119,69 @@ a:hover {
   margin-top: 2.2px;
   padding-bottom: 8px;
   background-color: #F3F1EF;
+}
+
+.listing-hover {
+  background-color: #eff1f3;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: 1;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.listing-hover:hover {
+  opacity: 0.5;
+}
+
+.listing-price {
+  padding: 5px 15px 5px 15px;
+  position: absolute;
+  top: 12px;
+  left: -0.6px;
+  font-size: 1.8rem;
+  background-color: #666;
+  color: #FEFEFE;
+  border-radius: 0px 5px 5px 0px;
+}
+
+.listing-details {
+  display: none;
+  opacity: 0.97;
+  z-index: 2;
+}
+
+.listing-user {
+  position: absolute;
+  width: 70%;
+  font-size: 1.4rem;
+  bottom: 30px;
+  text-align: center;
+  background-color: #DAE5DE;
+  color: #666;
+  margin-left: 35px;
+  border-radius: 5px;
+  padding: 2px;
+}
+
+.listing-time {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  padding: 0 2px 0 2px;
+  border-radius: 5px;
+  font-size: 1.4rem;
+  background-color: #FEFEFE;
+  color: #666;
+}
+
+.listing-hover:hover ~ .listing-details {
+  display: block;
 }
 
 @media (max-width: 767px) {

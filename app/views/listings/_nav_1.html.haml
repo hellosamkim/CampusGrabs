@@ -31,11 +31,11 @@
                   My Listings
               %li.divider
               %li
-                = link_to edit_user_registration_path do
+                = link_to user_edit_path(current_user) do
                   %i{:class => "fa fa-cog"} &nbsp
                   Account Settings
               %li
-                = link_to destroy_user_session_path, method: :delete do
+                = link_to logout_path, method: :delete do
                   %i{:class => "fa fa-sign-out"} &nbsp
                   Sign Out
               %li.nav-drop-menu-close

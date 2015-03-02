@@ -13,7 +13,12 @@
             = listing.title
         %a{:href => listing_path(listing.id)}
           .listing-hover
-        .listing-price
-          = number_to_currency(listing.price, :precision => 0)
+          .listing-price
+            = number_to_currency(listing.price, :precision => 0)
+          .listing-details.listing-user
+            Listed by 
+            = listing.user.username
+          .listing-details.listing-time  
+            = listing.created_at.strftime("%b %-d, %Y")
 
 

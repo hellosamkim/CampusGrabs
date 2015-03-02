@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     resources :images
   end
   authenticated :user do
-    root to: "listings#index", as: :authenticated_root
+    root to: "listings#index", as: :authenticated_root 
   end
 
   unauthenticated do
@@ -21,6 +21,12 @@ Rails.application.routes.draw do
   get '/about-us' => 'listings#about_us'
   get 'my_listings' => 'listings#my_listings'
   get '/my_profile' => 'listings#my_profile'
+
+  as :user do
+    get "/login" => "devise/sessions#new"
+    get "/logout" => "devise/sessions#destroy"
+    get "/:username/edit" => "devise/registrations#edit", as: :user_edit
+  end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
