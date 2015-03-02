@@ -37,6 +37,8 @@
                 = link_to destroy_user_session_path, method: :delete do
                   %i{:class => "fa fa-sign-out"} &nbsp
                   Sign Out
+              %li.nav-drop-menu-close
+                %i{:class => "fa fa-times fa-lg"}
         - else
           %li
             = link_to 'Log In', new_user_session_path

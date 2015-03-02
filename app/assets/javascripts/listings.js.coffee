@@ -10,3 +10,10 @@ $ ->
       gutterWidth: 10
   
   setTimeout("$('.alert').fadeOut('slow')", 2500)
+
+  $('#nav-menu').on 'click', ->
+    $('#nav-drop-menu').show 'slow'
+
+  $('.nav-drop-menu-close').click ->
+    $('#nav-drop-menu').hide 'slow'
+    return false;

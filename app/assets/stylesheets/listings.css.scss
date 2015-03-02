@@ -28,10 +28,25 @@
 }
 
 #nav-drop-menu {
-  margin: 12px 0 0 -55px;
-  font-size: 1.5rem;
+  margin: 12px 0 0 -60px;
+  font-size: 1.6rem;
   border-radius: 5px;
   padding: 10px;
+}
+
+.nav-drop-menu-close {
+  position: absolute;
+  top: 0;
+  right: 7px;
+  z-index: 1001;
+  opacity: 0.5;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.nav-drop-menu-close:hover {
+  opacity: 1;
 }
 
 .nav-logo:hover {
