@@ -5,17 +5,24 @@
 .each-listing-heading
   %h2
     = @listing.title
-
+  
+  %h4
+    = link_to my_profile_path(@listing.user) do
+      = @listing.user.username
   %h3
+    Price:
     = number_to_currency(@listing.price, :unit =>"$")
 
-  %h4
+  %p
     = @listing.description
 
 / Carousel of listing images
 .listing-image.parent-container
   - @listing.images.each do |image|
-    .image-container
+    = link_to listing_image_path(@listing, image) do
+      - if !current_user
+        .image-dim  
+      .image-container
         = image_tag image.picture_url, :class => "each-image"
 
 / Options to add images to listing   

@@ -22,7 +22,7 @@ Rails.application.routes.draw do
 
   as :user do
     get "/login" => "devise/sessions#new"
-    get "/logout" => "devise/sessions#destroy"
+    delete "/logout" => "devise/sessions#destroy"
     get "/users/:username/edit" => "devise/registrations#edit", as: :user_edit
     get '/users/:username/my_listings' => 'listings#my_listings', as: :my_listings
     get '/users/:username/' => 'listings#my_profile', as: :my_profile
