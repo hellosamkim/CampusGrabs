@@ -13,10 +13,11 @@
     = @listing.description
 
 / Carousel of listing images
-.listing-image
+.listing-image.parent-container
   - @listing.images.each do |image|
-    / %a{:href => edit_listing_image_path(@listing.id)}
-    = image_tag image.picture_url, :class => "each-image"
+    %a{:href => listing_image_path(@listing, image), :class => "thickbox"}
+      .image-container
+        = image_tag image.picture_url, :class => "each-image"
 
 / Options to add images to listing   
 %div.add_image

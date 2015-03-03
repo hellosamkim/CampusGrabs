@@ -69,6 +69,8 @@
     }
     img {
         display: block;
+        margin-left: auto;
+        margin-right: auto;
     }
     &.slick-loading img {
         display: none;

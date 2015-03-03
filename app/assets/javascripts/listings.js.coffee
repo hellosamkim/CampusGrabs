@@ -3,29 +3,31 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $ ->
-  // Masonry for pinterest-like fluid columns
+  # Masonry for pinterest-like fluid columns
   $('#listings-container').imagesLoaded ->
     $('#listings-container').masonry
       itemSelector: '.box'
       isFitWidth: true
       gutterWidth: 10
 
-  // Display menu from Top Nav menu upon click
+  # Display menu from Top Nav menu upon click
   $('#nav-menu').on 'click', ->
     $('#nav-drop-menu').show 'slow'
 
-  // Hide menu from Top Nav Menu upon click
+  # Hide menu from Top Nav Menu upon click
   $('.nav-drop-menu-close').click ->
     $('#nav-drop-menu').hide 'slow'
     return false
 
-  // Displays simple listing details upon hover
+  # Displays simple listing details upon hover
   $('.nav-logo').mouseenter ->
     $('.nav-logo').addClass("animated tada")
     setTimeout("$('.nav-logo').removeClass('animated tada')", 1000)
 
-  // Image carousal for each listings
+  # Image carousal for each listings
   $('.listing-image').slick
     dots: true
     speed: 500
     autoplay: false
+
+  setTimeout("$('.alert').fadeOut('slow')", 3000)

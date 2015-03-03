@@ -17,7 +17,3 @@
 //= require masonry/jquery.infinitescroll.min
 //= require bootstrap
 //= require_tree .
-
-// Autohide flash alerts after 5 seconds
-$ ->
-  setTimeout("$('.alert').fadeOut('slow')", 5000)
