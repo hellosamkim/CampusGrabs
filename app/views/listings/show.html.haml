@@ -1,6 +1,7 @@
+/ Top Main Nav
 = render 'nav_1'
-%div.breakline
 
+/ Listing title, and description
 .each-listing-heading
   %h2
     = @listing.title
@@ -11,14 +12,18 @@
   %h4
     = @listing.description
 
+/ Carousel of listing images
 .listing-image
   - @listing.images.each do |image|
+    / %a{:href => edit_listing_image_path(@listing.id)}
     = image_tag image.picture_url, :class => "each-image"
-    
+
+/ Options to add images to listing   
 %div.add_image
   - if @listing.user_auth(current_user)
     = link_to 'Add Product Image', new_listing_image_path(@listing.id)
 
+/ Current listing & page options
 = link_to 'Back', listings_path
 
 - if @listing.user_auth(current_user)

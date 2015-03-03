@@ -1,12 +1,13 @@
 %nav.navbar.navbar-default
   .container-fluid
-    / Brand and toggle get grouped for better mobile display
     .navbar-header
+      / Toggles right menu for mobile view
       %button.navbar-toggle.collapsed{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
         %span.sr-only Toggle navigation
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
+      / Nav Logo
       .navbar-brand
         %a{:href => listings_path}
           %img{:src => "/images/logo.png", :class => "nav-logo"}
@@ -15,6 +16,7 @@
         %li#only-mobile
           %a{:href => listings_path}
             Home
+          / Show menu for logged in users
         - if user_signed_in?
           %li.dropdown#nav-menu
             %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
@@ -40,6 +42,7 @@
                   Sign Out
               %li.nav-drop-menu-close
                 %i{:class => "fa fa-times fa-lg"}
+          / Show menu for users not logged in
         - else
           %li
             = link_to 'Log In', new_user_session_path

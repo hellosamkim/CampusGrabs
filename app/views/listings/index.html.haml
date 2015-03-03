@@ -1,6 +1,9 @@
+/ Top Main Nav
 = render 'nav_1'
+/ Top Sub Nav 2
 = render 'nav_2'
 
+/ Show All Listings
 .listings_wrapper
   #listings-container.transitions-enabled
     - @listings.each do |listing|

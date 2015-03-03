@@ -1,3 +1,4 @@
+/ Form for picture submission
 = simple_form_for @listing, html: { multipart: true } do |f|
   .form-group
     = f.file_field :"image[]", type: :file, multiple: true, :class => "form-control"
