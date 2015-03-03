@@ -15,8 +15,7 @@
 / Carousel of listing images
 .listing-image.parent-container
   - @listing.images.each do |image|
-    %a{:href => listing_image_path(@listing, image), :class => "thickbox"}
-      .image-container
+    .image-container
         = image_tag image.picture_url, :class => "each-image"
 
 / Options to add images to listing   
