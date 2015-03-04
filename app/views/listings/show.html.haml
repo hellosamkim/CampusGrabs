@@ -7,7 +7,7 @@
     = @listing.title
   
   %h4
-    = link_to my_profile_path(@listing.user) do
+    = link_to my_profile_path(@listing.user), :class => "list-user-link" do
       = @listing.user.username
   %h3
     Price:
@@ -34,11 +34,3 @@
 %div.add_image
   - if @listing.user_auth(current_user)
     = link_to 'Add Product Image', new_listing_image_path(@listing.id)
-
-/ Current listing & page options
-= link_to 'Back', listings_path
-
-- if @listing.user_auth(current_user)
-  = link_to 'Edit', edit_listing_path(@listing.id)
-
-  = link_to 'Delete', listing_path(@listing.id), method: :delete, data: { confirm: "Your listing will be permanently removed. Are you sure?" }

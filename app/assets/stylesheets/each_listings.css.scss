@@ -1,3 +1,4 @@
+// Listing Information
 .each-listing-heading {
   position: absolute;
   width: 50%;
@@ -7,10 +8,16 @@
   h2 {
     margin-top: 0;
   }
+  .list-user-link {
+    -moz-transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+  }
 }
 
+// Listing Image
 .listing-image {
-  position: absolute;
+  position: relative;
   left: 10%;
   margin-top: 70px;
   text-align: center;
@@ -25,8 +32,11 @@ img.each-image {
 .image-container {
   height: 300px;
   width: 358px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
+// Image is dimmed when user is not logged in
 .image-dim {
   height: 100%;
   width: 358px;
@@ -54,9 +64,7 @@ img.each-image {
   }
 }
 
-.slick-prev:before, .slick-next:before { 
-}
-
+// Listing image slick sliders
 .slick-prev {
   left: 7px !important; 
 }
@@ -67,7 +75,6 @@ img.each-image {
   font-style: normal  !important;
   font-weight: normal !important;
   text-decoration: inherit !important;
-/*--adjust as necessary--*/
   color: #000 !important;
   font-size: 20px !important;
   padding-right: 0.5em !important;
@@ -86,7 +93,6 @@ img.each-image {
   font-style: normal !important;
   font-weight: normal !important;
   text-decoration: inherit !important;
-/*--adjust as necessary--*/
   color: #000 !important;
   font-size: 20px !important;
   padding-right: 0.5em !important;
@@ -94,3 +100,4 @@ img.each-image {
   top: 10px !important;
   left: 0 !important;
 }
+
