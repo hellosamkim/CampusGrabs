@@ -1,4 +1,4 @@
-// Nav bars
+// Top Nav bar
 .navbar.navbar-default, {
   background-color: #cbbfb8;;
   border-color: #cbbfb8;;
@@ -6,6 +6,7 @@
   margin-bottom: 0px;
 }
 
+// Top Nav bar logo
 .nav-logo {
   position: relative;
   margin-top: -3.8%;
@@ -20,6 +21,8 @@
 .nav-logo:hover {
   opacity: 1;
 }
+
+// Top Nav Bar menu on right
 #nav-menu {
   -webkit-transition: all .2s ease-in-out;
   -moz-transition: all .2s ease-in-out;
@@ -31,6 +34,7 @@
   background-color: #c0b2a9;
 }
 
+// Top Nav Menu drop menu
 #nav-drop-menu {
   margin: 12px 0 0 -65px;
   font-size: 1.6rem;
@@ -55,6 +59,7 @@
   cursor: pointer;
 }
 
+// Breakline below Navs
 .breakline {
   height: 2px;
   background-color: #F3F1EF;
@@ -139,6 +144,7 @@ a:hover {
   opacity: 0.5;
 }
 
+// Front Page listing options
 .listing-price {
   padding: 5px 15px 5px 15px;
   position: absolute;
@@ -176,7 +182,7 @@ a:hover {
   padding: 1px 4px 1px 4px;
   border-radius: 0px 5px 0px 5px;
   font-size: 1.4rem;
-  background-color: #B5A49B;
+  background-color: #635248;
   color: #FEFEFE;
 }
 

@@ -24,5 +24,73 @@ img.each-image {
 
 .image-container {
   height: 300px;
-  width: 100%;
+  width: 358px;
+}
+
+.image-dim {
+  height: 100%;
+  width: 358px;
+  margin: auto;
+  line-height: 300px;
+  vertical-align: center;
+  h4 {
+    position: relative;
+    opacity: 0;
+    background-color: #635248;
+    color: #FEFEFE;
+    padding: 5px;
+    border-radius: 5px;
+    top: 150px;
+    width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.image-dim:hover {
+  opacity: 0.7;
+  h4 {
+    opacity: 1;
+  }
+}
+
+.slick-prev:before, .slick-next:before { 
+}
+
+.slick-prev {
+  left: 7px !important; 
+}
+
+.slick-prev:before {
+  content: "\f053" !important;
+  font-family: FontAwesome !important;
+  font-style: normal  !important;
+  font-weight: normal !important;
+  text-decoration: inherit !important;
+/*--adjust as necessary--*/
+  color: #000 !important;
+  font-size: 20px !important;
+  padding-right: 0.5em !important;
+  position: absolute !important;
+  top: 10px !important;
+  left: 0 !important;
+}
+
+.slick-next {
+  right: 0px !important;
+}
+
+.slick-next:before {
+  content: "\f054" !important;
+  font-family: FontAwesome !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  text-decoration: inherit !important;
+/*--adjust as necessary--*/
+  color: #000 !important;
+  font-size: 20px !important;
+  padding-right: 0.5em !important;
+  position: absolute !important;
+  top: 10px !important;
+  left: 0 !important;
 }

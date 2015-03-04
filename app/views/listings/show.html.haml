@@ -20,10 +20,15 @@
 .listing-image.parent-container
   - @listing.images.each do |image|
     = link_to listing_image_path(@listing, image) do
-      - if !current_user
-        .image-dim  
-      .image-container
-        = image_tag image.picture_url, :class => "each-image"
+      - if !current_user.present?
+        .image-dim
+          %h4 
+            Please Log In To Enlarge
+          .image-container
+            = image_tag image.picture_url, :class => "each-image"
+      - elsif current_user.present?
+        .image-container
+          = image_tag image.picture_url, :class => "each-image"
 
 / Options to add images to listing   
 %div.add_image
