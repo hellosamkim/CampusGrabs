@@ -10,6 +10,12 @@
     <%= f.input :username, required: true, autofocus: true %>
     <%= f.input :email, required: true %>
     <%= f.input :user_bio %>
+    <div class="form-group">
+      <%= f.label :campus %>
+      <div>
+        <%= f.select :campus, options_for_select(@user.universities), label: "School Attending" %>
+      </div>
+    </div>
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>

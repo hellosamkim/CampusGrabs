@@ -6,5 +6,9 @@
       = f.input :description, :class => "form-control"
     %div.form-group
       = f.input :price, :class => "form-control"
+    %div.form-group
+      = f.label :campus
+      %div
+        = f.select :campus, options_for_select(@listing.universities), label: "Campus"
     %div.actions
       = f.button :submit, :class => "btn btn-primary"
