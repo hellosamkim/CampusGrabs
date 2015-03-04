@@ -50,6 +50,7 @@ class ListingsController < ApplicationController
   end
 
   def my_profile
+    
   end
 
   private

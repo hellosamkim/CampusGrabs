@@ -1,4 +1,5 @@
-<%= render 'nav_1' %>
+ <!-- Top Main Nav -->
+<%= render '/listings/nav_1' %>
 
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
@@ -8,7 +9,7 @@
   <div class="form-inputs">
     <%= f.input :username, required: true, autofocus: true %>
     <%= f.input :email, required: true %>
-
+    <%= f.input :user_bio %>
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>

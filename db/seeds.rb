@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 50.times do
-  User.create(username: Faker::Internet.user_name, email: Faker::Internet.safe_email, password: "password", password_confirmation: "password")
+  User.create(username: Faker::Internet.user_name, email: Faker::Internet.safe_email, user_bio: Faker::Lorem.paragraph(rand(1..4)), password: "password", password_confirmation: "password")
 end
 
 25.times do

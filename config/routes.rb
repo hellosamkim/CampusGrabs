@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'users/show'
+
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -13,6 +15,8 @@ Rails.application.routes.draw do
     root to: "listings#index", as: :authenticated_root 
   end
 
+  resources :users, only: [:show] 
+
   unauthenticated do
     root to: "listings#welcome"    
   end
@@ -25,7 +29,6 @@ Rails.application.routes.draw do
     delete "/logout" => "devise/sessions#destroy"
     get "/users/:username/edit" => "devise/registrations#edit", as: :user_edit
     get '/users/:username/my_listings' => 'listings#my_listings', as: :my_listings
-    get '/users/:username/' => 'listings#my_profile', as: :my_profile
   end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

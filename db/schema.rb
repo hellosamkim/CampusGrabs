@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150228181053) do
+ActiveRecord::Schema.define(version: 20150304161937) do
 
   create_table "images", force: true do |t|
     t.integer  "listing_id"
@@ -45,10 +45,12 @@ ActiveRecord::Schema.define(version: 20150228181053) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "username"
+    t.text     "user_bio"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["user_bio"], name: "index_users_on_user_bio"
   add_index "users", ["username"], name: "index_users_on_username", unique: true
 
 end
