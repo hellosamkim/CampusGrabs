@@ -7,7 +7,7 @@
     = @listing.title
   
   %h4
-    = link_to user_path(@listing), :class => "list-user-link" do
+    = link_to user_path(@listing.user), :class => "list-user-link" do
       = @listing.user.username
   %h3
     Price:
