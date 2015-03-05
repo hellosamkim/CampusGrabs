@@ -9,4 +9,23 @@
 // Profile picture
 .profile-picture
   = image_tag @user.avatar_url
-      
+.user-details
+  #name
+    Name: 
+    = @user.first_name
+    = @user.last_name
+  #signed-up
+    Member Since:
+    = @user.created_at.strftime("%b %-d, %Y")
+  #last-online
+    Last Online: 
+    - if @user.last_sign_in_at.strftime("%b %-d, %Y") == Date.today.strftime("%b %-d, %Y")
+      Today
+    - elsif Date.today.strftime("%-d").to_i - @user.last_sign_in_at.strftime("%-d").to_i == 1
+      Yesterday
+    - else
+      = @user.last_sign_in_at.strftime("%b %-d, %Y")
+  #campus
+    Currently Attending:
+    = @user.campus
+  #social
