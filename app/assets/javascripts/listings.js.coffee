@@ -35,10 +35,24 @@ $ ->
     speed: 500
     autoplay: false
 
+  # Auto hide alerts after 3s
   setTimeout("$('.alert').fadeOut('slow')", 3000)
+
+  # Logo bounce in effect
   $('.logo').addClass('animated bounceInDown')
   setTimeout("$('.logo').removeClass('animated bounceInDown')", 3000)
 
+  # Get started button effect
   $('#get-started').hide()
   setTimeout("$('#get-started').slideToggle('slow')", 2000)
   setTimeout("$('#get-started').addClass('animated infinite pulse')", 4000)
+
+  $('#nav-menu').mouseenter ->
+    $('.username-bounce').addClass("animated bounce")
+    setTimeout("$('.username-bounce').removeClass('animated bounce')", 1000)
+
+  $('.profile-picture').addClass('animated bounceInDown')
+
+  # Listings show after .5s
+  $('.box').hide()
+  setTimeout("$('.box').show()", 200)

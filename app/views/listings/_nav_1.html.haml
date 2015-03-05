@@ -19,7 +19,7 @@
           / Show menu for logged in users
         - if user_signed_in?
           %li.dropdown#nav-menu
-            %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+            %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button", :class => "username-bounce"}
               %i{:class => "fa fa-bars"} &nbsp
               = current_user.username
             %ul.dropdown-menu#nav-drop-menu{:role => "menu"}

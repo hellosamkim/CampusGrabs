@@ -31,7 +31,7 @@
 }
 
 #nav-menu:hover {
-  background-color: #c0b2a9;
+  background-color: #cbbfb8;
 }
 
 // Top Nav Menu drop menu
@@ -188,6 +188,12 @@ a:hover {
 
 .listing-hover:hover ~ .listing-details {
   display: block;
+}
+
+.box {
+  -webkit-transition: all 1s ease-in;
+  -moz-transition: all 1s ease-in;
+  transition: all 1s ease-in;  
 }
 
 // ---------- Mobile Views ----------

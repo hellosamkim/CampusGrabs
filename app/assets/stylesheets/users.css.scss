@@ -2,22 +2,25 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.user-details-wrapper {
-  text-align: center;
-  width: 100%;
+.profile-picture {
+  width: 150px;
+  height: 150px;
+  border-radius: 150px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-top: 40px;
+  margin-right: auto;
+  img {
+    height: 100%;
+    border-radius: 150px;
+    width: 100%;
+  }
 }
 
-.user-details {
-  width: 30%;
-  text-align: left;
-  padding: 15px;
-  border-radius: 15px;
-  margin-top: 40px;
-  background-color: #90786A;
-  margin-left: auto;
-  margin-right: auto;
-  -webkit-box-shadow: 2px 2px 10px 1px rgba(0,0,0,0.75);
-  -moz-box-shadow: 2px 2px 10px 1px rgba(0,0,0,0.75);
-  box-shadow: 2px 2px 10px 1px rgba(0,0,0,0.75);
-  color: #F3F1EF;
+.user-details.current-user {
+  height: 25px !important; 
+  line-height: 25px !important;
+  margin-top: 19px !important;
 }
+      

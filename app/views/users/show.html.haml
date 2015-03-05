@@ -1,21 +1,12 @@
 / Top Main Nav
 = render '/listings/nav_1'
 
-/ User name and details
-.user-details-wrapper
-  %h4
-    Currently Viewing
-    = @user.username
-    's Profile
-  .user-details
-    %div
-      %h4 
-        Name: &nbsp
-        = @user.first_name
-        = @user.last_name
-    %div
-      %h4
-        School Attending: 
-        = @user.campus
-        = image_tag @user.avatar_url
+/ User details / profile picture
+.user-details.current-user
+  Currently viewing 
+  = @user.username + "'s"
+  profile
+// Profile picture
+.profile-picture
+  = image_tag @user.avatar_url
       

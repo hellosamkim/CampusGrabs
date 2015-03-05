@@ -29,7 +29,8 @@ body {
   background-size: cover;
 }
 
-.alert-info {
+// alert info msg style + current-user profile viewing display
+.alert-info, .user-details.current-user {
   background-color: #b8c4cb;
   border-color: #b8c4cb;
   position: absolute;
@@ -52,7 +53,7 @@ body {
   box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
 }
 
-.alert {
+.alert, .user-details.current-user {
   margin-bottom: 0px;
   height: 40px;
 }
@@ -64,7 +65,7 @@ body {
 
 // Nav-menu change "active" colour
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
-  background-color: #b5a49b;
+  background-color: #cbbfb8;
 }
 
 // Masonry Listings
