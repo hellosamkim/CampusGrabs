@@ -2,13 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// Profile picture
 .profile-picture {
-  width: 180px;
+  width: 200px;
   z-index: 1000;
-  height: 180px;
+  height: 200px;
   background-color: #DAE5DE;
   border: solid 10px #DAE5DE;
-  border-radius: 150px 150px 0px 0px;
+  border-radius: 150px;
   left: 0;
   right: 0;
   position: relative;
@@ -26,24 +27,64 @@
   }
 }
 
+// User Details
 .user-details {
+  font-size: 1.5rem;
+  font-weight: bold;
   width: 60%;
-  height: 40%;
+  padding: 20px;
   position: relative;
   background-color: #DAE5DE;
   margin-left: auto;
   margin-right: auto;
-  margin-top: -30px;
+  margin-top: -90px;
   z-index: 1;
   -webkit-box-shadow: 0px 2px 7px 1px rgba(0,0,0,0.3);
   -moz-box-shadow: 0px 2px 7px 1px rgba(0,0,0,0.3);
   box-shadow: 0px 2px 7px 1px rgba(0,0,0,0.3);
   border-radius: 50px;
+  
+  .row {
+    .col-md-6.left {
+      text-align: left;
+    }
+
+    .col-md-6.right {
+      text-align: right;
+    }
+  }
+
+  #bio {
+    font-weight: normal;
+    text-align: center;
+    margin-top: 50px;
+  }
+
+  #name {
+    margin-left: 5px;
+  }
 }
 
-.current-user {
-    height: 25px !important; 
+// Social icons
+.facebook-logo:hover, .twitter-logo:hover {
+  opacity: 0.7;
+}
+
+#social {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    z-index: 2000;
+    top: 290px;
+}
+
+// "Currently viewing username's profile"
+.current-user-show {
+    height: 20px !important; 
     color: #FFF !important;
-    line-height: 25px !important;
+    line-height: 20px !important;
     margin-top: 19px !important;
 }      

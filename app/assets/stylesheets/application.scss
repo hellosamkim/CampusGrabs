@@ -30,7 +30,7 @@ body {
 }
 
 // alert info msg style + current-user profile viewing display
-.alert-info, .user-details.current-user {
+.alert-info, .current-user-show {
   background-color: #b8c4cb;
   border-color: #b8c4cb;
   position: absolute;
@@ -53,7 +53,7 @@ body {
   box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
 }
 
-.alert, .user-details.current-user {
+.alert, .current-user-show {
   margin-bottom: 0px;
   height: 40px;
 }

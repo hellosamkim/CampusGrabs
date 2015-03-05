@@ -9,10 +9,11 @@
     = f.input :email, required: true
     = f.input :first_name, required: true
     = f.input :last_name, required: true
-    .form-group
-      = f.label :campus
-      %div
-        = f.select :campus, options_for_select(@user.universities), label: "School Attending"
+    = f.label :campus
+  .form-group
+    = f.label :campus
+    %div
+      = f.select :campus, options_for_select(@user.universities), label: "School Attending"
     = f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @validatable)
     = f.input :password_confirmation, required: true
     = f.file_field :avatar 

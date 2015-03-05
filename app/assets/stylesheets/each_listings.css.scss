@@ -43,6 +43,9 @@ img.each-image {
   margin: auto;
   line-height: 300px;
   vertical-align: center;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   h4 {
     position: relative;
     opacity: 0;

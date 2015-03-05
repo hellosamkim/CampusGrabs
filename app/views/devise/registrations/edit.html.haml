@@ -10,10 +10,11 @@
     = f.input :first_name, required: true
     = f.input :last_name, required: true
     = f.input :user_bio
-    .form-group
-      = f.label :campus
-      %div
-        = f.select :campus, options_for_select(@user.universities), label: "School Attending"
+    = f.label :campus
+  .form-group
+    = f.label :campus
+    %div
+      = f.select :campus, options_for_select(@user.universities), label: "School Attending"
     - if devise_mapping.confirmable? && resource.pending_reconfirmation?
       %p
         Currently waiting confirmation for: #{resource.unconfirmed_email}

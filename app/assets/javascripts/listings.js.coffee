@@ -12,11 +12,11 @@ $ ->
 
   # Display menu from Top Nav menu upon click
   $('#nav-menu').on 'click', ->
-    $('#nav-drop-menu').show 'slow'
+    $('#nav-drop-menu').fadeIn 'slow'
 
   # Hide menu from Top Nav Menu upon click
   $('.nav-drop-menu-close').click ->
-    $('#nav-drop-menu').hide 'slow'
+    $('#nav-drop-menu').fdaeOut 'slow'
     return false
 
   # Displays simple listing details upon hover
@@ -47,12 +47,11 @@ $ ->
   setTimeout("$('#get-started').slideToggle('slow')", 2000)
   setTimeout("$('#get-started').addClass('animated infinite pulse')", 4000)
 
+  # Username bounces
   $('#nav-menu').mouseenter ->
     $('.username-bounce').addClass("animated bounce")
     setTimeout("$('.username-bounce').removeClass('animated bounce')", 1000)
 
-  $('.profile-picture').addClass('animated bounceInDown')
-
-  # Listings show after .5s
+  # Load site with delay
   $('.box').hide()
-  setTimeout("$('.box').show()", 200)
+  setTimeout("$('.box').fadeIn()", 200)
