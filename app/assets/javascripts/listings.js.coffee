@@ -23,6 +23,11 @@ $ ->
   $('.nav-logo').mouseenter ->
     $('.nav-logo').addClass("animated tada")
     setTimeout("$('.nav-logo').removeClass('animated tada')", 1000)
+  
+
+  $('.logo').mouseenter ->
+    $('.logo').addClass("animated tada")
+    setTimeout("$('.logo').removeClass('animated tada')", 1000)
 
   # Image carousal for each listings
   $('.listing-image').slick
@@ -31,3 +36,9 @@ $ ->
     autoplay: false
 
   setTimeout("$('.alert').fadeOut('slow')", 3000)
+  $('.logo').addClass('animated bounceInDown')
+  setTimeout("$('.logo').removeClass('animated bounceInDown')", 3000)
+
+  $('#get-started').hide()
+  setTimeout("$('#get-started').slideToggle('slow')", 2000)
+  setTimeout("$('#get-started').addClass('animated infinite pulse')", 4000)
