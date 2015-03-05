@@ -8,5 +8,14 @@
     = @user.username
     's Profile
   .user-details
-    
+    %div
+      %h4 
+        Name: &nbsp
+        = @user.first_name
+        = @user.last_name
+    %div
+      %h4
+        School Attending: 
+        = @user.campus
+        = image_tag @user.avatar_url
       

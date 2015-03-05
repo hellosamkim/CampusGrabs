@@ -8,11 +8,16 @@
 }
 
 .user-details {
-  width: 40%;
-  height: 300px;
+  width: 30%;
+  text-align: left;
+  padding: 15px;
   border-radius: 15px;
   margin-top: 40px;
-  background-color: #E4E9EB;
+  background-color: #90786A;
   margin-left: auto;
   margin-right: auto;
+  -webkit-box-shadow: 2px 2px 10px 1px rgba(0,0,0,0.75);
+  -moz-box-shadow: 2px 2px 10px 1px rgba(0,0,0,0.75);
+  box-shadow: 2px 2px 10px 1px rgba(0,0,0,0.75);
+  color: #F3F1EF;
 }
