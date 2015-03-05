@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150305032905) do
+ActiveRecord::Schema.define(version: 20150305172548) do
 
   create_table "images", force: true do |t|
     t.integer  "listing_id"
@@ -51,6 +51,8 @@ ActiveRecord::Schema.define(version: 20150305032905) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "avatar"
+    t.string   "facebook"
+    t.string   "twitter"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

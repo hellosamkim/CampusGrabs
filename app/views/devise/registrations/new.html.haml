@@ -17,5 +17,7 @@
     = f.input :password_confirmation, required: true
     = f.file_field :avatar 
     = f.hidden_field :avatar_cache
+    = f.input :facebook
+    = f.input :twitter
   .form-actions
     = f.button :submit, "Sign up"
