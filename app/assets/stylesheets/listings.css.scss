@@ -4,6 +4,11 @@
   border-color: #cbbfb8;;
   border-radius: 0;
   margin-bottom: 0px;
+  .navbar-nav > li > a {
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;    
+  }
 }
 
 // Top Nav bar logo
@@ -28,6 +33,12 @@
   -moz-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
   border-radius: 5px;
+}
+
+.dropdown {
+  -webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
 }
 
 #nav-menu:hover {
@@ -105,20 +116,24 @@
 
 .add-listing {  
   float: right;
-  width: 170px;
+  width: 200px;
   line-height: 60px;
   vertical-align: middle;
   text-align: center;
-  opacity: 0.6;
   font-size: 1.7rem;
-
+  opacity: 0.7;
+  color: #98a5ac;
   -webkit-transition: all .3s ease-in-out;
   -moz-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;
 }
 
-.add_listing:hover, .my_listing:hover {
-  opacity: 0.9;
+.add-listing:hover {
+  opacity: 1;
+}
+
+.add-listing:hover {
+  cursor: pointer;
 }
 
 a:hover {

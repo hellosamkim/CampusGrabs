@@ -9,7 +9,9 @@ class ListingsController < ApplicationController
 
   def index
     @listings = Listing.all.order("created_at DESC")
-    @listing = current_user.listings.build
+    if !current_user.nil?
+      @listing = current_user.listings.build
+    end
   end
 
   def show
