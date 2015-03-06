@@ -34,8 +34,24 @@
   background-color: #cbbfb8;
 }
 
-.login-button {
-  display: none;
+// Login or Register
+.login-register-wrapper {
+  .login-button, .register-button {
+    line-height: 50px;
+    font-size: 1.9rem;
+  }
+  .login-button:hover, .register-button:hover {
+    cursor: pointer;
+    opacity: 0.7;
+  }
+  .login-button {
+    float: left;
+    margin-right: 10px;
+  }
+  .register-button {
+    float: right;
+    margin-left: 10px;
+  }
 }
 
 // Top Nav Menu drop menu
@@ -87,9 +103,9 @@
   box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.30);
 }
 
-.add_listing {  
+.add-listing {  
   float: right;
-  width: 50px;
+  width: 170px;
   line-height: 60px;
   vertical-align: middle;
   text-align: center;
@@ -199,6 +215,9 @@ a:hover {
   -moz-transition: all 1s ease-in;
   transition: all 1s ease-in;  
 }
+
+// Login and Register popup modal
+
 
 // ---------- Mobile Views ----------
 @media (max-width: 767px) {

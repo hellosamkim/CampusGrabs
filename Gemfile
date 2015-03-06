@@ -13,7 +13,6 @@ gem 'haml', '~> 4.0.6'
 gem 'bootstrap-sass', '~> 3.3.3'
 gem 'simple_form'
 gem 'devise', '~> 3.4.1'
-gem 'rmagick', '~> 2.13.4'
 gem 'carrierwave'
 gem "font-awesome-rails"
 gem 'masonry-rails', '~> 0.2.4'

@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   get '/about-us' => 'listings#about_us'
 
   as :user do
-    get "/login" => "devise/sessions#new"
+    post "/login" => "devise/sessions#new"
     delete "/logout" => "devise/sessions#destroy"
     get "/users/:username/edit" => "devise/registrations#edit", as: :user_edit
     get '/users/:username/my_listings' => 'listings#my_listings', as: :my_listings

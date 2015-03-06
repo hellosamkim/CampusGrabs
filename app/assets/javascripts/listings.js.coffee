@@ -19,12 +19,21 @@ $ ->
     $('#nav-drop-menu').fadeOut 'slow'
     return false
 
+  # Login / Register buttons on Nav1
+  $('.login-button').mouseenter ->
+    $('.login-button').addClass("animated pulse")
+    setTimeout("$('.login-button').removeClass('animated pulse')", 1000)
+
+  $('.register-button').mouseenter -> 
+    $('.register-button').addClass("animated pulse")
+    setTimeout("$('.register-button').removeClass('animated pulse')", 1000)    
+
   # Displays simple listing details upon hover
   $('.nav-logo').mouseenter ->
     $('.nav-logo').addClass("animated tada")
     setTimeout("$('.nav-logo').removeClass('animated tada')", 1000)
   
-
+  # Logo effect
   $('.logo').mouseenter ->
     $('.logo').addClass("animated tada")
     setTimeout("$('.logo').removeClass('animated tada')", 1000)
@@ -50,11 +59,3 @@ $ ->
   # Load site with delay
   $('.box').hide()
   setTimeout("$('.box').fadeIn()", 200)
-
-  $('.login-button').mouseenter ->
-    $('.login-button').addClass("animated bounce")
-    setTimeout("$('.login-button').removeClass('animated bounce')", 1)
-
-  $('.register-button').mouseenter ->
-    $('.register-button').addClass("animated bounce")
-    setTimeout("$('.register-button').removeClass('animated bounce')", 1)

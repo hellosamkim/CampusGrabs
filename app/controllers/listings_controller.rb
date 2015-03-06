@@ -3,6 +3,7 @@ class ListingsController < ApplicationController
   before_action :ensure_logged_in, only: [:new, :edit, :destroy, :my_listings]
   before_action :ensure_correct_user, only: [:edit]
   before_action :current_user_listings, only: [:my_listings, :my_profile]
+  
   def index
     @listings = Listing.all.order("created_at DESC")
   end
