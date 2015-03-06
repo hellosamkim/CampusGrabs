@@ -10,5 +10,9 @@
       = f.label :campus
       %div
         = f.select :campus, options_for_select(@listing.universities), label: "Campus"
+    %div.form-group
+      = f.label :type_of_listing
+      %div
+        = f.select :type_of_listing, options_for_select(["Buy", "Sell"]), label: "Buy or Sell"
     %div.actions
       = f.button :submit, :class => "btn btn-primary"
