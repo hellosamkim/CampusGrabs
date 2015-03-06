@@ -1,21 +1,16 @@
 / Main heading with logo / sign in / sign up
 .site-wrapper
-  .site-wrapper-inner
-    .cover-container
-      .masthead.clearfix
-        .inner
-          .masthead-brand
-            = link_to listings_path do
-              %img{:src => "/images/logo.png", :style => "width: 60%;", :class => "logo"}
-      / Main welcome section with link to main page of listings
-      .inner.cover
-        .cover-heading 
-          %h1 Buy, Sell, Trade
-          %h3 Things Around Campus
-        %a.btn.btn-lg.btn-default{:href => listings_path, :id => "get-started"} Get Started
-      / Footer        
-      .mastfoot
-        .inner
-          Made by Sam Kim with
-          %a{:href => "https://github.com/hellosamkim/CampusGrabs"}
-            %i{:class => "fa fa-heart fa-xs", :style => "color: #FF5F4D;"}
+  .welcome-logo
+    = link_to listings_path do
+      %img{:src => "/images/logo.png", :style => "width: 60%;", :class => "logo"}
+
+  .welcome-sentences
+    %span#sentences
+  
+  .welcome-get-started
+    %a.btn.btn-lg.btn-default{:href => listings_path} Get Started
+        
+  .welcome-footer
+    Made by Sam Kim with
+    %a{:href => "https://github.com/hellosamkim/CampusGrabs"}
+      %i{:class => "fa fa-heart fa-xs", :style => "color: #FF5F4D;"}

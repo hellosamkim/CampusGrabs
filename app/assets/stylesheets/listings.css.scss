@@ -34,9 +34,13 @@
   background-color: #cbbfb8;
 }
 
+.login-button {
+  display: none;
+}
+
 // Top Nav Menu drop menu
 #nav-drop-menu {
-  margin: 12px 0 0 -115px;
+  margin: 12px 0 0 -70px;
   font-size: 1.6rem;
   border-radius: 5px;
   padding: 10px;
@@ -85,7 +89,7 @@
 
 .add_listing {  
   float: right;
-  width: 16%;
+  width: 50px;
   line-height: 60px;
   vertical-align: middle;
   text-align: center;

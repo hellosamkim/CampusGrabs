@@ -1,3 +1,38 @@
+/* Blinking Cursor for sentences */
+.typed-cursor{
+  font-size: 36px;
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+}
+@keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-moz-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+
+/* Get started button */
+.welcome-get-started {
+  position: absolute;
+  margin-right: auto;
+  margin-left: auto;
+  left: 0;
+  right: 0;
+  width: 150px;
+  top: 55%;
+}
+
 /* Custom default button */
 .btn-default,
 .btn-default:hover,
@@ -8,10 +43,10 @@
   border: 1px solid #fff;
 }
 
-/* Extra markup and styles for table-esque vertical and horizontal centering */
+/* Site wrapper and includes background picture */
 .site-wrapper {
   text-align: center;
-  background-image: linear-gradient(rgba(255,255,255,0.5),rgba(255,255,255,0.5)), url("/images/background.jpeg");
+  background-image: linear-gradient(rgba(255,255,255,0.4),rgba(255,255,255,0.4)), url("/images/background.jpeg");
   text-shadow: 0 1px 3px rgba(0,0,0,0.5);
   background-position: 50% 50%;
   background-size: cover;
@@ -22,118 +57,46 @@
   -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
           box-shadow: inset 0 0 100px rgba(0,0,0,.5);
 }
-.site-wrapper-inner {
-  display: table-cell;
-  vertical-align: top;
-}
-.cover-container {
-  margin-right: auto;
-  margin-left: auto;
-}
 
-.inner {
-  padding: 30px;
+/* Logo on top left corner */
+.welcome-logo {
+  width: 45rem;
+  position: relative;
+  margin-top: 1.3%;
+  margin-left: -5%;
 }
 
-/*
- * Header
- */
-
-.masthead-nav > li {
+/* Welcome sentences */
+.welcome-sentences {
+  border: solid 1px rgba(21, 21, 21, 0.9);
+  border-radius: 5px;
+  background-color: rgba(21, 21, 21, 0.6);
   display: inline-block;
-}
-.masthead-nav > li + li {
-  margin-left: 20px;
-}
-.masthead-nav > li > a {
-  padding-right: 0;
-  padding-left: 0;
-  font-size: 16px;
-  font-weight: bold;
-  color: #333; /* IE8 proofing */
-  border-bottom: 2px solid transparent;
-}
-.masthead-nav > li > a:hover,
-.masthead-nav > li > a:focus {
-  background-color: transparent;
-  border-bottom-color: #333;
-}
-.masthead-nav > .active > a,
-.masthead-nav > .active > a:hover,
-.masthead-nav > .active > a:focus {
-  color: #333;
-  border-bottom-color: #333;
-}
+  padding-left: 25px;
+  padding-right: 25px;
+  height: 70px;
+  line-height: 70px;
+  color: #FEFEFE;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  top: 40%;
+  left: 0;
+  right: 0;
+  width: 50%;
 
-@media (min-width: 768px) {
-  .masthead-brand {
-    float: left;
-  }
-  .masthead-nav {
-    float: right;
+  #sentences {
+    margin-top: 15px;
+    font-size: 36px;
   }
 }
 
-/*
- * Cover
- */
-
-.cover {
-  padding: 0 20px;
-}
-.cover .btn-lg {
-  padding: 10px 20px;
-  font-weight: bold;
-}
-
-.cover-heading h1 {
-  font-size: 5rem;
-  color: #422A05; 
-}
-
-.cover-heading h3 {
-  font-size: 3rem;
-  color: #FDFBCA;
-}
-
-/*
- * Footer
- */
-
-.mastfoot {
-  color: #333; /* IE8 proofing */
-}
-
-/*
- * Affix and center
- */
-
-@media (min-width: 768px) {
-  /* Pull out the header and footer */
-  .masthead {
-    position: fixed;
-    top: 0;
-  }
-  .mastfoot {
-    position: fixed;
-    bottom: 0;
-  }
-  /* Start the vertical centering */
-  .site-wrapper-inner {
-    vertical-align: middle;
-  }
-  /* Handle the widths */
-  .masthead,
-  .mastfoot,
-  .cover-container {
-    width: 100%; /* Must be percentage or pixels for horizontal alignment */
-  }
-}
-
-@media (min-width: 992px) {
-  .masthead,
-  .mastfoot,
-  .cover-container {
-    width: 80%;
-  }
+/* Footer */
+.welcome-footer {
+  position: absolute;
+  bottom: 15px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
 }

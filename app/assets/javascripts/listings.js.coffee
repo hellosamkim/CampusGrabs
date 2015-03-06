@@ -16,7 +16,7 @@ $ ->
 
   # Hide menu from Top Nav Menu upon click
   $('.nav-drop-menu-close').click ->
-    $('#nav-drop-menu').fdaeOut 'slow'
+    $('#nav-drop-menu').fadeOut 'slow'
     return false
 
   # Displays simple listing details upon hover
@@ -43,15 +43,18 @@ $ ->
   setTimeout("$('.logo').removeClass('animated bounceInDown')", 3000)
 
   # Get started button effect
-  $('#get-started').hide()
-  setTimeout("$('#get-started').slideToggle('slow')", 2000)
-  setTimeout("$('#get-started').addClass('animated infinite pulse')", 4000)
-
-  # Username bounces
-  $('#nav-menu').mouseenter ->
-    $('.username-bounce').addClass("animated bounce")
-    setTimeout("$('.username-bounce').removeClass('animated bounce')", 1000)
+  $('.welcome-get-started').hide()
+  setTimeout("$('.welcome-get-started').slideToggle('slow')", 1500)
+  setTimeout("$('.welcome-get-started').addClass('animated infinite pulse')", 2500)
 
   # Load site with delay
   $('.box').hide()
   setTimeout("$('.box').fadeIn()", 200)
+
+  $('.login-button').mouseenter ->
+    $('.login-button').addClass("animated bounce")
+    setTimeout("$('.login-button').removeClass('animated bounce')", 1)
+
+  $('.register-button').mouseenter ->
+    $('.register-button').addClass("animated bounce")
+    setTimeout("$('.register-button').removeClass('animated bounce')", 1)
