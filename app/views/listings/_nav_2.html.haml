@@ -1,8 +1,12 @@
 %nav.bottom_nav
   / Add new listing
-  %div.add-listing{"data-target" => "#add-listing", "data-toggle" => "modal", :type => "button"}
-    %i{:class => "fa fa-plus-circle fa-lg"}
-    Add Listing
+  - if current_user.nil?
+    %div.add-listing
+      Log in to add listings
+  - else
+    %div.add-listing{"data-target" => "#add-listing", "data-toggle" => "modal", :type => "button"}
+      %i{:class => "fa fa-plus-circle fa-lg"}
+      Add Listing
 
 
 / Add Listing Modal Starts here
