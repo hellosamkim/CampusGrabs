@@ -3,14 +3,60 @@
   .welcome-logo
     = link_to listings_path do
       %img{:src => "/images/logo.png", :style => "width: 60%;", :class => "logo"}
-
   .welcome-sentences
     %span#sentences
+  / User Login Form  
+  .welcome-user-auth
+    .welcome-login
+      %h2 Log In
+      .welcome-login-form
+        = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+          .input-group
+            .input-group-addon
+              %i{:class => "fa fa-envelope-o fa-lg"}
+            = f.input :email, required: true, autofocus: true, label: false, :input_html => { :class => 'login-id' }
+          .input-group
+            .input-group-addon 
+              %i{:class => "fa fa-lock fa-lg"}
+            = f.input :password, required: true, label: false,  :input_html => { :class => 'login-pw' }
+          .form-actions
+            .welcome-login-button
+              = f.button :submit, "Log in", :class => 'form-login'
+      .welcome-forgot-pw
+        = link_to new_password_path(resource_name) do
+          %i{:class => "fa fa-question-circle"}
+
+    / User Register Form
+    .welcome-register
+      %h2 Sign Up
+      .welcome-register-form
+        = simple_form_for(resource, as: resource_name, url: registration_path(resource_name), :html => {:multipart => true}) do |f|
+          = f.error_notification
+          .input-group
+            .input-group-addon
+              %i{:class => "fa fa-user fa-lg"}
+            = f.input :username, required: true, autofocus: true, label: false, input_html: { :class => "register-user" }
+          .input-group
+            = f.input :email, required: true, label: false, input_html: { :class => "register-email" }
+          .input-group
+            = f.input :first_name, required: true, label: false, input_html: { :class => "register-fname" }
+          .input-group
+            = f.input :last_name, required: true, label: false, input_html: { :class => "register-lname" }
+          .input-group
+            = f.select :campus, options_for_select(universities), label: "School Attending", input_html: { :class => "register-school" }
+          .input-group
+            = f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @validatable), input_html: { :class => "register-pw" }
+          .input-group
+            = f.input :password_confirmation, required: true, input_html: { :class => "register-pw-2" }
+          .form-actions
+            = f.button :submit, "Sign up"
+          
   
-  .welcome-get-started
-    %a.btn.btn-lg.btn-default{:href => listings_path} Get Started
-        
   .welcome-footer
     Made by Sam Kim with
     %a{:href => "https://github.com/hellosamkim/CampusGrabs"}
       %i{:class => "fa fa-heart fa-xs", :style => "color: #FF5F4D;"}
+
+
+
+

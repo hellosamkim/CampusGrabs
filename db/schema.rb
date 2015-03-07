@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150306151415) do
+ActiveRecord::Schema.define(version: 20150306202000) do
 
   create_table "images", force: true do |t|
     t.integer  "listing_id"
@@ -28,7 +28,6 @@ ActiveRecord::Schema.define(version: 20150306151415) do
     t.datetime "updated_at"
     t.integer  "user_id"
     t.string   "campus"
-    t.string   "type_of_listing"
   end
 
   add_index "listings", ["user_id"], name: "index_listings_on_user_id"

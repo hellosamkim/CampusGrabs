@@ -1,5 +1,8 @@
 $ ->
   # Sentences
+  $('.welcome-sentences').hide()
+  setTimeout("$('.welcome-sentences').fadeIn(800)", 1500)
+
   typesentence = ->
     $('#sentences').typed
       strings: [
@@ -16,7 +19,8 @@ $ ->
       ]
       typeSpeed: 110
       backDelay: 3000
-      loop: false;
+      loop: true;
+      loopCount: false;
       backSpeed: 30;
       contentType: 'html'
       loopCount: false;
@@ -26,10 +30,10 @@ $ ->
       resetCallback: ->
         newTyped()
         return
-  setTimeout(typesentence, 1000)
+  setTimeout(typesentence, 4000)
 
   # Logo bounce in effect
   showlogo = ->
     $('.logo').addClass('animated bounceInDown')
     setTimeout("$('.logo').removeClass('animated bounceInDown')", 3000)
-  setTimeout(showlogo, 100)
+  setTimeout(showlogo, 500)
