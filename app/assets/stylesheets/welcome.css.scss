@@ -6,7 +6,7 @@
 // Login form
 .welcome-user-auth {
   width: 100%;
-  margin-top: 170px;
+  margin-top: 270px;
   color: #FEFEFE; 
   text-align: left;
   .welcome-login {
@@ -99,12 +99,19 @@ input#user_email, input#user_password, input#user_username, input#user_first_nam
 
 select#user_campus {
   width: 170px;
+  color: #555;
+  border-color: rgba(85, 85, 85, 0.9);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(85, 85, 85, 0.9);
+}
+
+select#user_campus:focus {
+  outline: 0 none;
 }
 
 .welcome-forgot-pw { 
   position: absolute;
   text-align: right;
-  right: 0;
+  right: 5px;
   top: 0;
   width: 15px;
   color: #FEFEFE;
@@ -128,14 +135,28 @@ select#user_campus {
   margin-left: 0px;
 }
 
-#welcome-login-button {
+#welcome-login-button, #welcome-register-button {
   width: 250px;
+  color: #FEFEFE;
+  font-size: 1.6rem;
+  border-color: rgba(85, 85, 85, 0.6);
+  background-color: rgba(85, 85, 85, 0.6);
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 #welcome-register-button {
   position: absolute;
   left: 0px;
   width: 215px;
+}
+
+#welcome-register-button:focus, #welcome-register-button:hover, #welcome-login-button:focus, #welcome-login-button:hover {
+  background-color: rgba(85, 85, 85, 0.9);
+  outline: 0 none;
+  border-color: rgba(85, 85, 85, 0.9);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(85, 85, 85, 0.9);
 }
 
 .welcome-forgot-pw:hover, .welcome-forgot-pw a:hover {
@@ -226,7 +247,7 @@ select#user_campus {
   position: absolute;
   margin-left: auto;
   margin-right: auto;
-  top: 25%;
+  top: 35%;
   left: 0;
   right: 0;
   width: 50%;

@@ -14,11 +14,11 @@
           .input-group.login
             .input-group-addon
               %i{:class => "fa fa-envelope-o fa-lg"}
-            = f.input :email, required: true, autofocus: true, label: false
+            = f.input :email, required: true, autofocus: true, label: false, placeholder: "Email"
           .input-group.login
             .input-group-addon 
               %i{:class => "fa fa-lock fa-lg"}
-            = f.input :password, required: true, label: false
+            = f.input :password, required: true, label: false, placeholder: "••••••••••"
             .welcome-forgot-pw
               = link_to new_password_path(resource_name) do
                 %i{:class => "fa fa-question-circle"}
@@ -37,34 +37,34 @@
               .input-group.register
                 .input-group-addon
                   %i{:class => "fa fa-user"}
-                = f.input :username, required: true, autofocus: true, label: false, input_html: {:style => "width: 170px;"}
+                = f.input :username, required: true, autofocus: true, label: false, input_html: {:style => "width: 170px; font-size: 1.4rem;"}, placeholder: 'Username'
             .col-md-6.welcome
               .input-group.register
                 .input-group-addon
-                  %i{:class => "fa fa-envelope-o fa-lg"}
-                = f.input :email, required: true, label: false, input_html: {:style => "width: 170px;"}
-          .row     
-            .col-md-6.welcome      
-              .input-group.register
-                .input-group-addon
-                  %i{:class => "fa fa-user fa-lg"}
-                = f.input :first_name, required: true, label: false, input_html: {:style => "width: 170px;"}
-            .col-md-6.welcome              
-              .input-group.register
-                .input-group-addon
-                  %i{:class => "fa fa-user fa-lg"}
-                = f.input :last_name, required: true, label: false, input_html: {:style => "width: 170px;"}
+                  %i{:class => "fa fa-envelope-o"}
+                = f.input :email, required: true, label: false, input_html: {:style => "width: 170px; font-size: 1.4rem;"}, placeholder: 'Email'
           .row    
             .col-md-6.welcome
               .input-group.register
                 .input-group-addon
-                  %i{:class => "fa fa-user fa-lg"}
-                = f.input :password, required: true, label: false, hint: ("#{@minimum_password_length} characters minimum" if @validatable), input_html: {:style => "width: 170px;"}
+                  %i{:class => "fa fa-lock"}
+                = f.input :password, required: true, label: false, hint: ("#{@minimum_password_length} characters minimum" if @validatable), input_html: {:style => "width: 170px; font-size: 1.4rem;"}, placeholder: "••••••••••"
             .col-md-6.welcome              
               .input-group.register
                 .input-group-addon
-                  %i{:class => "fa fa-user fa-lg"}
-                = f.input :password_confirmation, label: false, required: true, input_html: {:style => "width: 170px;"}
+                  %i{:class => "fa fa-lock"}
+                = f.input :password_confirmation, label: false, required: true, input_html: {:style => "width: 170px; font-size: 1.4rem;"}, placeholder: "••••••••••"
+          .row     
+            .col-md-6.welcome      
+              .input-group.register
+                .input-group-addon
+                  %i{:class => "fa fa-thumb-tack"}
+                = f.input :first_name, required: true, label: false, input_html: {:style => "width: 170px; font-size: 1.4rem;"}, placeholder: 'First Name'
+            .col-md-6.welcome              
+              .input-group.register
+                .input-group-addon
+                  %i{:class => "fa fa-thumb-tack"}
+                = f.input :last_name, required: true, label: false, input_html: {:style => "width: 170px; font-size: 1.4rem;"}, placeholder: 'Last Name'
           .row
             .col-md-6.welcome      
               .input-group.register
