@@ -37,3 +37,7 @@ $ ->
     $('.logo').addClass('animated bounceInDown')
     setTimeout("$('.logo').removeClass('animated bounceInDown')", 3000)
   setTimeout(showlogo, 500)
+
+  # Login and Register
+  $(".welcome-user-auth").hide()
+  setTimeout("$('.welcome-user-auth').fadeIn()", 600)  

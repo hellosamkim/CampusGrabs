@@ -31,8 +31,40 @@
   }
 }
 
+// Sign Up Form
+.welcome-register-form {
+  width: 75%;
+  height: 45px;
+  margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  .input-group.login, .input-group.register {
+    width: 250px;
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 7px;
+    .input-group-addon {
+      width: 45px;
+      opacity: 0.8;
+      color: #FEFEFE;
+      background-color: #555;
+      border: #444;
+    }
+  }
+  .input-group.register {
+    height: 33px;
+    width: 240px;
+  }
+}
+
+.col-md-6.welcome {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 .welcome-login-form {
-  width: 65%;
+  width: 75%;
   height: 45px;
   margin-bottom: 10px;
   margin-left: auto;
@@ -53,67 +85,63 @@
   }
 }
 
-.password.required.login-pw.form-control, .string.email.required.login-id.form-control {
-  background-color: rgba(222, 222, 222, 0.6);
+// Login and Register input styling
+input#user_email, input#user_password, input#user_username, input#user_first_name, input#user_last_name, input#user_password_confirmation, select#user_campus {
+  position: absolute;
+  background-color: rgba(246, 246, 246, 0.6);
+  font-weight: bold;
+  font-size: 1.7rem;
   border: none;
-  width: 100%;
-  height: 50px;
-  border-radius: 4px;
+  width: 205px;
+  height: 100%;
+  border-radius: 0px 4px 4px 0px;
 }
 
+select#user_campus {
+  width: 170px;
+}
 
 .welcome-forgot-pw { 
-  position: relative;
+  position: absolute;
   text-align: right;
+  right: 0;
+  top: 0;
   width: 15px;
-  margin-left: 426px;
-  margin-top: 11px;
   color: #FEFEFE;
   z-index: 1000;
   opacity: 0.7;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
   a {
     color: #FEFEFE;
   }
 }
 
-.welcome-login-button {
+.welcome-button-login, .welcome-button-register {
   text-align: center;
-  .form-login {
-    width: 250px;
-    height: 40px;
-  }
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.welcome-button-register {
+  margin-left: 0px;
+}
+
+#welcome-login-button {
+  width: 250px;
+}
+
+#welcome-register-button {
+  position: absolute;
+  left: 0px;
+  width: 215px;
 }
 
 .welcome-forgot-pw:hover, .welcome-forgot-pw a:hover {
   color: #FEFEFE;
   opacity: 1;
   cursor: pointer;
-}
-
-// Sign Up Form
-.welcome-register-form {
-  width: 65%;
-  height: 45px;
-  margin-bottom: 10px;
-  margin-left: auto;
-  margin-right: auto;
-  .input-group {
-    width: 250px;
-    height: 50px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 7px;
-    .input-group-addon {
-      width: 45px;
-      opacity: 0.9;
-      color: #FEFEFE;
-      background-color: #444;
-      border: #444;
-    }
-  }
 }
 
 /* Blinking Cursor for sentences */
