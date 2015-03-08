@@ -23,11 +23,16 @@
 html,
 body {
   height: 100%;
-  color: #333;
+  color: #555;
   background-color: #F3F1EF;
   background-position: 50% 50%;
   background-size: cover;
   font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+}
+
+.breakline {
+  background-color: #666;
 }
 
 // alert info msg style + current-user profile viewing display

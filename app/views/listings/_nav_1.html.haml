@@ -51,50 +51,87 @@
 / Login Modal Starts here
 #login.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
   .modal-dialog
-    .modal-content
+    .modal-content.login
       .modal-header
         %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
           %span{"aria-hidden" => "true"} ×      
         %h4#myModalLabel.modal-title Login
       .modal-body
-        = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-          .form-inputs
-            = f.input :email, required: false, autofocus: true, :label => "Email"
-            = f.input :password, required: false
-            = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
-          .form-actions
-            = f.button :submit, "Log in"
-        .forgot-pw
-          = link_to "Forgot Password", new_password_path(resource_name)
+        .welcome-login-form
+          = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+            .input-group.login
+              .input-group-addon
+                %i{:class => "fa fa-envelope-o fa-lg"}
+              = f.input :email, required: true, autofocus: true, label: false, placeholder: "Email"
+            .input-group.login
+              .input-group-addon 
+                %i{:class => "fa fa-lock fa-lg"}
+              = f.input :password, required: true, label: false, placeholder: "••••••••••"
+              .welcome-forgot-pw
+                = link_to new_password_path(resource_name) do
+                  %i{:class => "fa fa-question-circle"}
+            .form-actions
+              .welcome-button-login
+                = f.button :submit, "Log in", id: "welcome-login-button"
+            .forgot-pw
+              = link_to "Forgot Password?", new_password_path(resource_name)
 
 / Register Modal Starts here
 #register.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
   .modal-dialog
-    .modal-content
+    .modal-content.register
       .modal-header
         %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
           %span{"aria-hidden" => "true"} ×
         %h4#myModalLabel.modal-title Sign Up
       .modal-body
-        = simple_form_for(resource, as: resource_name, url: registration_path(resource_name), :html => {:multipart => true}) do |f|
-          = f.error_notification
-          .form-inputs
-            = f.input :username, required: true, autofocus: true
-            = f.input :email, required: true
-            = f.input :first_name, required: true
-            = f.input :last_name, required: true
-          .form-group
-            = f.label :campus
-            %div
-              = f.select :campus, options_for_select(universities), label: "School Attending"
-            = f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @validatable)
-            = f.input :password_confirmation, required: true
-            = f.file_field :avatar 
-            = f.hidden_field :avatar_cache
-            = f.input :facebook
-            = f.input :twitter
-          .form-actions
-            = f.button :submit, "Sign up"
+        .welcome-register
+          .welcome-register-form
+            = simple_form_for(resource, as: resource_name, url: registration_path(resource_name), :html => {:multipart => true}) do |f|
+              = f.error_notification
+              .row
+                .col-md-6.welcome
+                  .input-group.register
+                    .input-group-addon
+                      %i{:class => "fa fa-user"}
+                    = f.input :username, required: true, autofocus: true, label: false, input_html: {:style => "width: 170px; font-size: 1.4rem;"}, placeholder: 'Username'
+                .col-md-6.welcome
+                  .input-group.register
+                    .input-group-addon
+                      %i{:class => "fa fa-envelope-o"}
+                    = f.input :email, required: true, label: false, input_html: {:style => "width: 170px; font-size: 1.4rem;"}, placeholder: 'Email'
+              .row    
+                .col-md-6.welcome
+                  .input-group.register
+                    .input-group-addon
+                      %i{:class => "fa fa-lock"}
+                    = f.input :password, required: true, label: false, hint: ("#{@minimum_password_length} characters minimum" if @validatable), input_html: {:style => "width: 170px; font-size: 1.4rem;"}, placeholder: "••••••••••"
+                .col-md-6.welcome              
+                  .input-group.register
+                    .input-group-addon
+                      %i{:class => "fa fa-lock"}
+                    = f.input :password_confirmation, label: false, required: true, input_html: {:style => "width: 170px; font-size: 1.4rem;"}, placeholder: "••••••••••"
+              .row     
+                .col-md-6.welcome      
+                  .input-group.register
+                    .input-group-addon
+                      %i{:class => "fa fa-thumb-tack"}
+                    = f.input :first_name, required: true, label: false, input_html: {:style => "width: 170px; font-size: 1.4rem;"}, placeholder: 'First Name'
+                .col-md-6.welcome              
+                  .input-group.register
+                    .input-group-addon
+                      %i{:class => "fa fa-thumb-tack"}
+                    = f.input :last_name, required: true, label: false, input_html: {:style => "width: 170px; font-size: 1.4rem;"}, placeholder: 'Last Name'
+              .row
+                .col-md-6.welcome      
+                  .input-group.register
+                    .input-group-addon
+                      %i{:class => "fa fa-graduation-cap"}
+                    = f.select :campus, options_for_select(universities), label: false
+                .col-md-6.welcome
+                  .form-actions
+                    .welcome-button-register
+                  = f.button :submit, "Sign up", id: "welcome-register-button"
 
 
 
