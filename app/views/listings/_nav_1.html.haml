@@ -10,7 +10,7 @@
       / Nav Logo
       .navbar-brand
         %a{:href => listings_path}
-          %img{:src => "/images/logo.png", :class => "nav-logo"}
+          %img{:src => "/images/logo2.png", :class => "nav-logo"}
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
       %ul.nav.navbar-nav#nav-position
         %li#only-mobile
@@ -19,8 +19,7 @@
           / Show menu for logged in users
         - if user_signed_in?
           %li.dropdown#nav-menu
-            %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button", :class => "username-bounce"}
-              %i{:class => "fa fa-bars"} &nbsp
+            %a.dropdown-toggle{"aria-expanded" => "false", "data-toggle" => "dropdown", :href => "#", :role => "button", :class => "username-bounce"} 
               = current_user.username
             %ul.dropdown-menu#nav-drop-menu{:role => "menu"}
               %li
@@ -40,8 +39,6 @@
                 = link_to logout_path, method: :delete do
                   %i{:class => "fa fa-sign-out"} &nbsp
                   Sign Out
-              %li.nav-drop-menu-close
-                %i{:class => "fa fa-times fa-lg"}
           / Show menu for users not logged in
         - else
           .login-register-wrapper

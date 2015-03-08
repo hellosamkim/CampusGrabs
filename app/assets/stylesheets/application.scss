@@ -27,6 +27,7 @@ body {
   background-color: #F3F1EF;
   background-position: 50% 50%;
   background-size: cover;
+  font-family: 'Open Sans', sans-serif;
 }
 
 // alert info msg style + current-user profile viewing display
@@ -65,12 +66,13 @@ body {
 
 // Nav-menu change "active" colour
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
-  background-color: #cbbfb8;
+  color: rgba(255, 153, 0, 0.9);
+  background-color: rgba(102, 102, 102, 0.5);
 }
-
 // Masonry Listings
 .box {
   width: 240px;
+  margin-bottom: 10px;
 }
 
 .transitions-enabled.masonry,

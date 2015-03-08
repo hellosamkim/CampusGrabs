@@ -6,14 +6,18 @@
 // Login form
 .welcome-user-auth {
   width: 100%;
-  margin-top: 270px;
+  position: absolute;
+  bottom: 25%;
   color: #FEFEFE; 
   text-align: left;
-  .welcome-login {
+  .welcome-login, .welcome-register {
     width: 50%;
     float: left;
     h2 {
+      opacity: 0.8; 
+      font-family: 'Lato', sans-serif;
       text-align: center;
+      font-weight: 700;
       width: 65%;
       margin-left:auto;
       margin-right: auto;
@@ -22,17 +26,11 @@
   .welcome-register {
     width: 50%;
     float: right;
-    h2 {
-      text-align: center;
-      width: 65%;
-      margin-left:auto;
-      margin-right: auto;
-    }
   }
 }
 
 // Sign Up Form
-.welcome-register-form {
+.welcome-register-form, .welcome-login-form {
   width: 75%;
   height: 45px;
   margin-bottom: 10px;
@@ -50,6 +48,13 @@
       color: #FEFEFE;
       background-color: #555;
       border: #444;
+      -webkit-transition: all 0.3s ease-in-out;
+      -moz-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out;
+    }
+    .input-group-addon:hover {
+      opacity: 0.9;
+      background-color: #444
     }
   }
   .input-group.register {
@@ -63,38 +68,23 @@
   padding-right: 0;
 }
 
-.welcome-login-form {
-  width: 75%;
-  height: 45px;
-  margin-bottom: 10px;
-  margin-left: auto;
-  margin-right: auto;
-  .input-group {
-    width: 250px;
-    height: 50px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 7px;
-    .input-group-addon {
-      width: 45px;
-      opacity: 0.8;
-      color: #FEFEFE;
-      background-color: #555;
-      border: #444;
-    }
-  }
-}
-
 // Login and Register input styling
 input#user_email, input#user_password, input#user_username, input#user_first_name, input#user_last_name, input#user_password_confirmation, select#user_campus {
   position: absolute;
   background-color: rgba(246, 246, 246, 0.6);
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   font-weight: bold;
   font-size: 1.7rem;
   border: none;
   width: 205px;
   height: 100%;
   border-radius: 0px 4px 4px 0px;
+}
+
+input#user_email:hover input#user_password:hover, input#user_username:hover, input#user_first_name:hover, input#user_last_name:hover, input#user_password_confirmation:hover, select#user_campus:hover {
+  background-color: rgba(246,246,246,0.9);
 }
 
 select#user_campus {
@@ -149,7 +139,10 @@ select#user_campus:focus {
 #welcome-register-button {
   position: absolute;
   left: 0px;
-  width: 215px;
+  right: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100px;
 }
 
 #welcome-register-button:focus, #welcome-register-button:hover, #welcome-login-button:focus, #welcome-login-button:hover {
@@ -229,8 +222,8 @@ select#user_campus:focus {
 .welcome-logo {
   width: 45rem;
   position: relative;
-  margin-top: 10px;
-  margin-left: 25px;
+  margin-top: 0px;
+  margin-left: -30px;
 }
 
 /* Welcome sentences */

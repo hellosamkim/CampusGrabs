@@ -1,19 +1,19 @@
 $ ->
   # Sentences
   $('.welcome-sentences').hide()
-  setTimeout("$('.welcome-sentences').fadeIn(800)", 1500)
+  setTimeout("$('.welcome-sentences').fadeIn(200)", 300)
 
   typesentence = ->
     $('#sentences').typed
       strings: [
-        'I Want to Buy a Bicycle'
+        'I Want to Buy a Bike'
         'I Want to Buy a Long Board'
         'I Want to Buy a Laptop'
         'I Want to Buy a Textbook'
         'I Want to Buy Homecoming Tickets'
-        'I Want to Buy a Dog'
+        'I Want to Buy a Desk'
         'I Want to Sell my Car'
-        'I Want to Sell my Gym Equipment'
+        'I Want to Sell my Mini Fridge'
         'I Want to Sell my TV'
         'I Want to Sell my DJ Equipment'
       ]
@@ -30,14 +30,12 @@ $ ->
       resetCallback: ->
         newTyped()
         return
-  setTimeout(typesentence, 4000)
+  setTimeout(typesentence, 2000)
 
   # Logo bounce in effect
-  showlogo = ->
-    $('.logo').addClass('animated bounceInDown')
-    setTimeout("$('.logo').removeClass('animated bounceInDown')", 3000)
-  setTimeout(showlogo, 500)
+  $('.logo').addClass('animated bounceInDown')
+  
 
   # Login and Register
   $(".welcome-user-auth").hide()
-  setTimeout("$('.welcome-user-auth').fadeIn()", 600)  
+  setTimeout("$('.welcome-user-auth').fadeIn(4500)", 500)  

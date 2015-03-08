@@ -10,15 +10,6 @@ $ ->
       isFitWidth: true
       gutterWidth: 10
 
-  # Display menu from Top Nav menu upon click
-  $('#nav-menu').on 'click', ->
-    $('#nav-drop-menu').fadeIn 'slow'
-
-  # Hide menu from Top Nav Menu upon click
-  $('.nav-drop-menu-close').click ->
-    $('#nav-drop-menu').fadeOut 'slow'
-    return false
-
   # Login / Register buttons on Nav1
   $('.login-button').mouseenter ->
     $('.login-button').addClass("animated pulse")
@@ -27,16 +18,12 @@ $ ->
   $('.register-button').mouseenter -> 
     $('.register-button').addClass("animated pulse")
     setTimeout("$('.register-button').removeClass('animated pulse')", 1000)    
-
+    
   # Displays simple listing details upon hover
   $('.nav-logo').mouseenter ->
     $('.nav-logo').addClass("animated tada")
     setTimeout("$('.nav-logo').removeClass('animated tada')", 1000)
-  
-  # Logo effect
-  $('.logo').mouseenter ->
-    $('.logo').addClass("animated tada")
-    setTimeout("$('.logo').removeClass('animated tada')", 1000)
+
 
   # Image carousal for each listings
   $('.listing-image').slick
@@ -46,10 +33,6 @@ $ ->
 
   # Auto hide alerts after 3s
   setTimeout("$('.alert').fadeOut('slow')", 3000)
-
-  # Logo bounce in effect
-  $('.logo').addClass('animated bounceInDown')
-  setTimeout("$('.logo').removeClass('animated bounceInDown')", 3000)
 
   # Get started button effect
   $('.welcome-get-started').hide()

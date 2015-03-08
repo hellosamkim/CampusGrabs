@@ -1,7 +1,7 @@
 // Top Nav bar
 .navbar.navbar-default, {
-  background-color: #aa978c;
-  border-color: #aa978c;
+  background-image: linear-gradient(rgba(102, 102, 102, 0.5), rgba(102, 102, 102, 0.5)), url("/images/background2.png");
+  border: none;
   border-radius: 0;
   margin-bottom: 0px;
   .navbar-nav > li > a {
@@ -14,10 +14,11 @@
 // Top Nav bar logo
 .nav-logo {
   position: relative;
-  margin-top: -3.8%;
+  margin-top: -9.8%;
+  z-index: 1010;
   margin-left: 7%;
-  width: 40%;
-  opacity: 0.7;
+  width: 80%%;
+  opacity: 0.9;
   -webkit-transition: all .3s ease-in-out;
   -moz-transition: all .3s ease-in-out;
   transition: all .3s ease-in-out;  
@@ -42,7 +43,17 @@
 }
 
 #nav-menu:hover {
-  background-color: #cbbfb8;
+  background-color: rgba(102, 102, 102, 0.5);
+}
+
+a.dropdown-toggle.username-bounce {
+  font-size: 1.9rem !important;
+  color: rgba(255, 153, 0, 0.5) !important;
+}
+
+a.dropdown-toggle.username-bounce:hover {
+  font-size: 1.9rem !important;
+  color: rgba(255, 153, 0, 0.9) !important;
 }
 
 // Login or Register
@@ -74,33 +85,17 @@
   opacity: 0.95;
 }
 
-.nav-drop-menu-close {
-  position: absolute;
-  top: 0;
-  right: 7px;
-  z-index: 1001;
-  opacity: 0.5;
-  -webkit-transition: all .3s ease-in-out;
-  -moz-transition: all .3s ease-in-out;
-  transition: all .3s ease-in-out;
-}
-
-.nav-drop-menu-close:hover {
-  opacity: 1;
-  cursor: pointer;
-}
-
 // Breakline below Navs
 .breakline {
   height: 2px;
-  background-color: #F3F1EF;
+  background-color: rgba(68,68,68, 0.4);
   padding: 0;
   margin: 0;
 }
 
 .breakline-with-shadow {
   height: 2px;
-  background-color: #867266;
+  background-color: rgba(68,68,68, 0.4);
   -webkit-box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.75);
   -moz-box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.75);
   box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.75);
@@ -155,10 +150,10 @@ a:hover {
 }
 
 .listings_wrapper {
-  padding-top: 30px;
+  padding-top: 10px;
   margin-top: 2.2px;
   padding-bottom: 8px;
-  background-color: #F3F1EF;
+  background-image: linear-gradient(rgba(102,102,102, 0.5),rgba(102,102,102, 0.5)), url("/images/background2.png");
 }
 
 .listing-hover {
@@ -186,7 +181,7 @@ a:hover {
   top: 12px;
   left: -0.6px;
   font-size: 1.8rem;
-  background-color: #666;
+  background-color: rgba(102,102,102, 0.96);
   color: #FEFEFE;
   border-radius: 0px 5px 5px 0px;
 }
@@ -217,7 +212,7 @@ a:hover {
   padding: 1px 4px 1px 4px;
   border-radius: 0px 5px 0px 5px;
   font-size: 1.4rem;
-  background-color: #635248;
+  background-color: rgba(102, 102, 102, 0.8);
   color: #FEFEFE;
 }
 
