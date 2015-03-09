@@ -9,7 +9,14 @@ class ListingsController < ApplicationController
 
   def index
     @campus_select = "%#{params[:c]}%"
-    @listings = Listing.all.order("created_at DESC")
+    if @campus_select == "%%" 
+      @listings = Listing.all.order("created_at DESC")
+    elsif @campus_select == "%%" && current_user.present?
+      @campus_select = current_user.campus
+    else
+      @listings = Listing.where("LOWER(campus) LIKE LOWER(?)", "#{@campus_select}")  
+    end
+
     if !current_user.nil?
       new
     end
@@ -64,6 +71,7 @@ class ListingsController < ApplicationController
   def search
     @search_query = "%#{params[:q]}%"
     @search_results = []
+
 
     @listings = Listing.where("LOWER(title) LIKE LOWER(?)", "#{@search_query}")
     @user = User.find_by("LOWER(username) LIKE LOWER(?)", "#{@search_query}")

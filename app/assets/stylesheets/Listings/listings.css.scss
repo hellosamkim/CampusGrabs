@@ -165,8 +165,9 @@ input#q:focus {
   height: 110%;
 }
 
-.campus-select {
+.campus-select-container {
   position: absolute;
+  margin-left: -180px;
 }
 
 // Front Page with all the listings
@@ -177,6 +178,7 @@ input#q:focus {
 }
 
 .listings_wrapper {
+  height: 110%;
   padding-top: 10px;
   margin-top: 2.2px;
   padding-bottom: 8px;
@@ -232,7 +234,11 @@ input#q:focus {
   padding: 2px;
 }
 
-.listing-time {
+.listing-campus.current-user {
+  background-color: rgba(255, 77, 77, 0.7) !important;
+}
+
+.listing-campus, .listing-campus.current-user {
   position: absolute;
   top: 0px;
   right: -0.4px;

@@ -21,5 +21,9 @@
           .listing-details.listing-user
             Listed by 
             = listing.user.username
-          .listing-details.listing-time  
-            = listing.created_at.strftime("%b %-d, %Y")
+          - if current_user.present? && listing.campus == current_user.campus
+            .listing-details.listing-campus.current-user
+              = listing.campus
+          - else
+            .listing-details.listing-campus
+              = listing.campus

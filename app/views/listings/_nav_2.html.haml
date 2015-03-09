@@ -7,13 +7,13 @@
     %div.add-listing{"data-target" => "#add-listing", "data-toggle" => "modal", :type => "button"}
       %i{:class => "fa fa-plus-circle", :style => "color: rgba(255, 153, 0, 0.8);"}
       Add Listing
-  .campus-select
+
+  / Search Bar & campus select
+  .search-bar
     .campus-select-container
       = form_tag listings_path, method: :get, id: 'campus-selection' do
         = select_tag :c, options_for_select(universities), :onchange => ("$('.campus-form-submit').click()")
         = submit_tag "Enter", :style => "display: none;", :class => "campus-form-submit"
-  / Search Bar
-  .search-bar
     .search-container
       = form_tag search_path, method: :get, id: 'search-query' do
         = text_field_tag :q, nil, placeholder: "Search by Listing, Username, or by Campus!"
