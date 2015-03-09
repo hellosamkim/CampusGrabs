@@ -8,6 +8,7 @@ class ListingsController < ApplicationController
   end
 
   def index
+    @campus_select = "%#{params[:c]}%"
     @listings = Listing.all.order("created_at DESC")
     if !current_user.nil?
       new

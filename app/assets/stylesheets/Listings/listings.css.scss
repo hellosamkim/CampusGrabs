@@ -100,7 +100,7 @@
   float: right;
   height: 60px;
   width: 200px;
-  line-height: 80px;
+  line-height: 70px;
   font-family: 'Lato', sans-serif;
   font-weight: 700;
   text-align: center;
@@ -129,6 +129,44 @@ a:hover {
     width: 150px;
     margin-right: 18px;
   }
+}
+
+// Search Bar
+.search-bar {
+  float: right;
+  margin-top: 6px;
+  margin-right: 7px;
+}
+
+input#q {
+  border: none;
+  margin-left: 30px;
+  height: 50px;
+  width: 380px;
+  font-size: 1.8rem;
+}
+
+input#q:focus {
+  text-shadow: none;
+  outline: 0 none;
+  border-bottom: 2px solid #555;
+}
+
+.search-button {
+  position: absolute;
+  top: 70px;
+  margin-left: -5px;
+  -webkit-transform: scale(-1, 1);
+  -moz-transform: scale(-1, 1);
+  transform: scale(-1, 1);
+}
+
+.search_wrapper {
+  height: 110%;
+}
+
+.campus-select {
+  position: absolute;
 }
 
 // Front Page with all the listings
@@ -261,39 +299,6 @@ a:hover {
   }
 }
 
-// Search Bar
-.search-bar {
-  float: right;
-  margin-top: 6px;
-  margin-right: 35px;
-}
-
-input#q {
-  border: none;
-  margin-left: 30px;
-  height: 50px;
-  width: 380px;
-  font-size: 1.8rem;
-}
-
-input#q:focus {
-  text-shadow: none;
-  outline: 0 none;
-  border-bottom: 2px solid #555;
-}
-
-.search-button {
-  position: absolute;
-  top: 70px;
-  margin-left: -5px;
-  -webkit-transform: scale(-1, 1);
-  -moz-transform: scale(-1, 1);
-  transform: scale(-1, 1);
-}
-
-.search_wrapper {
-  height: 110%;
-}
 
 // ---------- Mobile Views ----------
 @media (max-width: 767px) {

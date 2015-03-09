@@ -22,11 +22,7 @@
           %li.dropdown#nav-menu
             %li
               .nav-current-user
-                = current_user.username
-            %li.toggle-user-menu
-              = link_to user_path(current_user) do
-                %i{:class => "fa fa-user"}  &nbsp&nbsp
-                Profile
+                = link_to current_user.username, user_path(current_user)
             %li.toggle-user-menu
               = link_to my_listings_path(current_user) do
                 %i{:class => "fa fa-briefcase"} &nbsp
