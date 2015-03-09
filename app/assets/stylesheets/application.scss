@@ -159,9 +159,31 @@ body {
 }
 
 // Nav bar links
-.navbar-default .navbar-nav > li > a {
+.navbar-default .navbar-nav > li, .nav-current-user {
   font-size: 1.7rem;
   height: 100%;
+}
+
+.navbar-default .navbar-nav > li:hover {
+  color: rgba(255, 153, 0, 0.6)
+}
+
+.container-fluid {
+  padding: 0;
+}
+
+.nav-current-user {
+  margin-right: 15px;
+  font-size: 35px;
+  color: rgba(255, 153, 0, 0.8);
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-current-user:hover {
+  color: rgba(255, 153, 0, 0.6);
+  cursor: initial;
 }
 
 // Mobile nav toggled Menu, and clear text decoration for links

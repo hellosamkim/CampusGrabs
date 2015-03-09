@@ -34,7 +34,3 @@ $ ->
   # Auto hide alerts after 3s
   setTimeout("$('.alert').fadeOut('slow')", 3000)
 
-  # Get started button effect
-  $('.welcome-get-started').hide()
-  setTimeout("$('.welcome-get-started').slideToggle('slow')", 1500)
-  setTimeout("$('.welcome-get-started').addClass('animated infinite pulse')", 2500)

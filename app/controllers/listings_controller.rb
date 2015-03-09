@@ -10,8 +10,7 @@ class ListingsController < ApplicationController
   def index
     @listings = Listing.all.order("created_at DESC")
     if !current_user.nil?
-      @listing = current_user.listings.build
-      @listing.images.build
+      new
     end
   end
 
@@ -19,6 +18,8 @@ class ListingsController < ApplicationController
   end
 
   def new
+    @listing = current_user.listings.build
+    @listing.images.build
   end
 
   def create

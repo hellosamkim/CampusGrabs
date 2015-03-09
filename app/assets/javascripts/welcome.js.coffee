@@ -39,3 +39,8 @@ $ ->
   # Login and Register
   $(".welcome-user-auth").hide()
   setTimeout("$('.welcome-user-auth').fadeIn(4500)", 500)  
+  
+  # Get started button effect
+  $('.welcome-get-started').hide()
+  setTimeout("$('.welcome-get-started').slideToggle('slow')", 1500)
+  setTimeout("$('.welcome-get-started').addClass('animated infinite pulse')", 2500)

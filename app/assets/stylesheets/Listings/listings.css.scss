@@ -42,19 +42,6 @@
   transition: all .2s ease-in-out;
 }
 
-a.dropdown-toggle.username-bounce {
-  font-size: 2.2rem !important;
-  color: rgba(255, 153, 0, 0.5) !important;
-  font-family: 'Lato', sans-serif;
-  font-weight: 900;
-}
-
-a.dropdown-toggle.username-bounce:hover {
-  font-size: 2.2rem !important;
-  color: rgba(255, 153, 0, 0.9) !important;
-
-}
-
 // Login or Register
 .login-register-wrapper {
   .login-button, .register-button {
@@ -80,14 +67,6 @@ a.dropdown-toggle.username-bounce:hover {
 }
 
 // Top Nav Menu drop menu
-#nav-drop-menu {
-  right: 0;
-  width: 200px;
-  font-size: 1.6rem;
-  border-radius: 5px;
-  padding: 10px;
-  opacity: 0.95;
-}
 
 // Breakline below Navs
 .breakline {
