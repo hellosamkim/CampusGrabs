@@ -1,50 +1,53 @@
 / Top Main Nav
 = render '/listings/nav_1'
+/ Top Sub Nav 2
+= render '/listings/nav_3'
 
-/ User details / profile picture
-.current-user-show
-  Currently viewing 
-  = @user.username + "'s"
-  profile
-// Profile picture
-.profile-picture
-  = image_tag @user.avatar_url
-.user-details-wrapper
-  .user-details
-    .row
-      .col-md-6.left
-        #name
-          %i{:class => "fa fa-user fa-lg"}
-          = @user.first_name
-          = @user.last_name
-        #campus
-          %i{:class => "fa fa-graduation-cap fa-lg"}
-          = @user.campus
-      .col-md-6.right
-        #signed-up
-          %i{:class => "fa fa-user-plus fa-lg"}
-          = @user.created_at.strftime("%b %-d, %Y")
-        #last-online
-          %i{:class => "fa fa-history fa-lg"}
-          - if !@user.last_sign_in_at.nil?
-            - if @user.last_sign_in_at.strftime("%b %-d, %Y") == Date.today.strftime("%b %-d, %Y")
-              Today
-            - elsif Date.today.strftime("%-d").to_i - @user.last_sign_in_at.strftime("%-d").to_i == 1
-              Yesterday
+.user-wrapper
+  / User details / profile picture
+  .current-user-show
+    Currently viewing 
+    = @user.username + "'s"
+    profile
+  // Profile picture
+  .profile-picture
+    = image_tag @user.avatar_url
+  .user-details-wrapper
+    .user-details
+      .row
+        .col-md-6.left
+          #name
+            %i{:class => "fa fa-user fa-lg"}
+            = @user.first_name
+            = @user.last_name
+          #campus
+            %i{:class => "fa fa-graduation-cap fa-lg"}
+            = @user.campus
+        .col-md-6.right
+          #signed-up
+            %i{:class => "fa fa-user-plus fa-lg"}
+            = @user.created_at.strftime("%b %-d, %Y")
+          #last-online
+            %i{:class => "fa fa-history fa-lg"}
+            - if !@user.last_sign_in_at.nil?
+              - if @user.last_sign_in_at.strftime("%b %-d, %Y") == Date.today.strftime("%b %-d, %Y")
+                Today
+              - elsif Date.today.strftime("%-d").to_i - @user.last_sign_in_at.strftime("%-d").to_i == 1
+                Yesterday
+              - else
+                = @user.last_sign_in_at.strftime("%b %-d, %Y")
             - else
-              = @user.last_sign_in_at.strftime("%b %-d, %Y")
-          - else
-            Never Logged In
-    #bio 
-      = @user.user_bio 
-  #social
-    - if !@user.facebook.nil? 
-      %a{:href => "http://#{@user.facebook}", :class => "facebook-logo fa-lg"}
-        %i{:class => "fa fa-facebook fa-lg", :style => "color: #3B5998"} &nbsp&nbsp&nbsp&nbsp
-    - if !@user.twitter.nil?
-      - if @user.twitter[0] == "@"
-        %a{:href => "http://twitter.com/#{@user.twitter[1..-1]}", :class => "twitter-logo fa-lg"}
-          %i{:class => "fa fa-twitter fa-lg", :style => "color: #55ACEE"}
-      - else
-        %a{:href => "http://twitter.com/#{@user.twitter}", :class => "twitter-logo fa-lg"}
-          %i{:class => "fa fa-twitter fa-lg", :style => "color: #55ACEE"}
+              Never Logged In
+      #bio 
+        = @user.user_bio 
+    #social
+      - if !@user.facebook.nil? 
+        %a{:href => "http://#{@user.facebook}", :class => "facebook-logo fa-lg"}
+          %i{:class => "fa fa-facebook fa-lg", :style => "color: #3B5998"} &nbsp&nbsp&nbsp&nbsp
+      - if !@user.twitter.nil?
+        - if @user.twitter[0] == "@"
+          %a{:href => "http://twitter.com/#{@user.twitter[1..-1]}", :class => "twitter-logo fa-lg"}
+            %i{:class => "fa fa-twitter fa-lg", :style => "color: #55ACEE"}
+        - else
+          %a{:href => "http://twitter.com/#{@user.twitter}", :class => "twitter-logo fa-lg"}
+            %i{:class => "fa fa-twitter fa-lg", :style => "color: #55ACEE"}

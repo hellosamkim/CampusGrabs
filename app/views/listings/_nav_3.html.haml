@@ -1,0 +1,40 @@
+%nav.bottom_nav
+  / Got rid of add listings for nav 3 
+  %div.add-listing-empty
+  / Search Bar
+  .search-bar
+    .search-container
+      = form_tag search_path, method: :get, id: 'search-query' do
+        = text_field_tag :q, nil, placeholder: "Search by listing, username, or by campus!"
+        = submit_tag "Search", :style => "display: none;"
+    %a.search-button
+      %i{:class => "fa fa-search fa-2x"}
+    
+/ Add Listing Modal Starts here
+- if !current_user.nil?
+  #add-listing.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+    .modal-dialog
+      .modal-content.login
+        .modal-header
+          %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+            %span{"aria-hidden" => "true"} ×      
+          %h4#myModalLabel.modal-title Login
+        .modal-body
+          .welcome-login-form
+            = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+              .input-group.login
+                .input-group-addon
+                  %i{:class => "fa fa-envelope-o fa-lg"}
+                = f.input :email, required: true, autofocus: true, label: false, placeholder: "Email"
+              .input-group.login
+                .input-group-addon 
+                  %i{:class => "fa fa-lock fa-lg"}
+                = f.input :password, required: true, label: false, placeholder: "••••••••••"
+                .welcome-forgot-pw
+                  = link_to new_password_path(resource_name) do
+                    %i{:class => "fa fa-question-circle"}
+              .form-actions
+                .welcome-button-login
+                  = f.button :submit, "Log in", id: "welcome-login-button"
+              .forgot-pw
+                = link_to "Forgot Password?", new_password_path(resource_name)
