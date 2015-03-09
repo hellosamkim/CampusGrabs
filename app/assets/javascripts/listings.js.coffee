@@ -38,7 +38,3 @@ $ ->
   $('.welcome-get-started').hide()
   setTimeout("$('.welcome-get-started').slideToggle('slow')", 1500)
   setTimeout("$('.welcome-get-started').addClass('animated infinite pulse')", 2500)
-
-  # Load site with delay
-  $('.box').hide()
-  setTimeout("$('.box').fadeIn()", 200)

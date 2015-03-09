@@ -312,6 +312,10 @@ input#q:focus {
   transform: scale(-1, 1);
 }
 
+.search_wrapper {
+  height: 110%;
+}
+
 // ---------- Mobile Views ----------
 @media (max-width: 767px) {
   .navbar-brand {

@@ -3,30 +3,31 @@
 / Top Sub Nav 2
 = render 'nav_3'
 
+/ Search starts here
 .search_wrapper
-  - @search_results.each do |listings|
-    - if !listings.nil?
-      .total_search_results
-        Your Search Results: 
-        %span{:style => "color: rgba(255, 153, 0, 1);"}
-          = listings.count
-      .listings_wrapper#search
-        #listings-container.transitions-enabled
-          - listings.each do |listing|
-            .box.panel.panel-default#listing-shadow
-              - listing.images[0..0].each_with_index do |image|
-                = image_tag image.picture.url, :class => "thumbs"
-                %div.breakline
-              .panel-body 
-                .panel-title
-                  = listing.title
-              %a{:href => listing_path(listing.id)}
-                .listing-hover
-                .listing-price
-                  = number_to_currency(listing.price, :precision => 0)
-                .listing-details.listing-user
-                  Listed by 
-                  = listing.user.username
-                .listing-details.listing-time  
-                  = listing.created_at.strftime("%b %-d, %Y")
+  / Display search results
+  .total_search_results
+    Your Search Results: 
+    %span{:style => "color: rgba(255, 153, 0, 1);"} 
+      = @search_count
+  .listings_wrapper#search        
+    #listings-container.transitions-enabled
+      / Display each searches
+      - @search_results.each do |listings|
+        .box.panel.panel-default#listing-shadow
+          - listings.images[0..0].each_with_index do |image|
+            = image_tag image.picture.url, :class => "thumbs"
+            %div.breakline
+          .panel-body 
+            .panel-title
+              = listings.title
+          %a{:href => listing_path(listings.id)}
+            .listing-hover
+            .listing-price
+              = number_to_currency(listings.price, :precision => 0)
+            .listing-details.listing-user
+              Listed by 
+              = listings.user.username
+            .listing-details.listing-time  
+              = listings.created_at.strftime("%b %-d, %Y")
   = render 'footer'

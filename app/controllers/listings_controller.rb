@@ -68,7 +68,11 @@ class ListingsController < ApplicationController
     @user = @user.listings if @user.present?
 
     @campus = Listing.where("LOWER(campus) LIKE LOWER(?)", "#{@search_query}")
-    @search_results.push(@listings, @user, @campus)
+    @search_results += @listings
+    @search_results += @user.to_a
+    @search_results += @campus
+
+    @search_count = @search_results.count
   end
 
   private

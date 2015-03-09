@@ -1,0 +1,17 @@
+.welcome-login
+  %h2 Log In
+  .welcome-login-form
+    = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      .input-group.login
+        .input-group-addon
+          %i{:class => "fa fa-envelope-o fa-lg"}
+        = f.input :email, required: true, autofocus: true, label: false, placeholder: "Email"
+      .input-group.login
+        .input-group-addon 
+          %i{:class => "fa fa-lock fa-lg"}
+        = f.input :password, required: true, label: false, placeholder: "••••••••••"
+        .welcome-forgot-pw{"data-target" => "#forgot-pw", "data-toggle" => "modal", :type => "button"}
+          %i{:class => "fa fa-question-circle"}
+      .form-actions
+        .welcome-button-login
+          = f.button :submit, "Log in", id: "welcome-login-button"

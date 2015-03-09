@@ -13,14 +13,14 @@
 
 ActiveRecord::Schema.define(version: 20150306202000) do
 
-  create_table "images", force: true do |t|
+  create_table "images", force: :cascade do |t|
     t.integer  "listing_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "picture"
   end
 
-  create_table "listings", force: true do |t|
+  create_table "listings", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
     t.integer  "price"
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20150306202000) do
 
   add_index "listings", ["user_id"], name: "index_listings_on_user_id"
 
-  create_table "users", force: true do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"

@@ -1,0 +1,22 @@
+= render '/listings/nav_1'
+= render '/listings/nav_3'
+
+.welcome-login-2
+  %h1 Forgot Password
+  .welcome-login-form
+    = simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+      .input-group.login
+        .input-group-addon
+          %i{:class => "fa fa-envelope-o fa-lg"}
+        = f.input :email, required: true, autofocus: true, label: false, placeholder: "Email"
+      .form-actions
+        .welcome-button-login
+          = f.button :submit, "Reset Password", id: "welcome-login-button"
+
+
+
+
+
+
+
+

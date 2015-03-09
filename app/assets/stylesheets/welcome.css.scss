@@ -31,7 +31,7 @@
 }
 
 // Sign Up Form
-.welcome-register-form, .welcome-login-form {
+.welcome-register-form-2, .welcome-register-form, .welcome-login-form {
   width: 75%;
   height: 45px;
   margin-bottom: 10px;
@@ -207,7 +207,7 @@ select#user_campus:focus {
 /* Site wrapper and includes background picture */
 .site-wrapper {
   text-align: center;
-  background-image: linear-gradient(rgba(255,255,255,0.4),rgba(255,255,255,0.4)), url("/images/background.jpeg");
+  background-image: linear-gradient(rgba(255,255,255,0.4),rgba(255,255,255,0.4)), url("/images/background.jpg");
   text-shadow: 0 1px 3px rgba(0,0,0,0.5);
   background-position: 50% 50%;
   background-size: cover;
