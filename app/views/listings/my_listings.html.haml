@@ -2,8 +2,9 @@
 = render 'nav_1'
 
 %div.row
-  - @listings.each do |listing|
+  - current_user.listings.each do |listing|
     %div.col-md-4
       %a{:href => listing_path(listing.id)}
-        - listing.images[0..0].each_with_index do |image|
+        = listing.images[0..0].each_with_index do |image|
           = image_tag image.picture.url, :class => "thumbs"
+        = listing.title

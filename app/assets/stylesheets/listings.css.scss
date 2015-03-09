@@ -42,10 +42,6 @@
   transition: all .2s ease-in-out;
 }
 
-#nav-menu:hover {
-  background-color: rgba(102, 102, 102, 0.5);
-}
-
 a.dropdown-toggle.username-bounce {
   font-size: 2.2rem !important;
   color: rgba(255, 153, 0, 0.5) !important;
@@ -221,7 +217,7 @@ a:hover {
   padding: 1px 4px 1px 4px;
   border-radius: 0px 5px 0px 5px;
   font-size: 1.4rem;
-  background-color: rgba(101, 153, 255, 0.9);
+  background-color: rgba(101, 153, 255, 0.7);
   color: #FEFEFE;
 }
 
@@ -281,6 +277,27 @@ a:hover {
   }
 }
 
+// Search Bar
+.search-bar {
+  float: right;
+  margin-top: 6px;
+}
+
+input#q {
+  margin-left: 30px;
+  height: 50px;
+  width: 400px;
+  font-size: 1.8rem;
+}
+
+.search-button {
+  position: absolute;
+  top: 70px;
+  margin-left: -10px;
+  -webkit-transform: scale(-1, 1);
+  -moz-transform: scale(-1, 1);
+  transform: scale(-1, 1);
+}
 
 // ---------- Mobile Views ----------
 @media (max-width: 767px) {

@@ -19,9 +19,8 @@
             .input-group-addon 
               %i{:class => "fa fa-lock fa-lg"}
             = f.input :password, required: true, label: false, placeholder: "••••••••••"
-            .welcome-forgot-pw
-              = link_to new_password_path(resource_name) do
-                %i{:class => "fa fa-question-circle"}
+            .welcome-forgot-pw{"data-target" => "#forgot-pw", "data-toggle" => "modal", :type => "button"}
+              %i{:class => "fa fa-question-circle"}
           .form-actions
             .welcome-button-login
               = f.button :submit, "Log in", id: "welcome-login-button"
@@ -75,8 +74,7 @@
               .form-actions
                 .welcome-button-register
                   = f.button :submit, "Sign up", id: "welcome-register-button"
-          
-  
+
   .welcome-footer
     Made by Sam Kim with
     %a{:href => "https://github.com/hellosamkim/CampusGrabs"}
@@ -84,4 +82,21 @@
 
 
 
-
+  / Modal for Forgot pw - Used Modal login form for template
+  #forgot-pw.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
+    .modal-dialog
+      .modal-content.forgot-pw
+        .modal-header
+          %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+            %span{"aria-hidden" => "true"} ×      
+          %h4#myModalLabel.modal-title Forgot Password
+        .modal-body
+          .welcome-login-form
+            = simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+              .input-group.login
+                .input-group-addon
+                  %i{:class => "fa fa-envelope-o fa-lg"}
+                = f.input :email, required: true, autofocus: true, label: false, placeholder: "Email"
+              .form-actions
+                .welcome-button-login
+                  = f.button :submit, "Reset Password", id: "welcome-login-button"

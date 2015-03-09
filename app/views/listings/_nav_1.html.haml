@@ -67,9 +67,6 @@
               .input-group-addon 
                 %i{:class => "fa fa-lock fa-lg"}
               = f.input :password, required: true, label: false, placeholder: "••••••••••"
-              .welcome-forgot-pw
-                = link_to new_password_path(resource_name) do
-                  %i{:class => "fa fa-question-circle"}
             .form-actions
               .welcome-button-login
                 = f.button :submit, "Log in", id: "welcome-login-button"

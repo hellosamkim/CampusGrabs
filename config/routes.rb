@@ -11,18 +11,20 @@ Rails.application.routes.draw do
   resources :listings do
     resources :images
   end
+
   authenticated :user do
     root to: "listings#index", as: :authenticated_root 
   end
 
   resources :users, only: [:show] 
 
-  unauthenticated do
+  unauthenticated do 
     root to: "listings#welcome"    
   end
 
   get '/welcome' => 'listings#welcome'
   get '/about-us' => 'listings#about_us'
+  get '/search' => 'listings#search', as: :search
 
   as :user do
     post "/login" => "devise/sessions#new"
@@ -78,5 +80,4 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-  get "*path", to: 'listings#welcome'
 end

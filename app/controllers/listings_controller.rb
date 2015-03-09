@@ -57,7 +57,18 @@ class ListingsController < ApplicationController
   end
 
   def my_profile
+  end
+
+  def search
+    @search_query = "%#{params[:q]}%"
+    @search_results = []
+
+    @listings = Listing.where("LOWER(title) LIKE LOWER(?)", "#{@search_query}")
+    @user = User.find_by("LOWER(username) LIKE LOWER(?)", "#{@search_query}")
+    @user = @user.listings if @user.present?
     
+    @campus = Listing.where("LOWER(campus) LIKE LOWER(?)", "#{@search_query}")
+    @search_results.push(@listings, @user, @campus)
   end
 
   private
