@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   # root 'welcome#index'
 
   resources :listings do
-    resources :images
+    resources :images, only: [:create, :destroy, :show]    
   end
 
   authenticated :user do

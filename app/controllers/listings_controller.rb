@@ -11,6 +11,7 @@ class ListingsController < ApplicationController
     @listings = Listing.all.order("created_at DESC")
     if !current_user.nil?
       @listing = current_user.listings.build
+      @listing.images.build
     end
   end
 
@@ -18,7 +19,6 @@ class ListingsController < ApplicationController
   end
 
   def new
-    @listing = current_user.listings.build
   end
 
   def create
@@ -85,6 +85,6 @@ class ListingsController < ApplicationController
   end
 
   def listing_params
-    params.require(:listing).permit(:title, :description, :price, :image, :campus)
+    params.require(:listing).permit(:title, :description, :price, :campus, images_attributes: [:id, :picture] )
   end
 end

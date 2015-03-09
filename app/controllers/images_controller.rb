@@ -8,25 +8,10 @@ class ImagesController < ApplicationController
   def show
   end
 
-  def new
-    @image = Image.new(:listing_id => params[:listing_id])
-  end
-
-  def edit
-  end
-
   def create
     @image = @listing.images.create(image_params)
-    if @image.save
-      flash[:success] = "Image successfully uploaded"
-    else
-      flash[:error] = "Image could not be uploaded. Please try again."
-    end
+    @image.save
     redirect_to @listing
-  end
-
-  def update
-    @image.update(image_params)
   end
 
   def destroy

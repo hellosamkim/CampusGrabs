@@ -32,6 +32,7 @@
         .image-container
           = image_tag image.picture_url, :class => "each-image"
 
+= link_to "Delete", listing_path, :method => :delete
 / Options to add images to listing   
 / %div.add_image
 /   - if @listing.user_auth(current_user)

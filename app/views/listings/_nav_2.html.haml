@@ -20,27 +20,27 @@
 - if !current_user.nil?
   #add-listing.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
     .modal-dialog
-      .modal-content.login
+      .modal-content
         .modal-header
           %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
-            %span{"aria-hidden" => "true"} ×      
-          %h4#myModalLabel.modal-title Login
+            %span{"aria-hidden" => "true"} ×
+          %h4#myModalLabel.modal-title Add Listing
         .modal-body
-          .welcome-login-form
-            = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-              .input-group.login
-                .input-group-addon
-                  %i{:class => "fa fa-envelope-o fa-lg"}
-                = f.input :email, required: true, autofocus: true, label: false, placeholder: "Email"
-              .input-group.login
-                .input-group-addon 
-                  %i{:class => "fa fa-lock fa-lg"}
-                = f.input :password, required: true, label: false, placeholder: "••••••••••"
-                .welcome-forgot-pw
-                  = link_to new_password_path(resource_name) do
-                    %i{:class => "fa fa-question-circle"}
-              .form-actions
-                .welcome-button-login
-                  = f.button :submit, "Log in", id: "welcome-login-button"
-              .forgot-pw
-                = link_to "Forgot Password?", new_password_path(resource_name)
+          = simple_form_for @listing, html: { multipart: true } do |f|
+            %form
+              %div.form-group
+                = f.input :title, :class => "form-control"
+              %div.form-group
+                = f.input :description, :class => "form-control"
+              %div.form-group
+                = f.input :price, :class => "form-control"
+              %div.form-group
+                = f.label :campus
+                %div
+                  = f.select :campus, options_for_select(@listing.universities), label: "Campus"
+              %div.form-group
+                = f.simple_fields_for :images do |image|
+                  = image.file_field :picture
+              %div.actions
+                = f.button :submit, :class => "btn btn-primary"
+
