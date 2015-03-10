@@ -51,7 +51,7 @@
               %div.form-group
                 = f.label :campus
                 %div
-                  = f.select :campus, options_for_select(universities), label: "Campus"
+                  = f.select :campus, options_for_select(universities, current_user.campus), label: "Campus"
               %div.form-group
                 = f.simple_fields_for :images do |image|
                   = image.file_field :picture
