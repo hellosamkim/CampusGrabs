@@ -174,10 +174,17 @@ input#q:focus {
   font-size: 22px;
   position: absolute;
   margin-left: -188px;
-  margin-top: 15px;
+  margin-top: 12px;
+  a {
+    color: rgba(102, 102, 102, 0.96)
+  }
 }
 
 // Front Page with all the listings
+
+.primary-user-campus {
+
+}
 
 .thumbs {
   width: 100%;

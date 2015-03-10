@@ -1,6 +1,6 @@
 %nav.bottom_nav
   / Add new listing
-  - if current_user.nil?
+  - if !current_user.present?
     %div.add-listing
       Log in to add listings
   - else
@@ -10,8 +10,9 @@
 
   / Search Bar & campus select
   .search-bar
-    .show-all
-      = link_to "Show All", all_results_path
+    - if current_user.present?
+      .show-all
+        = link_to "Show All", all_results_path
     / Campus select bar, saved to use for later
     / .campus-select-container
     /   = form_tag listings_path, method: :get, id: 'campus-selection' do

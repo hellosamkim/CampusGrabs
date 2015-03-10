@@ -13,9 +13,10 @@ class ListingsController < ApplicationController
       @campus_select = current_user.campus
     elsif @campus_select == "%%"
       @listings = Listing.all.order("created_at DESC")
+    else
+      @listings = Listing.where("LOWER(campus) LIKE LOWER(?)", "#{@campus_select}")  
     end
-    @listings = Listing.where("LOWER(campus) LIKE LOWER(?)", "#{@campus_select}")  
-
+    @listings_count = @listings.flatten.count
     if !current_user.nil?
       new
     end

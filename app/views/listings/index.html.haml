@@ -2,6 +2,9 @@
 = render 'nav_1'
 / Top Sub Nav 2
 = render 'nav_2'
+/ Shows the University
+- if current_user.present?
+  = render 'primary_campus'
 
 / Show All Listings
 .listings_wrapper

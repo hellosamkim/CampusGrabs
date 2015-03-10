@@ -3,6 +3,8 @@
   %div.add-listing-empty
   / Search Bar
   .search-bar
+    .show-all
+      = link_to "Show All", all_results_path
     .search-container
       = form_tag search_path, method: :get, id: 'search-query' do
         = text_field_tag :q, nil, placeholder: "Search by listing, username, or by campus!"
