@@ -9,6 +9,8 @@ class ListingsController < ApplicationController
     @campus_select = current_user.campus if @campus_select == "%%" && current_user.present?
     @listings = Listing.where("LOWER(campus) LIKE LOWER(?)", "#{@campus_select}").order("created_at DESC")
 
+    @listings = Listing.all if params[:x] == "all"
+
     @listings_count = @listings.flatten.count
     if !current_user.nil?
       new
@@ -68,6 +70,7 @@ class ListingsController < ApplicationController
   end
 
   def search
+    @search_string = "#{params[:q]}"
     @search_query = "%#{params[:q]}%"
     @search_results = []
 
@@ -80,6 +83,7 @@ class ListingsController < ApplicationController
     @search_results += @listings
     @search_results += @user.to_a
     @search_results += @campus
+    @search_results = Listing.all if @search_string.empty?
 
     @search_count = @search_results.count
   end

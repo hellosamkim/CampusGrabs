@@ -32,7 +32,7 @@ Rails.application.routes.draw do
     post "/login" => "devise/sessions#new"
     delete "/logout" => "devise/sessions#destroy"
     get "/users/:username/edit" => "devise/registrations#edit", as: :user_edit
-    get '/users/:username/my_listings' => 'listings#my_listings', as: :my_listings
+    get '/users/:username/my_listings' => 'users#my_listings', as: :my_listings
   end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

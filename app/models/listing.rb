@@ -13,4 +13,8 @@ class Listing < ActiveRecord::Base
   def my_campus?(current_user)
     current_user && self.campus == current_user.campus
   end
+
+  def creation_date
+    self.created_at.strftime("%b %d, %Y")
+  end
 end

@@ -206,6 +206,7 @@ select#user_campus:focus {
 
 /* Site wrapper and includes background picture */
 .site-wrapper {
+  height: 100vh !important;
   text-align: center;
   background-image: linear-gradient(rgba(255,255,255,0.4),rgba(255,255,255,0.4)), url("/images/background.jpg");
   text-shadow: 0 1px 3px rgba(0,0,0,0.5);

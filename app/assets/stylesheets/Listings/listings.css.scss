@@ -189,6 +189,11 @@ input#q:focus {
   color: #FEFEFE;
 }
 
+#primary-user-campus-name {
+  display: inline;
+  color: rgba(255, 153, 0, 0.8);
+}
+
 .thumbs {
   width: 100%;
   border-radius: 5px;
@@ -250,11 +255,7 @@ input#q:focus {
   padding: 2px;
 }
 
-.listing-campus.current-user {
-  background-color: rgba(255, 77, 77, 0.7) !important;
-}
-
-.listing-campus, .listing-campus.current-user {
+.listing-time {
   position: absolute;
   top: 0px;
   right: -0.4px;

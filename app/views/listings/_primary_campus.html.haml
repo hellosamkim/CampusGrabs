@@ -1,9 +1,10 @@
 / Will be making this more custom in the future
 
 .primary-user-campus
-  There
-  = "is".pluralize(@listings_count)
-  currently 
+  There 
+  = @listings_count == 1 ? "is" : "are" 
+  Currently
   = pluralize(@listings_count, "Listing")
   at
-  = current_user.campus
+  #primary-user-campus-name
+    = current_user.campus

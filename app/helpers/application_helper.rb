@@ -4,6 +4,6 @@ module ApplicationHelper
   end
 
   def categories
-    ["Art & Collectibles", "Electronics", "Furniture", "Jewellery", "Musical Instruments", "Sporting Equipment", "Text Books", "Tickets", "Video Games", "Other"]
+    ["Art & Collectibles", "Automobile", "Electronics", "Furniture", "Jewellery", "Musical Instruments", "Sporting Equipment", "Text Books", "Tickets", "Video Games", "Other"]
   end
 end
