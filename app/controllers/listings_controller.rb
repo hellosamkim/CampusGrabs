@@ -11,7 +11,8 @@ class ListingsController < ApplicationController
     @campus_select = "%#{params[:c]}%"
     if @campus_select == "%%" && current_user.present?
       @campus_select = current_user.campus
-    elsif @campus_select == "%%"
+      @listings = Listing.where("LOWER(campus) LIKE LOWER(?)", "#{@campus_select}")  
+    elsif @campus_select == "%%" && current_user.nil?
       @listings = Listing.all.order("created_at DESC")
     else
       @listings = Listing.where("LOWER(campus) LIKE LOWER(?)", "#{@campus_select}")  
