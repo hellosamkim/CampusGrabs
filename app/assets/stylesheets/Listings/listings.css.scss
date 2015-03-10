@@ -132,18 +132,24 @@ a:hover {
 }
 
 // Search Bar
+
+.search-container {
+  width: 100%;
+}
+
 .search-bar {
   float: right;
   margin-top: 6px;
   margin-right: 7px;
+  width: 31%;
 }
 
 input#q {
   border: none;
   margin-left: 30px;
   height: 50px;
-  width: 380px;
-  font-size: 1.8rem;
+  width: 92%;
+  font-size: 1.7rem;
 }
 
 input#q:focus {
@@ -162,12 +168,13 @@ input#q:focus {
 }
 
 .search_wrapper {
-  height: 110%;
 }
 
-.campus-select-container {
+.show-all {
+  font-size: 22px;
   position: absolute;
-  margin-left: -180px;
+  margin-left: -188px;
+  margin-top: 15px;
 }
 
 // Front Page with all the listings
@@ -178,7 +185,6 @@ input#q:focus {
 }
 
 .listings_wrapper {
-  height: 110%;
   padding-top: 10px;
   margin-top: 2.2px;
   padding-bottom: 8px;

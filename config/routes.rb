@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   get '/welcome' => 'listings#welcome'
   get '/about-us' => 'listings#about_us'
   get '/search' => 'listings#search', as: :search
+  get '/all-listings' => 'listings#all_results', as: :all_results
 
   as :user do
     post "/login" => "devise/sessions#new"

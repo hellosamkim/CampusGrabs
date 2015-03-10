@@ -9,14 +9,20 @@ class ListingsController < ApplicationController
 
   def index
     @campus_select = "%#{params[:c]}%"
-    if @campus_select == "%%" 
-      @listings = Listing.all.order("created_at DESC")
-    elsif @campus_select == "%%" && current_user.present?
+    if @campus_select == "%%" && current_user.present?
       @campus_select = current_user.campus
-    else
-      @listings = Listing.where("LOWER(campus) LIKE LOWER(?)", "#{@campus_select}")  
+    elsif @campus_select == "%%"
+      @listings = Listing.all.order("created_at DESC")
     end
+    @listings = Listing.where("LOWER(campus) LIKE LOWER(?)", "#{@campus_select}")  
 
+    if !current_user.nil?
+      new
+    end
+  end
+
+  def all_results
+    @listings = Listing.all.order("created_at DESC")
     if !current_user.nil?
       new
     end
@@ -95,6 +101,6 @@ class ListingsController < ApplicationController
   end
 
   def listing_params
-    params.require(:listing).permit(:title, :description, :price, :campus, images_attributes: [:id, :picture] )
+    params.require(:listing).permit(:title, :description, :price, :campus, images_attributes: [:id, :picture])
   end
 end
