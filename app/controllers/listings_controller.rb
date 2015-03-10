@@ -1,22 +1,14 @@
 class ListingsController < ApplicationController
-  before_action :set_listing, only: [:show, :edit, :update, :destroy, :find]
+  before_action :set_listing, only: [:show, :edit, :update, :destroy]
   before_action :ensure_logged_in, only: [:new, :edit, :destroy, :my_listings]
   before_action :ensure_correct_user, only: [:edit]
   before_action :current_user_listings, only: [:my_listings, :my_profile]
 
-  def find
-  end
-
   def index
     @campus_select = "%#{params[:c]}%"
-    if @campus_select == "%%" && current_user.present?
-      @campus_select = current_user.campus
-      @listings = Listing.where("LOWER(campus) LIKE LOWER(?)", "#{@campus_select}")  
-    elsif @campus_select == "%%" && current_user.nil?
-      @listings = Listing.all.order("created_at DESC")
-    else
-      @listings = Listing.where("LOWER(campus) LIKE LOWER(?)", "#{@campus_select}")  
-    end
+    @campus_select = current_user.campus if @campus_select == "%%" && current_user.present?
+    @listings = Listing.where("LOWER(campus) LIKE LOWER(?)", "#{@campus_select}").order("created_at DESC")
+
     @listings_count = @listings.flatten.count
     if !current_user.nil?
       new

@@ -24,7 +24,7 @@
           .listing-details.listing-user
             Listed by 
             = listing.user.username
-          - if current_user.present? && listing.campus == current_user.campus
+          - if listing.my_campus?(current_user)
             .listing-details.listing-campus.current-user
               = listing.campus
           - else

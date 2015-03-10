@@ -10,7 +10,7 @@ class Listing < ActiveRecord::Base
     current_user && current_user.id == self.user.id
   end
 
-  def universities
-    ["Brock University", "Carleton University", "University of Guelph", "Lakehead University", "McMaster University", "OCAD University", "University of Ottawa", "Queen's University", "Ryerson University", "University of Toronto", "Trent University", "UOIT", "University of Waterloo", "UWO", "Wilfrid Laurier University", "University of Windsor", "York University"].sort!
+  def my_campus?(current_user)
+    current_user && self.campus == current_user.campus
   end
 end

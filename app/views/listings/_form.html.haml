@@ -9,6 +9,6 @@
     %div.form-group
       = f.label :campus
       %div
-        = f.select :campus, options_for_select(@listing.universities), label: "Campus"
+        = f.select :campus, options_for_select(universities), label: "Campus"
     %div.actions
       = f.button :submit, :class => "btn btn-primary"
