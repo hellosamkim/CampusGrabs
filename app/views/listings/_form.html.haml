@@ -7,6 +7,10 @@
     %div.form-group
       = f.input :price, :class => "form-control"
     %div.form-group
+      = f.label :category
+      %div
+        = f.select :category, options_for_select(categories), label: "Category"
+    %div.form-group
       = f.label :campus
       %div
         = f.select :campus, options_for_select(universities), label: "Campus"

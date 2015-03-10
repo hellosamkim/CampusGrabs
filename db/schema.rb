@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150306202000) do
+ActiveRecord::Schema.define(version: 20150310143023) do
 
   create_table "images", force: :cascade do |t|
     t.integer  "listing_id"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20150306202000) do
     t.datetime "updated_at"
     t.integer  "user_id"
     t.string   "campus"
+    t.string   "category"
   end
 
   add_index "listings", ["user_id"], name: "index_listings_on_user_id"
