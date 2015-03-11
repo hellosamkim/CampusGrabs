@@ -41,10 +41,10 @@
       #bio 
         = @user.user_bio 
     #social
-      - if !@user.facebook.nil? 
+      - if !@user.facebook.empty?
         %a{:href => "http://#{@user.facebook}", :class => "facebook-logo fa-lg"}
           %i{:class => "fa fa-facebook fa-lg", :style => "color: #3B5998"} &nbsp&nbsp&nbsp&nbsp
-      - if !@user.twitter.nil?
+      - if !@user.twitter.empty?
         - if @user.twitter[0] == "@"
           %a{:href => "http://twitter.com/#{@user.twitter[1..-1]}", :class => "twitter-logo fa-lg"}
             %i{:class => "fa fa-twitter fa-lg", :style => "color: #55ACEE"}

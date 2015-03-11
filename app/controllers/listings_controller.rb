@@ -11,7 +11,7 @@ class ListingsController < ApplicationController
     @listings = Listing.where("LOWER(campus) LIKE LOWER(?)", "#{@campus_select}").order("created_at DESC")
 
     # Display all listings
-    @listings = Listing.all if params[:show_all] == "all"
+    @listings = Listing.all.order("created_at DESC") if params[:show_all] == "all"
     # Listings counter
     @listings_count = @listings.flatten.count
     if !current_user.nil?
