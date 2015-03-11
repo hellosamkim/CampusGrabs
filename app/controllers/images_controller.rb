@@ -8,6 +8,9 @@ class ImagesController < ApplicationController
   def show
   end
 
+  def new
+  end
+
   def create
     @image = @listing.images.create(image_params)
     @image.save

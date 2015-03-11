@@ -5,13 +5,53 @@
   right: 5%;
   margin-top: 70px;
 
-  h2 {
+  h1 {
     margin-top: 0;
+    font-weight: 900;
+    color: rgba(255, 153, 0, 0.8);
   }
+
   .list-user-link {
+    color: rgba(101, 153, 255, 0.8);
     -moz-transition: all .3s ease-in-out;
     -webkit-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
+  }
+
+  .list-user-link:hover {
+    color: rgba(101, 153, 255, 0.5);
+  }
+
+  p {
+    color: rgba(246, 246, 246, 0.6);
+  }
+}
+
+.each-listing-options {
+  #option-1 {
+    display: inline;
+    a {
+      -webkit-transition: all 0.1s ease-in-out;
+      -moz-transition: all 0.1s ease-in-out;
+      transition: all 0.1s ease-in-out;
+      color: rgba(0, 255, 153, 0.3);
+    }
+    a:hover {
+      color: rgba(0, 255, 153, 0.7);
+    }
+  }
+
+  #option-2 {
+    display: inline;
+    a {
+      -webkit-transition: all 0.1s ease-in-out;
+      -moz-transition: all 0.1s ease-in-out;
+      transition: all 0.1s ease-in-out;
+      color: rgba(101, 153, 255, 0.3);
+    }
+    a:hover {
+      color: rgba(101, 153, 255, 0.7); 
+    }
   }
 }
 
@@ -37,39 +77,21 @@ img.each-image {
 }
 
 // Image is dimmed when user is not logged in
-.image-dim {
-  height: 100%;
-  width: 358px;
-  margin: auto;
-  line-height: 300px;
-  vertical-align: center;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  h4 {
-    position: absolute;
-    opacity: 0;
-    background-color: #635248;
-    color: #FEFEFE;
-    padding: 5px;
-    border-radius: 5px;
-    top: 150px;
-    width: 250px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
-.image-dim:hover {
-  opacity: 0.7;
-  h4 {
-    opacity: 1;
-  }
-}
 
 // Listing image slick sliders
 .slick-prev {
-  left: 7px !important; 
+  left: -25px !important; 
+}
+
+.slick-next {
+  right: -25px !important;
+}
+
+.slick-prev, .slick-next {
+  height: 30px !important;
+  width: 30px !important;
+  background-color: rgba(255, 153, 0, 0.5) !important;
+  border-radius: 1337px !important; 
 }
 
 .slick-prev:before {
@@ -78,16 +100,8 @@ img.each-image {
   font-style: normal  !important;
   font-weight: normal !important;
   text-decoration: inherit !important;
-  color: #000 !important;
+  color: #FEFEFE !important;
   font-size: 20px !important;
-  padding-right: 0.5em !important;
-  position: absolute !important;
-  top: 10px !important;
-  left: 0 !important;
-}
-
-.slick-next {
-  right: 0px !important;
 }
 
 .slick-next:before {
@@ -96,11 +110,7 @@ img.each-image {
   font-style: normal !important;
   font-weight: normal !important;
   text-decoration: inherit !important;
-  color: #000 !important;
+  color: #FEFEFE !important;
   font-size: 20px !important;
-  padding-right: 0.5em !important;
-  position: absolute !important;
-  top: 10px !important;
-  left: 0 !important;
 }
 

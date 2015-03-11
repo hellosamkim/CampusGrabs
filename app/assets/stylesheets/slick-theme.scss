@@ -154,7 +154,7 @@ $slick-opacity-not-active: 0.25 !default;
             border-style: solid;
             margin-left: 2px;
             margin-top: 1px;
-            border-color: #584940;
+            border-color: #555;
             border-radius: 100px;
             background: transparent;
             display: block;
@@ -194,8 +194,7 @@ $slick-opacity-not-active: 0.25 !default;
             }
         }
         &.slick-active button:before {
-            box-shadow: inset 1px 1px 1px #b3a196;
-            background-color: #584940;
+            background-color: #FEFEFE;
             color: $slick-dot-color-active;
             opacity: $slick-opacity-default;
         }

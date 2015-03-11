@@ -23,6 +23,8 @@
           = link_to "Edit", edit_listing_path(listing.id), id: "my-listing-options-2"          
           &nbsp 
           = link_to "Delete", listing_path(listing.id), method: :delete, data: {confirm: "Are you sure you want to PERMANENTLY delete this listing?"}, id: "my-listing-options-3"
+          %p
+            = link_to "Add Pictures", new_listing_image_path(listing.id)
       .col-md-6.my-listings#right
         %table{:class => "my-listing-table"}
           %tr.my-listing-table-menu
