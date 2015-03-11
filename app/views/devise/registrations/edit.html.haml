@@ -1,31 +1,85 @@
-/ Top Main Nav
 = render '/listings/nav_1'
-%h2
-  Edit #{resource_name.to_s.humanize}
-= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
-  = f.error_notification
-  .form-inputs
-    = f.input :username, required: true, autofocus: true
-    = f.input :email, required: true
-    = f.input :first_name, required: true
-    = f.input :last_name, required: true
-    = f.input :user_bio
-  .form-group
-    = f.label :campus
-    %div
-      = f.select :campus, options_for_select(universities), label: "School Attending"
-    - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+= render '/listings/nav_3'
+
+.sign-up-wrapper
+  .welcome-register-2
+    %h1 Profile Settings
+    .welcome-register-form-2.prof-settings
+      = simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+        = f.error_notification
+        .row
+          .col-md-6.welcome
+            .input-group.register
+              .input-group-addon
+                %i{:class => "fa fa-user"}
+              = f.input :username, required: true, autofocus: true, label: false, input_html: {:style => "width: 170px; font-size: 1.4rem;"}, placeholder: 'Username'
+          .col-md-6.welcome
+            .input-group.register
+              .input-group-addon
+                %i{:class => "fa fa-envelope-o"}
+              = f.input :email, required: true, label: false, input_html: {:style => "width: 170px; font-size: 1.4rem;"}, placeholder: 'Email'
+        .row    
+          .col-md-6.welcome
+            .input-group.register
+              .input-group-addon
+                %i{:class => "fa fa-lock"}
+              = f.input :password, required: true, label: false, hint: ("#{@minimum_password_length} characters minimum" if @validatable), input_html: {:style => "width: 170px; font-size: 1.4rem;"}, placeholder: "New Password"
+          .col-md-6.welcome              
+            .input-group.register
+              .input-group-addon
+                %i{:class => "fa fa-lock"}
+              = f.input :password_confirmation, label: false, required: true, input_html: {:style => "width: 170px; font-size: 1.4rem;"}, placeholder: "New Password"
+        .row     
+          .col-md-6.welcome      
+            .input-group.register
+              .input-group-addon
+                %i{:class => "fa fa-thumb-tack"}
+              = f.input :first_name, required: true, label: false, input_html: {:style => "width: 170px; font-size: 1.4rem;"}, placeholder: 'First Name'
+          .col-md-6.welcome              
+            .input-group.register
+              .input-group-addon
+                %i{:class => "fa fa-thumb-tack"}
+              = f.input :last_name, required: true, label: false, input_html: {:style => "width: 170px; font-size: 1.4rem;"}, placeholder: 'Last Name'
+        .row     
+          .col-md-6.welcome      
+            .input-group.register
+              .input-group-addon
+                %i{:class => "fa fa-facebook"}
+              = f.input :facebook, required: true, label: false, input_html: {:style => "width: 170px; font-size: 1.4rem;"}, placeholder: "\"http://www.facebook.com/example\""
+          .col-md-6.welcome              
+            .input-group.register
+              .input-group-addon
+                %i{:class => "fa fa-twitter"}
+              = f.input :twitter, required: true, label: false, input_html: {:style => "width: 170px; font-size: 1.4rem;"}, placeholder: "\"@hellosamkim\""
+        .row
+          .col-md-6.welcome
+            .input-group.register
+              .input-group-addon
+                %i{:class => "fa fa-graduation-cap"}
+              = f.select :campus, options_for_select(universities, current_user.campus), label: false, id: "user-auth"
+          .col-md-6.welcome
+            .input-group.register
+              %h4 Profile Picture
+              = f.file_field :avatar
+        .row
+          .col-md-6.welcome
+            .input-group.register
+              .input-group-addon
+                %i{:class => "fa fa-lock"}
+              = f.input :current_password, label: false, required: true
+            %p  
+              "We need your current password to confirm your changes"
+
+            - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+              %p
+                Currently waiting confirmation for: #{resource.unconfirmed_email}
+          .col-md-6.welcome
+            .form-actions
+              .welcome-button-register
+                = f.button :submit, "Update"
+          
+      %h3 Cancel my account
       %p
-        Currently waiting confirmation for: #{resource.unconfirmed_email}
-    = f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false
-    = f.input :password_confirmation, required: false
-    = f.input :current_password, hint: "we need your current password to confirm your changes", required: true
-    = f.file_field :avatar 
-    = f.input :facebook, :placeholder => "\"http://www.facebook.com/example\""
-    = f.input :twitter, :placeholder => "\"@hellosamkim\""
-  .form-actions
-    = f.button :submit, "Update"
-%h3 Cancel my account
-%p
-  Unhappy? #{link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete}
-= link_to "Back", :back
+        Unhappy?
+      %p#cancelation 
+        = link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete

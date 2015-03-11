@@ -1,22 +1,96 @@
-.my-listing-images {
-  width: 250px;
-}
-
 .my-listings-head {
   text-align: center;
-  font-size: 2.2rem;
+  font-size: 3rem;
   margin-top: 20px;
   color: #FEFEFE;
 }
 
 .my-each-listings {
-  height: 500px;
+  border: 2px solid #FEFEFE;
+  border-radius: 15px;
   width: 70%;
-  margin-top: 40px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   margin-left: auto;
+  background-color: #FEFEFE;
   margin-right: auto;
 }
 
 .row.my-listings {
   margin: 15px;
+  border: 2px solid #555;
+  border-radius: 5px;
+
+  .col-md-6.my-listings#left {
+    border-right: 2px solid;
+    width: 30%;
+
+    .my-listing-images {
+      margin-left: auto;
+      margin-right: auto;
+      width: 200px;
+    }
+    .my-listings.title {
+      font-size: 1.8rem;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+  }
+  .col-md-6.my-listings#right {
+    width: 70%;
+  }
+}
+
+.my-listing-table {
+  width: 100%;
+  text-align: center;
+  font-size: 1.6rem;
+
+  .my-listing-table-menu {
+    td {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: rgba(255, 153, 0, 1);
+      padding: 5px 15px 0px 15px;
+      text-decoration: underline;
+    }
+  .my-listing-table-info {
+    td {
+      color: #555;
+      font-weight: bold;
+    }
+  }
+}
+}
+
+.my-listing-description {
+  // width: 100%;
+  margin-top: 25px;
+  h4 {
+    font-weight: bold;
+  }
+}
+
+.my-listing-options {
+  text-align: center;
+  font-size: 1.6rem;
+
+  #my-listing-options-1 {
+    color: rgba(255, 153, 0, 0.8);
+  }
+  #my-listing-options-1:hover {
+    color: rgba(255, 153, 0, 0.4);
+  }
+  #my-listing-options-2 {
+    color: rgba(101, 153, 255, 0.8);
+  }
+  #my-listing-options-2:hover {
+    color: rgba(101, 153, 255, 0.4);
+  }
+  #my-listing-options-3 {
+    color: rgba(255, 91, 64, 0.8);
+  }
+  #my-listing-options-3:hover {
+    color: rgba(255, 91, 64, 0.4);
+  }
 }

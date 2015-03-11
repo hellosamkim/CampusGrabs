@@ -5,25 +5,20 @@ class ListingsController < ApplicationController
   before_action :current_user_listings, only: [:my_listings, :my_profile]
 
   def index
+    # Display listings according to campus; defaults to user's pre-selected campus from registration
     @campus_select = "%#{params[:c]}%"
     @campus_select = current_user.campus if @campus_select == "%%" && current_user.present?
     @listings = Listing.where("LOWER(campus) LIKE LOWER(?)", "#{@campus_select}").order("created_at DESC")
 
-    @listings = Listing.all if params[:x] == "all"
-
+    # Display all listings
+    @listings = Listing.all if params[:show_all] == "all"
+    # Listings counter
     @listings_count = @listings.flatten.count
     if !current_user.nil?
       new
     end
   end
-
-  def all_results
-    @listings = Listing.all.order("created_at DESC")
-    if !current_user.nil?
-      new
-    end
-  end
-
+  
   def show
   end
 
@@ -70,11 +65,12 @@ class ListingsController < ApplicationController
   end
 
   def search
+    # search_string to display string to users
     @search_string = "#{params[:q]}"
     @search_query = "%#{params[:q]}%"
     @search_results = []
 
-
+    # Search given user's query to see if it matches listing title, username, and campus
     @listings = Listing.where("LOWER(title) LIKE LOWER(?)", "#{@search_query}")
     @user = User.find_by("LOWER(username) LIKE LOWER(?)", "#{@search_query}")
     @user = @user.listings if @user.present?

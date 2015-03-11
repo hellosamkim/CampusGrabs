@@ -1,10 +1,16 @@
-/ Will be making this more custom in the future
-
 .primary-user-campus
-  There 
-  = @listings_count == 1 ? "is" : "are" 
-  Currently
-  = pluralize(@listings_count, "Listing")
-  at
-  #primary-user-campus-name
-    = current_user.campus
+  / Shows all listings
+  - if params[:show_all] == "all"
+    Displaying All
+    = pluralize(@listings_count, "Listing")
+    across
+    #primary-user-campus-name
+      Ontario
+  - else
+    There
+    = @listings_count == 1 ? "is" : "are" 
+    Currently
+    = pluralize(@listings_count, "Listing")
+    at
+    #primary-user-campus-name
+      = current_user.campus

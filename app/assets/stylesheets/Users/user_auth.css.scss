@@ -10,19 +10,21 @@
   padding-top: 30px;
 }
 
-.help-block {
-  display: inline !important;
-  position: absolute !important;
-  margin-top: 2px !important;
-  margin-bottom: 10px !important;
-  width: 250px !important;
-}
+#user-password {
+  .help-block {
+    display: inline !important;
+    position: absolute !important;
+    margin-top: 2px !important;
+    margin-bottom: 10px !important;
+    width: 250px !important;
+  }
 
-p.help-block {
-  top: 17px !important;
-  font-size: 1.2rem !important;
-  margin-left: 18px !important;
-  color: #d38f8e !important;
+  p.help-block {
+    top: 17px !important;
+    font-size: 1.2rem !important;
+    margin-left: 18px !important;
+    color: #d38f8e !important;
+  }  
 }
 
 select#user_campus {

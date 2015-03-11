@@ -2,5 +2,52 @@
 = render '/listings/nav_3'
   
 .sign-up-wrapper
-  = render '/listings/sign_up_2'
-
+  .welcome-register-2
+    %h1 Sign Up
+    .welcome-register-form-2
+      = simple_form_for(resource, as: resource_name, url: registration_path(resource_name), :html => {:multipart => true}) do |f|
+        = f.error_notification
+        .row
+          .col-md-6.welcome
+            .input-group.register
+              .input-group-addon
+                %i{:class => "fa fa-user"}
+              = f.input :username, required: true, autofocus: true, label: false, input_html: {:style => "width: 170px; font-size: 1.4rem;"}, placeholder: 'Username'
+          .col-md-6.welcome
+            .input-group.register
+              .input-group-addon
+                %i{:class => "fa fa-envelope-o"}
+              = f.input :email, required: true, label: false, input_html: {:style => "width: 170px; font-size: 1.4rem;"}, placeholder: 'Email'
+        .row    
+          .col-md-6.welcome
+            .input-group.register
+              .input-group-addon
+                %i{:class => "fa fa-lock"}
+              = f.input :password, required: true, label: false, hint: ("#{@minimum_password_length} characters minimum" if @validatable), input_html: {:style => "width: 170px; font-size: 1.4rem;" id: "signup-pw"}, placeholder: "••••••••••", :class => "signup-pw"
+          .col-md-6.welcome              
+            .input-group.register
+              .input-group-addon
+                %i{:class => "fa fa-lock"}
+              = f.input :password_confirmation, label: false, required: true, input_html: {:style => "width: 170px; font-size: 1.4rem;"}, placeholder: "••••••••••"
+        .row     
+          .col-md-6.welcome      
+            .input-group.register
+              .input-group-addon
+                %i{:class => "fa fa-thumb-tack"}
+              = f.input :first_name, required: true, label: false, input_html: {:style => "width: 170px; font-size: 1.4rem;"}, placeholder: 'First Name'
+          .col-md-6.welcome              
+            .input-group.register
+              .input-group-addon
+                %i{:class => "fa fa-thumb-tack"}
+              = f.input :last_name, required: true, label: false, input_html: {:style => "width: 170px; font-size: 1.4rem;"}, placeholder: 'Last Name'
+        .row
+          .col-md-6.welcome      
+            .input-group.register
+              .input-group-addon
+                %i{:class => "fa fa-graduation-cap"}
+              = f.select :campus, options_for_select(universities), label: false, id: "user-auth"
+          .col-md-6.welcome
+            .form-actions
+              .welcome-button-register
+                = f.button :submit, "Sign up", id: "welcome-register-button"
+                

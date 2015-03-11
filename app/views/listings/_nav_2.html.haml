@@ -12,7 +12,7 @@
   .search-bar
     - if current_user.present?
       .show-all
-        = link_to "Show All", {controller: "listings", action: "index", x: "all"}
+        = link_to "Show All", {controller: "listings", action: "index", show_all: "all"}
     / Campus select bar, saved to use for later
     / .campus-select-container
     /   = form_tag listings_path, method: :get, id: 'campus-selection' do
@@ -36,6 +36,7 @@
             %span{"aria-hidden" => "true"} ×
           %h4#myModalLabel.modal-title Add Listing
         .modal-body
+          / Form for New Listing
           = simple_form_for @listing, html: { multipart: true } do |f|
             %form
               %div.form-group
