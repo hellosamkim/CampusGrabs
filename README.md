@@ -7,4 +7,4 @@ Current not mobile friendly (On progress)
 ![Alt text](/screenshot1.png?raw=true)
 
 **Main Listings Page**
-![Alt text](/screenshot1.png?raw=true)
+![Alt text](/screenshot2.png?raw=true)
