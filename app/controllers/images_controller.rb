@@ -1,20 +1,17 @@
 class ImagesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_listing  
-  before_action :set_image, only: [:show, :edit, :update, :destroy]
+  before_action :set_image, only: [:show, :destroy]
   before_filter :ensure_logged_in, only: [:new, :edit, :destroy]
   before_filter :ensure_correct_user, only: [:edit]
-
-  def show
-  end
-
-  def new
-  end
-
+  
   def create
     @image = @listing.images.create(image_params)
     @image.save
-    redirect_to @listing
+    respond_to do |format|
+      format.html { redirect_to :back }
+      format.json { head :no_content }
+    end
   end
 
   def destroy
@@ -23,7 +20,10 @@ class ImagesController < ApplicationController
     else
       flash[:error] = "Image could not be deleted. Please try again."
     end
-    redirect_to @listing
+    respond_to do |format|
+      format.html { redirect_to :back }
+      format.json { head :no_content }
+    end
   end
 
   private

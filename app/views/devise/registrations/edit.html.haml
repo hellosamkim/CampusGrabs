@@ -45,12 +45,12 @@
             .input-group.register
               .input-group-addon
                 %i{:class => "fa fa-facebook"}
-              = f.input :facebook, required: true, label: false, input_html: {:style => "width: 170px; font-size: 1.4rem;"}, placeholder: "\"http://www.facebook.com/example\""
+              = f.input :facebook, label: false, input_html: {:style => "width: 170px; font-size: 1.4rem;"}, placeholder: "\"http://www.facebook.com/example\""
           .col-md-6.welcome              
             .input-group.register
               .input-group-addon
                 %i{:class => "fa fa-twitter"}
-              = f.input :twitter, required: true, label: false, input_html: {:style => "width: 170px; font-size: 1.4rem;"}, placeholder: "\"@hellosamkim\""
+              = f.input :twitter, label: false, input_html: {:style => "width: 170px; font-size: 1.4rem;"}, placeholder: "\"@hellosamkim\""
         .row
           .col-md-6.welcome
             .input-group.register
@@ -59,8 +59,15 @@
               = f.select :campus, options_for_select(universities, current_user.campus), label: false, id: "user-auth"
           .col-md-6.welcome
             .input-group.register
-              %h4 Profile Picture
-              = f.file_field :avatar
+              %h5 Upload Profile Picture
+              .upload
+                = f.file_field :avatar
+        .row     
+          .col-md-6.welcome.user-bio      
+            .input-group.register
+              .input-group-addon
+                %i{:class => "fa fa-pencil-square-o"}
+              = f.input :user_bio, label: false, input_html: {:style => "width: 170px; font-size: 1.4rem;"}, placeholder: "Write your little bio here." 
         .row
           .col-md-6.welcome
             .input-group.register

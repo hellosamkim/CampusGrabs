@@ -6,16 +6,16 @@ $ ->
   typesentence = ->
     $('#sentences').typed
       strings: [
-        'I Want to Buy a Bike'
-        'I Want to Buy a Long Board'
-        'I Want to Buy a Laptop'
-        'I Want to Buy a Textbook'
-        'I Want to Buy Homecoming Tickets'
-        'I Want to Buy a Desk'
-        'I Want to Sell my Car'
-        'I Want to Sell my Mini Fridge'
-        'I Want to Sell my TV'
-        'I Want to Sell my DJ Equipment'
+        'I want to buy a bike'
+        'I want to buy a long board'
+        'I want to buy a laptop'
+        'I want to buy a textbook'
+        'I want to buy homecoming tickets'
+        'I want to buy a desk'
+        'I want to sell my car'
+        'I want to sell my mini fridge'
+        'I want to sell my TV'
+        'I want to sell my dj equipment'
       ]
       typeSpeed: 110
       backDelay: 3000

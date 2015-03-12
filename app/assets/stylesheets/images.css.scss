@@ -1,0 +1,29 @@
+.new-image-wrapper {
+  text-align: center;
+
+  h1 {
+    color: #FEFEFE;
+  }
+}
+ 
+.show-uploaded-images {
+  .listing-image.parent-container {
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px;
+  }
+}
+
+.each-image-preview {
+  width: 80%;
+}
+
+#delete-picture {
+  color: rgba(255, 153, 0, 0.8);
+}
+
+#delete-picture:hover {
+  color: rgba(255, 153, 0, 0.5);
+}

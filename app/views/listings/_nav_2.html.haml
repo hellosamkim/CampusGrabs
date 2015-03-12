@@ -30,32 +30,40 @@
 - if !current_user.nil?
   #add-listing.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", :role => "dialog", :tabindex => "-1"}
     .modal-dialog
-      .modal-content
+      .modal-content.listing
         .modal-header
           %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
             %span{"aria-hidden" => "true"} ×
           %h4#myModalLabel.modal-title Add Listing
         .modal-body
-          / Form for New Listing
-          = simple_form_for @listing, html: { multipart: true } do |f|
-            %form
-              %div.form-group
-                = f.input :title, :class => "form-control"
-              %div.form-group
-                = f.input :description, :class => "form-control"
-              %div.form-group
-                = f.input :price, :class => "form-control"
-              %div.form-group
-                = f.label :category
-                %div
-                  = f.select :category, options_for_select(categories), label: "Category"  
-              %div.form-group
-                = f.label :campus
-                %div
-                  = f.select :campus, options_for_select(universities, current_user.campus), label: "Campus"
-              %div.form-group
-                = f.simple_fields_for :images do |image|
-                  = image.file_field :picture
-              %div.actions
+          .welcome-login-form{:style => "text-align: center;"}
+            / Form for New Listing
+            = simple_form_for @listing, html: { multipart: true } do |f|
+              .input-group.login
+                .input-group-addon
+                  %i{:class => "fa fa-lightbulb-o"}
+                = f.input :title, :class => "form-control", label: false, placeholder: "Listing Title"
+              .input-group.login
+                .input-group-addon
+                  %i{:class => "fa fa-pencil-square-o"}
+                = f.input :description, :class => "form-control", label: false, placeholder: "Write production description here"
+              .input-group.login
+                .input-group-addon
+                  %i{:class => "fa fa-usd"}              
+                = f.input :price, :class => "form-control", label: false, placeholder: "Price"
+              .input-group.login
+                .input-group-label
+                  = f.label :category
+                = f.select :category, options_for_select(categories), label: "Category"
+              .input-group.login
+                .input-group-label
+                  = f.label :campus
+                = f.select :campus, options_for_select(universities, current_user.campus), label: "Campus"
+              .input-group.login
+                .input-group-label
+                  = f.label :"Add Image"
+                = f.simple_fields_for :images, label: "Add Image" do |image|
+                  .upload
+                    = image.file_field :picture
+              .input-group.login
                 = f.button :submit, :class => "btn btn-primary"
-

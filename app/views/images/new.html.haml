@@ -1,5 +1,22 @@
-%h1 New image
+/ Top Main Nav
+= render '/listings/nav_1'
+/ Top Sub Nav 3
+= render '/listings/nav_3'
 
-= render 'form'
+.new-image-wrapper
+  %h1 Upload New Image
 
-= link_to 'Back', listing_path(@listing)
+  = simple_form_for ([@listing, @listing.images.build]), html: {:id => "form", multipart: true} do |f|
+    = f.error_notification
+    .upload
+      = f.file_field :picture, id: "image-upload", :onchange => ("$('.image-submit').click()")
+    %span{:style => "display: none;"}
+      = f.button :submit, value: "Submit", :class => "image-submit"
+
+.show-uploaded-images 
+  .listing-image.parent-container
+    - @listing.images.each do |image|
+      %div
+        .image-container
+          = image_tag image.picture_url, :class => "each-image"
+        = link_to "Delete", listing_image_path(@listing, image.id.to_i), method: :delete, data: {confirm: "Are you sure you want to remove this picture?"}, id: "delete-picture"

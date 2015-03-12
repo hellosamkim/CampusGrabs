@@ -24,7 +24,7 @@ input#user_avatar {
   margin-right: auto;
   margin-top: 5px;
 }
-input#user_current_passsowrd.password.required.form-control {
+input#user_current_passsword.password.required.form-control {
   border-radius: 0 4px 4px 0;
 }
 
@@ -45,5 +45,22 @@ input#user_current_passsowrd.password.required.form-control {
     margin-left: auto;
     margin-right: auto;
     color: rgba(101, 153, 255, 0.8);
+  }
+}
+
+
+.col-md-6.welcome.user-bio {
+  width: 100%;
+
+  .input-group.register {
+    width: 400px;
+    height: 100px;
+    margin-left: 40px; 
+
+    textarea#user_user_bio {
+      width: 350px !important;
+      height: 100px;
+      border-radius: 0 4px 4px 0;
+    }
   }
 }

@@ -50,4 +50,9 @@
             %i{:class => "fa fa-twitter fa-lg", :style => "color: #55ACEE"}
         - else
           %a{:href => "http://twitter.com/#{@user.twitter}", :class => "twitter-logo fa-lg"}
-            %i{:class => "fa fa-twitter fa-lg", :style => "color: #55ACEE"}
+            %i{:class => "fa fa-twitter fa-lg", :style => "color: #55ACEE"}\
+  .user-listings 
+    %h2
+      = @user.first_name.capitalize + "'s"
+      Listings
+    = render '/listings/show_all_listings'

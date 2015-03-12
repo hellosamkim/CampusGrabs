@@ -304,10 +304,14 @@ input#q:focus {
   height: 270px;
 }
 
-.modal-content.register {
+.modal-content.register, .modal-content.listing {
   height: 260px !important;
   margin-left: auto;
   margin-right: auto;
+}
+
+.modal-content.listing {
+  height: 580px !important;
 }
 
 .forgot-pw {
@@ -322,6 +326,41 @@ input#q:focus {
   }
 }
 
+.upload {
+    width: 160px;
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    background-image: url("/images/upload.png");
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.upload input {
+    display: block !important;
+    width: 160px !important;
+    height: 70px !important;
+    opacity: 0 !important;
+    overflow: hidden !important;
+}
+
+.upload input:hover {
+  cursor: pointer;
+}
+
+textarea#listing_description {
+  margin: 0px;
+  height: 130px;
+  max-height: 130px;
+  width: 580px;
+  max-width: 400px;
+}
+
+// Add Listing Pop Up Modal
+
+input#listing_title, input#listing_price, select#listing_category {
+  height: 50px;
+}
 
 // ---------- Mobile Views ----------
 @media (max-width: 767px) {

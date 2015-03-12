@@ -1,1 +1,1 @@
-= image_tag @image.picture_url, :class => "each-image"
+= link_to "Delete", listing_image_path(@listing, @image), method: :delete, data: {confirm: "Are you sure you want to remove this picture?"}

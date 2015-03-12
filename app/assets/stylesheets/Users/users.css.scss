@@ -59,9 +59,11 @@
   }
 
   #bio {
-    font-weight: normal;
+    opacity: 0.8;
     text-align: center;
     margin-top: 55px;
+    color: #f6f6f6;
+    font-weight: 600;
   }
 
   #name {
@@ -96,4 +98,13 @@
     color: #FFF !important;
     line-height: 20px !important;
     margin-top: 80px !important;
-}      
+}    
+
+.user-listings {
+  h2 {
+    text-align: center;
+    color: #FEFEFE;
+    font-weight: 700;
+    text-decoration: underline;
+  }
+} 
