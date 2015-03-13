@@ -14,7 +14,7 @@
       = f.button :submit, value: "Submit", :class => "image-submit"
 
 .show-uploaded-images 
-  .listing-image.parent-container
+  .listing-image#listing-image.parent-container
     - @listing.images.each do |image|
       %div
         .image-container

@@ -1,4 +1,5 @@
 class ListingsController < ApplicationController
+  protect_from_forgery with: :exception
   before_action :set_listing, only: [:show, :edit, :update, :destroy]
   before_action :ensure_logged_in, only: [:new, :edit, :destroy, :my_listings]
   before_action :ensure_correct_user, only: [:edit]
