@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150310143023) do
+ActiveRecord::Schema.define(version: 20150313133908) do
 
   create_table "images", force: :cascade do |t|
     t.integer  "listing_id"
