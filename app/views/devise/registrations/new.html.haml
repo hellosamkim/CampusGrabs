@@ -23,7 +23,7 @@
             .input-group.register
               .input-group-addon
                 %i{:class => "fa fa-lock"}
-              = f.input :password, required: true, label: false, hint: ("#{@minimum_password_length} characters minimum" if @validatable), input_html: {:style => "width: 170px; font-size: 1.4rem;" id: "signup-pw"}, placeholder: "••••••••••", :class => "signup-pw"
+              = f.input :password, required: true, label: false, hint: ("#{@minimum_password_length} characters minimum" if @validatable), input_html: {:style => "width: 170px; font-size: 1.4rem;", id: "signup-pw"}, placeholder: "••••••••••", :class => "signup-pw"
           .col-md-6.welcome              
             .input-group.register
               .input-group-addon

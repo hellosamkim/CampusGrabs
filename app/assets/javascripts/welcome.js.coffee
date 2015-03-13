@@ -33,14 +33,9 @@ $ ->
   setTimeout(typesentence, 2000)
 
   # Logo bounce in effect
-  $('.logo').addClass('animated bounceInDown')
+  $('#logo').addClass('animated bounceInDown')
   
 
   # Login and Register
-  $(".welcome-user-auth").hide()
-  setTimeout("$('.welcome-user-auth').fadeIn(4500)", 500)  
-  
-  # Get started button effect
-  $('.welcome-get-started').hide()
-  setTimeout("$('.welcome-get-started').slideToggle('slow')", 1500)
-  setTimeout("$('.welcome-get-started').addClass('animated infinite pulse')", 2500)
+  $("#welcome-user-auth").hide()
+  setTimeout("$('#welcome-user-auth').fadeIn(4500)", 500)  

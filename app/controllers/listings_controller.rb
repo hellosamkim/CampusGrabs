@@ -6,13 +6,12 @@ class ListingsController < ApplicationController
 
   def index
     # Display listings according to campus; defaults to user's pre-selected campus from registration
-    @campus_select = "%#{params[:c]}%"
-    @campus_select = current_user.campus if @campus_select == "%%" && current_user.present?
-    @listings = Listing.where("LOWER(campus) LIKE LOWER(?)", "#{@campus_select}").order("created_at DESC")
-
-    # Display all listings
-    @listings = Listing.all.order("created_at DESC") if params[:show_all] == "all"
-    # Listings counter
+    @show_all = "#{params[:show_all]}"
+    if current_user.present?
+      @listings = Listing.select_listing("campus", current_user.campus, @show_all)
+    else
+      @listings = Listing.all.order("created_at DESC")
+    end
     @listings_count = @listings.flatten.count
     if !current_user.nil?
       new
@@ -65,23 +64,21 @@ class ListingsController < ApplicationController
   end
 
   def search
-    # search_string to display string to users
-    @search_string = "#{params[:q]}"
-    @search_query = "%#{params[:q]}%"
+    @search_query = "#{params[:q]}"
     @search_results = []
 
-    # Search given user's query to see if it matches listing title, username, and campus
-    @listings = Listing.where("LOWER(title) LIKE LOWER(?)", "#{@search_query}")
-    @user = User.find_by("LOWER(username) LIKE LOWER(?)", "#{@search_query}")
+    @user = User.select_user("username", @search_query)
     @user = @user.listings if @user.present?
+    if @search_query.empty?
+      @search_results = Listing.all
+    else
+      @search_results += Listing.select_listing("title", @search_query)
+      @search_results += Listing.select_listing("campus", @search_query)
+      @search_results += @user.to_a
+    end
+    
 
-    @campus = Listing.where("LOWER(campus) LIKE LOWER(?)", "#{@search_query}")
-    @search_results += @listings
-    @search_results += @user.to_a
-    @search_results += @campus
-    @search_results = Listing.all if @search_string.empty?
-
-    @search_count = @search_results.count
+    @search_count = @search_results.flatten.count
   end
 
   private

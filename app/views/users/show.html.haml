@@ -10,9 +10,9 @@
     = @user.username + "'s"
     profile
   // Profile picture
-  .profile-picture
+  .profile-picture#profile-picture
     = image_tag @user.avatar_url
-  .user-details-wrapper
+  .user-details-wrapper#user-details-wrapper
     .user-details
       .row
         .col-md-6.left
@@ -41,12 +41,12 @@
       #bio 
         = @user.user_bio 
     #social
-      - if !@user.facebook.empty?
-        %a{:href => "http://#{@user.facebook}", :class => "facebook-logo fa-lg"}
+      - if !@user.facebook.nil?
+        %a{:href => "http://#{@user.facebook}", :class => "facebook-logo fa-lg", :id => "facebook-logo"}
           %i{:class => "fa fa-facebook fa-lg", :style => "color: #3B5998"} &nbsp&nbsp&nbsp&nbsp
-      - if !@user.twitter.empty?
+      - if !@user.twitter.nil?
         - if @user.twitter[0] == "@"
-          %a{:href => "http://twitter.com/#{@user.twitter[1..-1]}", :class => "twitter-logo fa-lg"}
+          %a{:href => "http://twitter.com/#{@user.twitter[1..-1]}", :class => "twitter-logo fa-lg", :id => "twitter-logo"}
             %i{:class => "fa fa-twitter fa-lg", :style => "color: #55ACEE"}
         - else
           %a{:href => "http://twitter.com/#{@user.twitter}", :class => "twitter-logo fa-lg"}

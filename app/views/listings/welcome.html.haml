@@ -2,10 +2,10 @@
 .site-wrapper
   .welcome-logo
     = link_to listings_path do
-      %img{:src => "/images/logo.png", :style => "width: 60%;", :class => "logo"}
+      %img{:src => "/images/logo.png", :style => "width: 60%;", :class => "logo", :id => "logo"}
   .welcome-sentences
     %span#sentences
-  .welcome-user-auth
+  .welcome-user-auth#welcome-user-auth
     / User Login Form  
     = render 'sign_in'
     / User Register Form

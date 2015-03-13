@@ -12,10 +12,17 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery-ui
 //= require masonry/jquery.masonry
 //= require masonry/jquery.infinitescroll.min
 //= require bootstrap
 //= require_tree .
 
-
+$(function() {
+  return $('#listings-container').imagesLoaded(function() {
+    return $('#listings-container').masonry({
+      itemSelector: '.box',
+      isFitWidth: true,
+      gutterWidth: 10
+    });
+  });
+});

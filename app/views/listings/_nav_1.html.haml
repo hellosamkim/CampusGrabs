@@ -10,7 +10,7 @@
       / Nav Logo
       .navbar-brand
         %a{:href => listings_path}
-          %img{:src => "/images/logo2.png", :class => "nav-logo"}
+          %img{:src => "/images/logo2.png", :class => "nav-logo", :id => "nav-logo"}
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
       %ul.nav.navbar-nav#nav-position
         %li#only-mobile
@@ -38,9 +38,9 @@
           / Show menu for users not logged in
         - else
           .login-register-wrapper
-            .login-button{"data-target" => "#login", "data-toggle" => "modal", :type => "button"}
+            .login-button#login-button{"data-target" => "#login", "data-toggle" => "modal", :type => "button"}
               Login
-            .register-button{"data-target" => "#register", "data-toggle" => "modal", :type => "button"}
+            .register-button#register-button{"data-target" => "#register", "data-toggle" => "modal", :type => "button"}
               Sign Up
 %div.breakline-with-shadow
 

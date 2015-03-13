@@ -7,4 +7,8 @@ class User < ActiveRecord::Base
 
   validates_presence_of :username, :email
   has_many :listings
+
+  def self.select_user(property, search_query)
+    find_by("LOWER(#{property}) LIKE LOWER(?)", "%#{search_query}%")
+  end
 end
