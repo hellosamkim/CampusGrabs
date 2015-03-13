@@ -1,7 +1,7 @@
 # CampusGrabs
 
 ##### A Classifieds Page to Buy and Sell, dedicated to University students across Ontario.
-Current not mobile friendly (On progress)
+#### Check it out here: http://campus-grabs.herokuapp.com/
 
 **Welcome Page**
 ![Alt text](/screenshot1.png?raw=true)
