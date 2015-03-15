@@ -3,6 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $ ->
+
   $('#listings-container').imagesLoaded ->
     $('#listings-container').masonry
       itemSelector: '.box'

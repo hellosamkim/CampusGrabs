@@ -17,12 +17,3 @@
 //= require bootstrap
 //= require_tree .
 
-$(function() {
-  return $('#listings-container').imagesLoaded(function() {
-    return $('#listings-container').masonry({
-      itemSelector: '.box',
-      isFitWidth: true,
-      gutterWidth: 10
-    });
-  });
-});
