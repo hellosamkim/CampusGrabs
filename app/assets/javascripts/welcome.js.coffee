@@ -1,7 +1,4 @@
 $ ->
-  # Sentences
-  $('.welcome-sentences').hide()
-  setTimeout("$('.welcome-sentences').fadeIn(200)", 300)
 
   typesentence = ->
     $('#sentences').typed
@@ -31,6 +28,10 @@ $ ->
         newTyped()
         return
   setTimeout(typesentence, 2000)
+
+  # Sentences
+  $('.welcome-sentences').hide()
+  setTimeout("$('.welcome-sentences').fadeIn(200)", 300)
 
   # Logo bounce in effect
   $('#logo').addClass('animated bounceInDown')

@@ -3,7 +3,7 @@
     - @listings.each do |listing|
       .box.panel.panel-default#listing-shadow
         - listing.images[0..0].each_with_index do |image|
-          = image_tag image.picture.url, :class => "thumbs"
+          = image_tag image.picture.thumb.url, :class => "thumbs"
           %div.breakline
         .panel-body 
           .panel-title
