@@ -9,12 +9,12 @@ class ListingsController < ApplicationController
     # Display listings according to campus; defaults to user's pre-selected campus from registration
     @show_all = "#{params[:show_all]}"
     if current_user.present?
-      @listings = Listing.select_listing("campus", current_user.campus, @show_all)
+      @listings = Listing.select_listing("campus", current_user.campus, @show_all).page params[:page]
     else
-      @listings = Listing.all.order("created_at DESC")
+      @listings = Listing.all.order("created_at DESC").page params[:page]
     end
     @listings_count = @listings.flatten.count
-    if !current_user.nil?
+    if current_user.present?
       new
     end
   end
@@ -71,11 +71,12 @@ class ListingsController < ApplicationController
     @user = User.select_user("username", @search_query)
     @user = @user.listings if @user.present?
     if @search_query.empty?
-      @search_results = Listing.all
+      @search_results = Listing.all.page params[:page]
     else
       @search_results += Listing.select_listing("title", @search_query)
       @search_results += Listing.select_listing("campus", @search_query)
       @search_results += @user.to_a
+      @search_results.page params[:page]
     end
     
 
