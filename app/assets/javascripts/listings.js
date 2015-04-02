@@ -27,5 +27,9 @@ function masonryProducts() {
     });
   });
 
-  $()
+  $container.infinitescroll({
+    navSelector : '.page',
+    nextSelector : '#next-page',
+    itemSelector : '.box'
+  })
 };
