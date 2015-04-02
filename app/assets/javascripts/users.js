@@ -1,4 +1,8 @@
 $(function() {
+  userAnimations();
+});
+
+function userAnimations(){
   $('#facebook-logo').mouseover(function() {
     $('#facebook-logo').addClass("animated swing");
     return setTimeout("$('#facebook-logo').removeClass('animated swing')", 1000);
@@ -15,4 +19,4 @@ $(function() {
   });
   $("#user-details-wrapper").hide();
   return setTimeout("$('#user-details-wrapper').fadeIn()", 1300);
-});
+};

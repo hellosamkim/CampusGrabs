@@ -12,23 +12,5 @@
     %span{:style => "color: rgba(255, 153, 0, 1);"} 
       = @search_count
   .listings_wrapper#search        
-    #listings-container.transitions-enabled
-      / Display each searches
-      - @search_results.each do |listing|
-        .box.panel.panel-default#listing-shadow
-          - listing.images[0..0].each_with_index do |image|
-            = image_tag image.picture.url, :class => "thumbs"
-            %div.breakline
-          .panel-body 
-            .panel-title
-              = listing.title
-          %a{:href => listing_path(listing.id)}
-            .listing-hover
-            .listing-price
-              = number_to_currency(listing.price, :precision => 0)
-            .listing-details.listing-user
-              Listed by 
-              = listing.user.username
-            .listing-details.listing-time  
-              = listing.created_at.strftime("%b %-d, %Y")
-  = render 'footer'
+    = render 'show_all_listings'
+  

@@ -66,21 +66,20 @@ class ListingsController < ApplicationController
 
   def search
     @search_query = "#{params[:q]}"
-    @search_results = []
+    @listing = []
 
     @user = User.select_user("username", @search_query)
     @user = @user.listings if @user.present?
     if @search_query.empty?
-      @search_results = Listing.all.page params[:page]
+      @listings = Listing.all.page params[:page]
     else
-      @search_results += Listing.select_listing("title", @search_query)
-      @search_results += Listing.select_listing("campus", @search_query)
-      @search_results += @user.to_a
-      @search_results.page params[:page]
-    end
-    
+      @listings += Listing.select_listing("title", @search_query)
+      @listings += Listing.select_listing("campus", @search_query)
+      @listings += @user.to_a
+      @listings.page params[:page]
+    end    
 
-    @search_count = @search_results.flatten.count
+    @search_count = @listings.flatten.count
   end
 
   private
