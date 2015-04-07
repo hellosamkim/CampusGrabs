@@ -1,6 +1,7 @@
 $(function() {
   masonryProducts();
   listingAnimations();
+  imageSlick();
   return setTimeout("$('.alert').fadeOut('slow')", 3000);
 });
 
@@ -30,6 +31,30 @@ function masonryProducts() {
   $container.infinitescroll({
     navSelector : '.page',
     nextSelector : '#next-page',
-    itemSelector : '.box'
+    itemSelector : '.box',
+    loading : {
+      finshedMsg: 'No more products to load.',
+      img: 'http://i.imgur.com/WxlCYpH.gif'
+    }
+  },
+  function (newElements) {
+    var $newElems = $(newElements).css({opacity: 0}); 
+    var nextPageNav = $(this).find('.page');
+    $('.page').replaceWith(nextPageNav);
+    $newElems.imagesLoaded(function(){
+      $newElems.animate({opacity: 1});
+      $container.masonry('appended', $newElems, true);
+    });
+  }
+  );  
+};
+
+function imageSlick() {
+  $(function(){
+    $('#listing-image').slick({
+      dots: true,
+      speed: 500,
+      autoplay: false
+    });
   })
 };

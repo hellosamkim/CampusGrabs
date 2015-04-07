@@ -1,0 +1,319 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// Profile picture
+.profile-picture {
+  width: 200px;
+  z-index: 1000;
+  height: 200px;
+  background-color: rgba(101, 153, 255, 0.7);
+  border: solid 10px rgba(255, 153, 0, 1);
+  border-radius: 150px;
+  left: 0;
+  right: 0;
+  position: relative;
+  margin-left: auto;
+  margin-top: 40px;
+  margin-right: auto;
+  -webkit-box-shadow: 0px -1px 0px 0px rgba(0,0,0,0.1);
+  -moz-box-shadow: 0px -1px 0px 0px rgba(0,0,0,0.1);
+  box-shadow: 0px -1px 0px 0px rgba(0,0,0,0.1);
+  img {
+    height: 100%;
+    border-radius: 150px;
+    width: 100%;
+
+  }
+}
+
+// User Details
+#campus, #name, #signed-up, #last-online {
+  color: #555;
+}
+.user-details {
+  font-size: 1.5rem;
+  font-weight: bold;
+  width: 60%;
+  padding: 20px;
+  color: #F6F6F6;
+  position: relative;
+  background-color: rgba(255, 153, 0, 1);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -90px;
+  z-index: 1;
+  -webkit-box-shadow: 0px 2px 7px 1px rgba(0,0,0,0.3);
+  -moz-box-shadow: 0px 2px 7px 1px rgba(0,0,0,0.3);
+  box-shadow: 0px 2px 7px 1px rgba(0,0,0,0.3);
+  border-radius: 50px;
+  
+  .row {
+    .col-md-6.left {
+      text-align: left;
+    }
+
+    .col-md-6.right {
+      text-align: right;
+    }
+  }
+
+  #bio {
+    opacity: 0.8;
+    text-align: center;
+    margin-top: 55px;
+    color: #f6f6f6;
+    font-weight: 600;
+  }
+
+  #name {
+    margin-left: 5px;
+  }
+}
+
+// Social icons
+
+.facebook-logo {
+  margin-right: 150px;
+}
+
+.facebook-logo:hover, .twitter-logo:hover {
+  opacity: 0.7;
+}
+
+#social {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    z-index: 2000;
+    top: 290px;
+}
+
+// "Currently viewing username's profile"
+.current-user-show {
+    height: 20px !important; 
+    color: #FFF !important;
+    line-height: 20px !important;
+    margin-top: 80px !important;
+}    
+
+.user-listings {
+  h2 {
+    text-align: center;
+    color: #FEFEFE;
+    font-weight: 700;
+    text-decoration: underline;
+  }
+} 
+
+// My listings for User page
+.my-listings-head {
+  text-align: center;
+  font-size: 3rem;
+  margin-top: 20px;
+  color: #FEFEFE;
+}
+
+.my-each-listings {
+  border: 2px solid #FEFEFE;
+  border-radius: 15px;
+  width: 70%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  background-color: #FEFEFE;
+  margin-right: auto;
+}
+
+.row.my-listings {
+  margin: 15px;
+  border: 2px solid #555;
+  border-radius: 5px;
+
+  .col-md-6.my-listings#left {
+    border-right: 2px solid;
+    width: 30%;
+
+    .my-listing-images {
+      margin-left: auto;
+      margin-right: auto;
+      width: 200px;
+    }
+    .my-listings.title {
+      font-size: 1.8rem;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+  }
+  .col-md-6.my-listings#right {
+    width: 70%;
+  }
+}
+
+.my-listing-table {
+  width: 100%;
+  text-align: center;
+  font-size: 1.6rem;
+
+  .my-listing-table-menu {
+    td {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: rgba(255, 153, 0, 1);
+      padding: 5px 15px 0px 15px;
+      text-decoration: underline;
+    }
+  .my-listing-table-info {
+    td {
+      color: #555;
+      font-weight: bold;
+    }
+  }
+}
+}
+
+.my-listing-description {
+  // width: 100%;
+  margin-top: 25px;
+  h4 {
+    font-weight: bold;
+  }
+}
+
+.my-listing-options {
+  text-align: center;
+  font-size: 1.6rem;
+
+  #my-listing-options-1 {
+    color: rgba(255, 153, 0, 0.8);
+  }
+  #my-listing-options-1:hover {
+    color: rgba(255, 153, 0, 0.4);
+  }
+  #my-listing-options-2 {
+    color: rgba(101, 153, 255, 0.8);
+  }
+  #my-listing-options-2:hover {
+    color: rgba(101, 153, 255, 0.4);
+  }
+  #my-listing-options-3 {
+    color: rgba(255, 91, 64, 0.8);
+  }
+  #my-listing-options-3:hover {
+    color: rgba(255, 91, 64, 0.4);
+  }
+}
+
+// Profile Settings for User profile
+.col-md-6.welcome.center {
+  font-size: 1rem;
+}
+
+input#user_facebook {
+  font-size: 1.2rem;
+}
+
+input#user_facebook, input#user_twitter {
+  border-radius: 0 4px 4px 0;
+}
+
+.welcome-register-form-2.prof-settings {
+  width: 50%;
+}
+
+select#user_campus {
+  font-size: 1.3rem;
+}
+
+input#user_avatar {
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5px;
+}
+input#user_current_passsword.password.required.form-control {
+  border-radius: 0 4px 4px 0;
+}
+
+.input-group.register {
+  h4 {
+    margin-top: 0px;
+    color: rgba(255, 153, 0, 0.8);
+  }
+  p {
+    font-size: 1.3rem;
+  }
+}
+
+.col-md-6.welcome {
+  p {
+    font-size: 1.3rem;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    color: rgba(101, 153, 255, 0.8);
+  }
+}
+
+
+.col-md-6.welcome.user-bio {
+  width: 100%;
+
+  .input-group.register {
+    width: 400px;
+    height: 100px;
+    margin-left: 40px; 
+
+    textarea#user_user_bio {
+      width: 350px !important;
+      height: 100px;
+      border-radius: 0 4px 4px 0;
+    }
+  }
+}
+
+// User auth for user page
+.welcome-login-2, .welcome-register-2 {
+  text-align: center;
+}
+
+.welcome-register-2 {
+  margin-bottom: 30px;
+}
+
+.welcome-register-form-2 {
+  padding-top: 30px;
+}
+
+#user-password {
+  .help-block {
+    display: inline !important;
+    position: absolute !important;
+    margin-top: 2px !important;
+    margin-bottom: 10px !important;
+    width: 250px !important;
+  }
+
+  p.help-block {
+    top: 17px !important;
+    font-size: 1.2rem !important;
+    margin-left: 18px !important;
+    color: #d38f8e !important;
+  }  
+}
+
+select#user_campus {
+  left: 45px !important;
+}
+
+div.alert.alert-danger {
+  margin-bottom: 30px !important;
+  border-radius: 15px;
+}
+
+.sign-up-wrapper {
+
+}
