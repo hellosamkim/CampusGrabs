@@ -7,7 +7,7 @@ class Listing < ActiveRecord::Base
   accepts_nested_attributes_for :images, allow_destroy: true
 
   def self.select_listing(property, search_query, show_all = nil)
-    if show_all.nil?
+    if show_all.nil? || show_all == ""
       where("LOWER(#{property}) LIKE LOWER(?)", "%#{search_query}%").order("created_at DESC")
     else
       all.order("created_at DESC")
