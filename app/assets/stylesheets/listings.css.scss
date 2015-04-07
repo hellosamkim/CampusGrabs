@@ -541,3 +541,8 @@ img.each-image {
   font-size: 20px !important;
 }
 
+// Hide pagination 
+
+.pagination {
+  visibility: hidden;
+}
