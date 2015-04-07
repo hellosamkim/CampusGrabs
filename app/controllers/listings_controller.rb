@@ -66,20 +66,20 @@ class ListingsController < ApplicationController
 
   def search
     @search_query = "#{params[:q]}"
-    @listing = []
+    @listings = []
 
     @user = User.select_user("username", @search_query)
     @user = @user.listings if @user.present?
     if @search_query.empty?
-      @listings = Listing.all.page params[:page]
+      @listings = Listing.all.order("created_at DESC").page params[:page]
     else
       @listings += Listing.select_listing("title", @search_query)
       @listings += Listing.select_listing("campus", @search_query)
       @listings += @user.to_a
-      @listings.page params[:page]
+      @listings = Kaminari.paginate_array(@listings).page(params[:page])
     end    
 
-    @search_count = @listings.flatten.count
+    @search_count = @listings.count
   end
 
   private
