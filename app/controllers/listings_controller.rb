@@ -1,5 +1,6 @@
 class ListingsController < ApplicationController
   protect_from_forgery with: :exception
+  before_action :create_listing
   before_action :set_listing, only: [:show, :edit, :update, :destroy]
   before_action :ensure_logged_in, only: [:new, :edit, :destroy, :my_listings]
   before_action :ensure_correct_user, only: [:edit]
@@ -9,7 +10,7 @@ class ListingsController < ApplicationController
     # Display listings according to campus; defaults to user's pre-selected campus from registration
     @show_all = "#{params[:show_all]}"
     if current_user.present?
-      @listings = Listing.select_listing("campus", current_user.campus, @show_all).page params[:page]
+      @listings = Listing.select_listing("campus", current_user.campus).page params[:page]
     else
       @listings = Listing.all.order("created_at DESC").page params[:page]
     end
@@ -23,8 +24,6 @@ class ListingsController < ApplicationController
   end
 
   def new
-    @listing = current_user.listings.build
-    @listing.images.build
   end
 
   def create
@@ -85,6 +84,11 @@ class ListingsController < ApplicationController
   private
   def set_listing
     @listing = Listing.find(params[:id])
+  end
+
+  def create_listing
+    @listing = current_user.listings.build
+    @listing.images.build
   end
 
   def current_user_listings
