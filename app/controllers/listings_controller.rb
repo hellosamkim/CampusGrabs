@@ -87,8 +87,10 @@ class ListingsController < ApplicationController
   end
 
   def create_listing
-    @listing = current_user.listings.build
-    @listing.images.build
+    if current_user.present?
+      @listing = current_user.listings.build
+      @listing.images.build
+    end
   end
 
   def current_user_listings
