@@ -1,0 +1,481 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require font-awesome
+ *= require 'masonry/transitions'
+ *= require 'masonry/infinitescroll'
+ */
+ 
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "base";
+@import "masonry-stuff";
+
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: $main-dark-color;
+}
+
+// Make animation visibile of hidden beforehand
+.animated { visibility: visible !important; }
+
+// button transitions
+.login h3, .login input, .get-started {
+  @include transition-duration(0.2s);
+}
+
+.container {
+  @include padding-both-sides(0);
+  width: 80vw;
+}
+
+.line-break {
+  height: 2.5px;
+  margin-top: 10px;
+  background-color: $main-orange-color;
+  width: 200px;
+  @include center-div;
+}
+
+/////// WELCOME PAGE ///////
+#welcome-wrapper {
+  height: 100vh;
+  #welcome-bg {
+    position: absolute;
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    @include opacity(0.7);
+    @include bg-image("background", "yes");
+    @include background-size(cover);
+  }
+  @include logo(300px);
+}
+
+// Welcome page typed messages
+#welcome-wrapper .text-animation {
+  height: 50vh;
+  #welcome-sentences, #search-sentences {
+    position: absolute;
+    text-align: center;
+    z-index: 3;
+    display: inline-block;
+    border: solid 2px $main-dark-color;
+    @include opacity(0.7);
+    background-color: $main-dark-color;
+    height: 70px;
+    line-height: 70px;
+    color: $main-light-color;
+    top: 35%;
+    width: 55%;
+    @include border-radius(1px);
+    @include center-div;
+    @include padding-both-sides(25px);
+    @include no-focus($main-light-color);
+    @include hover-pointer;
+    #sentences, .typed-cursor {
+      z-index: 3;
+      font-size: 35px;
+      font-weight: 600;
+    }
+
+    // Typed message search bar
+    input {
+      @include opacity(0.7);
+      padding: none;
+      width: 100%;
+      text-align: center;
+      background: none;
+      border: none;
+    }
+  }
+  .typed-cursor{
+    display: none;
+  }
+}
+
+// Welcome User login/ Get Started
+#welcome-wrapper .user-auth {
+  a {
+    &:hover, &:focus {
+      text-decoration: none;
+    }
+  }
+  .login, .get-started {
+    position: absolute;
+    font-weight: 600;
+    z-index: 3;
+    text-align: center;
+    width: 80%;
+    bottom: 0.5%;
+    @include center-div;
+    @include no-focus($main-light-color);
+  }
+  .login { 
+    h3 {
+      @include center-div;
+      @include border-radius(50px);
+      @include button-boxed(20, 120px, 30px);
+      @include button-boxed-hover($main-dark-color-2, $main-light-color, $main-light-color);
+      color: $main-light-color;
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+    }
+    .input-group-addon {
+      background-color: lighten($main-dark-color, 13%);
+      color: darken($main-light-color, 3%);
+      border-color: lighten($main-dark-color, 13%);
+    }
+    input {
+      color: $main-light-color;
+      background: none; 
+      border-color: darken($main-light-color, 3%);
+    }
+    input[type="submit"] {
+      &:hover {
+        background-color: lighten($main-dark-color, 3%);
+        border-color: lighten($main-dark-color, 3%);  
+      }
+    }
+  }
+  .get-started {
+    position: relative;
+    color: $main-dark-color;
+    background-color: rgba(255, 255, 255, 0.3);
+    @include button-boxed(10, 130px, 50px);
+    @include button-boxed-hover($main-light-color, $main-dark-color, $main-dark-color);
+  }
+}
+
+/////// MAIN PAGES ///////
+
+// top nav abar
+nav.top-nav {
+  background-color: $main-dark-color-2;
+  @include nav-container-size(80px);
+  .container {
+    height: 50.5px;
+    @include logo(250px);
+    .logo-wrapper {
+      margin-top: -12px;
+    }
+  }
+}
+// main nav bar
+nav.main-nav {
+  z-index: 6;
+  position: relative;
+  height: 45px;
+  background-color: $main-light-color;
+  @include box-style-shadow($main-dark-color-2);
+  @include nav-container-size(45px);
+  .container {
+    .search-bar {
+      float: left;
+      @include no-focus($main-dark-color);
+      input#q {
+        height: 46px;
+        padding-left: 15px;
+        margin-left: 15px;
+        width: 220px;
+        border-left: $border-style;
+        border-bottom: $border-style;
+      }
+      .select-group {
+        background-color: $main-light-color;
+        margin-left: -4px;
+        padding-left: 4px;
+      }
+      .select-group, .submit-group {  
+        width: 170px;
+        color: lighten($main-dark-color, 13%);
+        display: inline-block;
+        margin-left: -4px;
+        border-right: $border-style;
+        border-bottom: $border-style;
+      }
+      .submit-group {
+        border: none;
+        input[type='submit'] {
+          height: 45px;
+          padding-top: 3px;
+          border-bottom: $border-style;
+        }
+      }
+      .selection {
+        display: inline;
+        i {
+          margin-left: 3.5px;
+        }
+      }
+      input, select {
+        position: relative;
+        border: none;
+        font-family: $nunito;
+        height: 45px;
+        background-color: $main-light-color;
+        border-right: $border-style;
+      }
+      select {
+        overflow: hidden;
+        color: #aaa;
+        height: 44px;
+        width: 150px;
+        @include appearance(none);
+        outline: none;
+        border-radius: 0px;
+        padding-left: 5px;
+        margin-left: -4px;
+      }
+      .select-group, select, input[type="submit"] {
+        @include hover-pointer;
+        opacity: 0.97;
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+    .links {
+      float: right;
+      z-index: 5;
+      opacity: 0.9;
+      color: $main-light-color;
+      margin-top: -30px;
+      height: 80px;
+      position: fixed;
+      right: 10%;
+      text-align: center;
+      .login, .register {
+        font-family: $pt-sans;
+        font-weight: 700;
+        @include transition-duration(0.2s);
+        @include opacity(0.6);
+        font-size: 1rem;
+        color: $main-orange-color;
+        border-bottom: 2px solid $main-dark-color-2;
+        display: inline-block;
+        padding: 3px;
+        margin-bottom: 10px;
+        @include hover-pointer;
+        &:hover {
+          @include opacity(1);
+          border-bottom: 2px solid $main-dark-color-2;
+        }
+      }
+      .posting {
+        font-family: $roboto;
+        padding: 8px 0;
+        background-color: $main-dark-color-2;
+        border: 2px solid $main-light-color;
+        display: block;
+        margin-top: 5px;
+        @include transition-duration(0.2s);
+        &:hover {
+          @include button-boxed-hover($main-dark-color-2, lighten($main-light-color, 30%), $main-dark-color-2)
+        }
+      }
+    }
+  }
+  ::-webkit-input-placeholder {
+    @include search-input-ph;
+  }
+  ::-moz-placeholder {
+    @include search-input-ph;
+  } 
+  :-ms-input-placeholder {
+    @include search-input-ph;
+  }
+}
+
+// allows for fixed search-bar when scrolled past main nav
+.search-bar-scrolled {
+  z-index: 1000;
+  position: fixed;
+  @include center-div;
+}
+
+// Banner like display for all campuses/ locations
+.campus-locations {
+  margin-top: 18px;
+  .locations {
+    @include main-bg-cover;
+    .row { 
+      margin-left: 0;
+      margin-right: 0;
+      .col-md-3 {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        text-align: center;
+        @include hover-pointer;
+        @include transition-duration(0.2s);
+        &:hover {
+          background-color: $main-red-color;
+          i, p {
+            color: $main-light-color;
+          }
+        }
+      }
+      i {
+        color: $main-orange-color;
+      }
+      h4 {
+        font-family: $nunito;
+        font-size: 19px;
+        display: inline-block;
+      }
+      p {
+        font-family: $roboto;
+        color: $main-red-color;
+        font-size: 13px;
+      }
+    }
+  }
+}
+
+// Main headings inside container
+h1 {
+  margin-top: 30px;
+  font-family: $raleway;
+  font-weight: 800;
+  font-size: 30px;
+  text-align: center;
+}
+
+// Listings
+.listings {
+  .listings-wrapper {
+    margin-top: 30px;
+    position: relative;
+  }
+  .listings-menu {
+    text-align: center;
+    @include no-focus(#fff);
+    button {
+      padding: 12px;
+      text-align: center;
+      color: $main-orange-color;
+      @include main-bg-cover;
+      display: inline;
+      @include hover-pointer;
+      &:hover {
+        background-color: lighten($main-orange-color,10);
+        border-color: lighten($main-orange-color,10);
+        color: $main-light-color;
+      }
+    }
+  }
+  // list of listings
+  .show-listings {
+    margin-left: auto;
+    margin-right: auto;
+    @include main-bg-cover;
+    height: 85vh;
+    overflow: auto;
+    margin-bottom: 30px;
+    clear: both;
+    // listings wrapper with masonry & infinite scroll
+    #listing-wrapper.transitions-enabled.infinite-scroll {
+      @include center-div;
+      margin-top: 15px;
+      .listing {
+        width: 220px;
+        margin-bottom: 15px;
+      }  
+    } 
+    .listing-hover {
+      width: 100%;
+      height: 100%;
+      background-color: #f3f3f3;
+    }
+  }
+  // each listings
+  .listing {
+    border: solid $main-dark-color-2;
+    border-width: 3.2px 1.2px 0px 1.2px;
+    @include transition-duration(0.2s);
+    &:hover {
+      background-color: $main-dark-color;
+      border-top: 3.2px solid $main-green-color;
+    }
+    &:hover > .date {
+      opacity: 0.9;
+    }
+    img {
+      @include transition-duration(0.2s);
+      width: 100%;
+      &:hover {
+        opacity: 0.9;
+      }
+    }
+    .title {
+      background-color: $main-dark-color-2;
+      color: $main-light-color;
+      text-align: center;
+      padding: 5px 0;
+    }
+    .price, .date {
+      font-family: $alegreya;
+      color: $main-light-color;
+      padding: 4px 5px;
+      top: 0;
+    }
+    .price {
+      position: absolute;
+      font-weight: 500;
+      background-color: lighten($main-orange-color, 5);
+      left: 0;
+      font-size: 1.5rem;
+    }
+    .date {
+      @include transition-duration(0.2s);
+      opacity: 0;
+      position: absolute;
+      background-color: lighten($main-red-color, 5);
+      font-size: 0.97rem;
+      right: 0;
+    }
+  }
+}
+
+.social {
+  .line-break {
+    margin-bottom: 20px;
+  }
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 20px;
+  a {
+    text-decoration: none;
+    opacity: 0.5;
+    @include transition-duration(0.2s);
+    @include padding-both-sides(2px);
+    &:hover {
+      opacity: 1;
+    }
+    &:nth-child(1) {
+      color: #55ACEE
+    }
+    &:nth-child(2) {
+      color: #3b5998;
+    }
+    &:nth-child(3) {
+      color: #3f729b;
+    }
+    &:nth-child(4) {
+      color: #dd4b39;
+    }
+  }
+}
+

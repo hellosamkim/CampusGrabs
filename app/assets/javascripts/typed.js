@@ -248,14 +248,12 @@
                 // on the first string, only delete one word
                 // the stopNum actually represents the amount of chars to
 ////////////////// keep in the current string. In my case it's 14.
-                if (self.arrayPos < 5){
-                 self.stopNum = 13;
-                }
-                else if (self.arrayPos > 5){
-                 self.stopNum = 14;
-                }
-                else{
-                 self.stopNum = 9;
+                if (self.arrayPos < 2){
+                    self.stopNum = 16;
+                } else if (self.arrayPos < 3) {
+                    self.stopNum = 10;
+                } else {
+                    self.stopNum = 0;
                 }
 
                 if (self.contentType === 'html') {

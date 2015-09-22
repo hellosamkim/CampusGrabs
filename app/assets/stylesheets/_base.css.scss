@@ -1,0 +1,127 @@
+@import "compass";
+@import "compass/reset";
+
+// color variables
+$main-dark-color: rgb(41, 41, 41);
+$main-dark-color-2: #555;
+$main-light-color: #F8F8F8;
+$main-orange-color: #FF9900;
+$main-red-color: #db7070;
+$main-green-color: #70db70;
+
+// font variables
+$roboto: 'Roboto', sans-serif;            // Sub font
+$open-sans: 'Open Sans', sans-serif;      // Main font      
+$pt-sans: 'PT Sans Narrow', sans-serif;   // Narrow font
+$raleway: 'Raleway', sans-serif;            // Sub font
+$nunito: 'Nunito', sans-serif;            // Sub font
+$alegreya: 'Alegreya Sans SC', sans-serif;
+// other variables
+$border-style: 1px solid lighten($main-dark-color-2, 50%);
+
+
+// background-image for div
+@mixin bg-image($name, $bool) {
+  @if $bool == "yes" {
+    background: url("/images/#{$name}.png") no-repeat center center fixed;
+  } @else if $bool == "no" {
+    background: url("/images/#{$name}.png");
+  }
+  overflow: hidden;
+}
+
+// spacing with padding on each side
+@mixin padding-both-sides($padding) {
+  padding-left: $padding !important;
+  padding-right: $padding !important;
+}
+
+// center div with auto margins
+@mixin center-div() {
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// remove default focus color for forms
+@mixin no-focus($color) {
+  input {
+    opacity: 0.8;
+    &:focus {
+      opacity: 1;
+      outline: none;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none;
+    }
+  }
+}
+
+// buttons
+@mixin button-boxed($lh, $w, $h) {
+  border: solid;
+  width: $w;
+  height: $h;
+  line-height: $h - ($h * ($lh / 100));
+}
+
+// button hover
+@mixin button-boxed-hover($text, $bg, $border) {
+  &:hover {
+    text-decoration: none;
+    cursor: pointer;
+    color: $text;
+    opacity: 0.9;
+    background-color: $bg;
+    border-color: $border;
+  }
+}
+
+// logo for welcome page and all pages
+@mixin logo($width){
+  .logo-wrapper, .logo {
+      float: left;
+      position: relative;
+      z-index: 1000;
+      width: $width;
+      height: $width / 2;  
+  }
+  .logo {
+    @include bg-image("logo", "no");
+    @include background-size(contain);
+  }
+}
+
+// nav containers
+@mixin nav-container-size($height){
+  .container {
+    height: $height;
+  }
+}
+// nav container search input placeholder
+@mixin search-input-ph {
+  padding-top: 2px;
+  color: #aaa;
+}
+
+// When hover, makes cursor a pointer
+@mixin hover-pointer {
+    &:hover {
+      cursor: pointer;
+    }
+}
+
+// main box-shadow design
+@mixin box-style-shadow($color) { 
+  -moz-box-shadow: (lighten($color, 55%) 0px 2px); 
+  -webkit-box-shadow: (lighten($color, 55%) 0px 2px); 
+  box-shadow: (lighten($color, 55%) 0px 2px); 
+}
+
+// main content divs
+@mixin main-bg-cover {
+  background-color: $main-light-color;
+  border: $border-style;
+  @include box-style-shadow($main-dark-color-2);
+}

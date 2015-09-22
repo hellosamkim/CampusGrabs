@@ -1,11 +1,43 @@
-/ Top Main Nav
-= render 'nav_1'
-/ Top Sub Nav 2
-= render 'nav_2'
-/ Shows the University
-- if current_user.present?
-  = render 'primary_campus'
+%header
+  %nav.top-nav
+    = render 'topnav'
+  %nav.main-nav
+    = render 'mainnav'
+  %section.campus-locations
+    = render 'locations'
+%section.listings
+  .container
+    %h1 LISTINGS
+    .line-break{style: "width: 80px; height: 3px;"}
+    .listings-wrapper
+      .listings-menu
+        %button Latest Ads
+        %button Popular Ads
+        %button Cheapest Ads
+      .show-listings
+        #listing-wrapper.transitions-enabled.infinite-scroll.clearfix
+          - @listings.each do |listing|  
+            = link_to listing_path(listing.id) do
+              .listing
+                .image
+                  - listing.images[0..0].each_with_index do |image|
+                    = image_tag image.picture.thumb.url, :class => "thumbs"
+                .title
+                  = listing.title
+                .price
+                  = number_to_currency(listing.price, :precision => 0)
+                .date
+                  = listing.created_at.strftime("%b %d")
+        = paginate @listings
+%footer.social-feeds
+  .social
+    %h1 CONNECT WITH US
+    .line-break{style: "width: 120px; height: 3px;"}
+    %a{:href => "#", :class => "fa fa-twitter-square"}
+    %a{:href => "#", :class => "fa fa-facebook-square"}
+    %a{:href => "#", :class => "fa fa-instagram"}
+    %a{:href => "#", :class => "fa fa-google-plus-square"}
 
-/ Show All Listings
-.listings_wrapper
-  = render 'show_all_listings'
+
+
+

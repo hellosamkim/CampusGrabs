@@ -1,0 +1,15 @@
+%h3 Member Login
+%form.form-inline
+  = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    .form-group
+      .input-group
+        .input-group-addon 
+          %i{class: "fa fa-envelope-o"}
+        = f.input :email, required: true, label: false, placeholder: "Email"
+    .form-group
+      .input-group
+        .input-group-addon
+          %i{class: "fa fa-lock"}
+        = f.input :password, required: true, label: false, placeholder: "•••••••••"
+    .input-group{style: "display: block; margin-top: 10px;"}
+      = f.button :submit, "Log In"           
